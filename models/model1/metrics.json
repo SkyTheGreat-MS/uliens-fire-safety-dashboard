@@ -1,0 +1,27 @@
+{
+  "model": "StandardScaler + OneHotEncoder + GaussianProcessRegressor(RBF + WhiteKernel)",
+  "target": "flame_spread_mm_s",
+  "target_unit": "mm/s",
+  "validation_rows": 50,
+  "training_rows": 198,
+  "r2_score": 0.9776224061956498,
+  "mean_absolute_error_mm_s": 0.05251119775664408,
+  "mean_squared_error": 0.013888605259067377,
+  "root_mean_squared_error_mm_s": 0.11784992685219357,
+  "max_error_mm_s": 0.7044996523381606,
+  "mean_validation_uncertainty_std_mm_s": 0.2318078805435626,
+  "fitted_kernel": "13.5**2 * RBF(length_scale=19) + WhiteKernel(noise_level=0.0672)",
+  "split": {
+    "method": "stratified by test_outcome holdout",
+    "test_size": 0.2,
+    "seed": 42
+  },
+  "feature_columns": [
+    "oxygen_pct",
+    "pressure_kpa",
+    "flow_velocity_cm_s",
+    "loi_threshold_pct",
+    "material_name"
+  ],
+  "warning": "Research-model estimate; not certified fire-safety guidance."
+}

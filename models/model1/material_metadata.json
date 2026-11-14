@@ -1,0 +1,294 @@
+{
+  "materials": {
+    "Kapton Hn": {
+      "loi_threshold_pct": 36.0,
+      "row_count": 2,
+      "outcome_counts": {
+        "EXTINGUISHED": 1,
+        "SUSTAINED": 1
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.0,
+          34.0
+        ],
+        "pressure_kpa": [
+          70.3,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          10.0,
+          15.0
+        ],
+        "loi_threshold_pct": [
+          36.0,
+          36.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.0,
+        "max": 0.85,
+        "mean": 0.425,
+        "median": 0.425,
+        "std": 0.425
+      }
+    },
+    "Nomex Ht90-40": {
+      "loi_threshold_pct": 28.5,
+      "row_count": 9,
+      "outcome_counts": {
+        "EXTINGUISHED": 4,
+        "SUSTAINED": 5
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.0,
+          22.5
+        ],
+        "pressure_kpa": [
+          98.5,
+          102.1
+        ],
+        "flow_velocity_cm_s": [
+          8.0,
+          30.0
+        ],
+        "loi_threshold_pct": [
+          28.5,
+          28.5
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 1.86,
+        "max": 5.32,
+        "mean": 2.748888888888889,
+        "median": 2.78,
+        "std": 1.0205058053560656
+      }
+    },
+    "Paraffin Wax": {
+      "loi_threshold_pct": 21.0,
+      "row_count": 18,
+      "outcome_counts": {
+        "EXTINGUISHED": 3,
+        "SUSTAINED": 15
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          15.9,
+          22.2
+        ],
+        "pressure_kpa": [
+          98.29,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          0.0,
+          10.0
+        ],
+        "loi_threshold_pct": [
+          21.0,
+          21.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.5,
+        "max": 2.09,
+        "mean": 0.9744444444444444,
+        "median": 0.825,
+        "std": 0.3684686361177422
+      }
+    },
+    "Pmma Cast Acrylic": {
+      "loi_threshold_pct": 21.0,
+      "row_count": 172,
+      "outcome_counts": {
+        "EXTINGUISHED": 32,
+        "SUSTAINED": 140
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          13.6,
+          22.6
+        ],
+        "pressure_kpa": [
+          98.29,
+          102.21
+        ],
+        "flow_velocity_cm_s": [
+          0.0,
+          49.0
+        ],
+        "loi_threshold_pct": [
+          21.0,
+          21.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.4,
+        "max": 7.08,
+        "mean": 1.5782558139534884,
+        "median": 1.3050000000000002,
+        "std": 0.8481309023862277
+      }
+    },
+    "Ptfe Teflon": {
+      "loi_threshold_pct": 95.0,
+      "row_count": 1,
+      "outcome_counts": {
+        "EXTINGUISHED": 1,
+        "SUSTAINED": 0
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.0,
+          21.0
+        ],
+        "pressure_kpa": [
+          101.3,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          10.0,
+          10.0
+        ],
+        "loi_threshold_pct": [
+          95.0,
+          95.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0
+      }
+    },
+    "Sibal Fabric Blend": {
+      "loi_threshold_pct": 19.5,
+      "row_count": 40,
+      "outcome_counts": {
+        "EXTINGUISHED": 20,
+        "SUSTAINED": 20
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          16.4,
+          22.7
+        ],
+        "pressure_kpa": [
+          98.29,
+          101.72
+        ],
+        "flow_velocity_cm_s": [
+          5.0,
+          22.0
+        ],
+        "loi_threshold_pct": [
+          19.5,
+          19.5
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 1.1,
+        "max": 3.89,
+        "mean": 1.74775,
+        "median": 1.84,
+        "std": 0.5931715076603056
+      }
+    },
+    "Silicone Rtv-560": {
+      "loi_threshold_pct": 29.0,
+      "row_count": 4,
+      "outcome_counts": {
+        "EXTINGUISHED": 0,
+        "SUSTAINED": 4
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.5,
+          22.1
+        ],
+        "pressure_kpa": [
+          101.3,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          20.0,
+          20.0
+        ],
+        "loi_threshold_pct": [
+          29.0,
+          29.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 1.2,
+        "max": 1.2,
+        "mean": 1.2,
+        "median": 1.2,
+        "std": 0.0
+      }
+    },
+    "Ultem Polyetherimide": {
+      "loi_threshold_pct": 21.0,
+      "row_count": 2,
+      "outcome_counts": {
+        "EXTINGUISHED": 1,
+        "SUSTAINED": 1
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.9,
+          22.5
+        ],
+        "pressure_kpa": [
+          100.01,
+          102.1
+        ],
+        "flow_velocity_cm_s": [
+          8.0,
+          14.5
+        ],
+        "loi_threshold_pct": [
+          21.0,
+          21.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 1.79,
+        "max": 2.77,
+        "mean": 2.2800000000000002,
+        "median": 2.2800000000000002,
+        "std": 0.49
+      }
+    }
+  },
+  "global_observed_ranges": {
+    "oxygen_pct": [
+      13.6,
+      34.0
+    ],
+    "pressure_kpa": [
+      70.3,
+      102.21
+    ],
+    "flow_velocity_cm_s": [
+      0.0,
+      49.0
+    ],
+    "loi_threshold_pct": [
+      19.5,
+      95.0
+    ]
+  },
+  "global_flame_spread_mm_s": {
+    "min": 0.0,
+    "max": 7.08,
+    "mean": 1.5881451612903226,
+    "median": 1.3
+  },
+  "target_description": "Continuous flame spread rate in mm/s with Gaussian Process \u00b12\u03c3 uncertainty band.",
+  "warning": "Research-model estimate; not certified fire-safety guidance."
+}

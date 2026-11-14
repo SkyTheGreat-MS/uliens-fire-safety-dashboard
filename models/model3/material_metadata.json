@@ -1,0 +1,293 @@
+{
+  "materials": {
+    "Kapton Hn": {
+      "loi_threshold_pct": 36.0,
+      "row_count": 2,
+      "regime_counts": {
+        "NOMINAL": 1,
+        "ELEVATED": 0,
+        "CRITICAL": 1
+      },
+      "median_sustained_spread_threshold_mm_s": 0.85,
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.0,
+          34.0
+        ],
+        "pressure_kpa": [
+          70.3,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          10.0,
+          15.0
+        ],
+        "loi_threshold_pct": [
+          36.0,
+          36.0
+        ],
+        "flame_spread_mm_s": [
+          0.0,
+          0.85
+        ]
+      }
+    },
+    "Nomex Ht90-40": {
+      "loi_threshold_pct": 28.5,
+      "row_count": 9,
+      "regime_counts": {
+        "NOMINAL": 0,
+        "ELEVATED": 6,
+        "CRITICAL": 3
+      },
+      "median_sustained_spread_threshold_mm_s": 2.78,
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.0,
+          22.5
+        ],
+        "pressure_kpa": [
+          98.5,
+          102.1
+        ],
+        "flow_velocity_cm_s": [
+          8.0,
+          30.0
+        ],
+        "loi_threshold_pct": [
+          28.5,
+          28.5
+        ],
+        "flame_spread_mm_s": [
+          1.86,
+          5.32
+        ]
+      }
+    },
+    "Paraffin Wax": {
+      "loi_threshold_pct": 21.0,
+      "row_count": 18,
+      "regime_counts": {
+        "NOMINAL": 0,
+        "ELEVATED": 6,
+        "CRITICAL": 12
+      },
+      "median_sustained_spread_threshold_mm_s": 0.8,
+      "observed_ranges": {
+        "oxygen_pct": [
+          15.9,
+          22.2
+        ],
+        "pressure_kpa": [
+          98.29,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          0.0,
+          10.0
+        ],
+        "loi_threshold_pct": [
+          21.0,
+          21.0
+        ],
+        "flame_spread_mm_s": [
+          0.5,
+          2.09
+        ]
+      }
+    },
+    "Pmma Cast Acrylic": {
+      "loi_threshold_pct": 21.0,
+      "row_count": 172,
+      "regime_counts": {
+        "NOMINAL": 0,
+        "ELEVATED": 98,
+        "CRITICAL": 74
+      },
+      "median_sustained_spread_threshold_mm_s": 1.29,
+      "observed_ranges": {
+        "oxygen_pct": [
+          13.6,
+          22.6
+        ],
+        "pressure_kpa": [
+          98.29,
+          102.21
+        ],
+        "flow_velocity_cm_s": [
+          0.0,
+          49.0
+        ],
+        "loi_threshold_pct": [
+          21.0,
+          21.0
+        ],
+        "flame_spread_mm_s": [
+          0.4,
+          7.08
+        ]
+      }
+    },
+    "Ptfe Teflon": {
+      "loi_threshold_pct": 95.0,
+      "row_count": 1,
+      "regime_counts": {
+        "NOMINAL": 1,
+        "ELEVATED": 0,
+        "CRITICAL": 0
+      },
+      "median_sustained_spread_threshold_mm_s": 1.29,
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.0,
+          21.0
+        ],
+        "pressure_kpa": [
+          101.3,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          10.0,
+          10.0
+        ],
+        "loi_threshold_pct": [
+          95.0,
+          95.0
+        ],
+        "flame_spread_mm_s": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "Sibal Fabric Blend": {
+      "loi_threshold_pct": 19.5,
+      "row_count": 40,
+      "regime_counts": {
+        "NOMINAL": 0,
+        "ELEVATED": 30,
+        "CRITICAL": 10
+      },
+      "median_sustained_spread_threshold_mm_s": 1.9449999999999998,
+      "observed_ranges": {
+        "oxygen_pct": [
+          16.4,
+          22.7
+        ],
+        "pressure_kpa": [
+          98.29,
+          101.72
+        ],
+        "flow_velocity_cm_s": [
+          5.0,
+          22.0
+        ],
+        "loi_threshold_pct": [
+          19.5,
+          19.5
+        ],
+        "flame_spread_mm_s": [
+          1.1,
+          3.89
+        ]
+      }
+    },
+    "Silicone Rtv-560": {
+      "loi_threshold_pct": 29.0,
+      "row_count": 4,
+      "regime_counts": {
+        "NOMINAL": 0,
+        "ELEVATED": 0,
+        "CRITICAL": 4
+      },
+      "median_sustained_spread_threshold_mm_s": 1.2,
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.5,
+          22.1
+        ],
+        "pressure_kpa": [
+          101.3,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          20.0,
+          20.0
+        ],
+        "loi_threshold_pct": [
+          29.0,
+          29.0
+        ],
+        "flame_spread_mm_s": [
+          1.2,
+          1.2
+        ]
+      }
+    },
+    "Ultem Polyetherimide": {
+      "loi_threshold_pct": 21.0,
+      "row_count": 2,
+      "regime_counts": {
+        "NOMINAL": 0,
+        "ELEVATED": 1,
+        "CRITICAL": 1
+      },
+      "median_sustained_spread_threshold_mm_s": 2.77,
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.9,
+          22.5
+        ],
+        "pressure_kpa": [
+          100.01,
+          102.1
+        ],
+        "flow_velocity_cm_s": [
+          8.0,
+          14.5
+        ],
+        "loi_threshold_pct": [
+          21.0,
+          21.0
+        ],
+        "flame_spread_mm_s": [
+          1.79,
+          2.77
+        ]
+      }
+    }
+  },
+  "global_observed_ranges": {
+    "oxygen_pct": [
+      13.6,
+      34.0
+    ],
+    "pressure_kpa": [
+      70.3,
+      102.21
+    ],
+    "flow_velocity_cm_s": [
+      0.0,
+      49.0
+    ],
+    "loi_threshold_pct": [
+      19.5,
+      95.0
+    ],
+    "flame_spread_mm_s": [
+      0.0,
+      7.08
+    ]
+  },
+  "regime_labels": [
+    "NOMINAL",
+    "ELEVATED",
+    "CRITICAL"
+  ],
+  "badge_color_map": {
+    "NOMINAL": "green",
+    "ELEVATED": "amber",
+    "CRITICAL": "red"
+  },
+  "warning": "Research-model estimate; not certified fire-safety guidance."
+}
