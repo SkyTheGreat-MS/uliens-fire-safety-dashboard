@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { X } from 'lucide-react';
-import { materials, sectors, type Sector } from '../data';
+import { materials, sectors, type Material, type Sector } from '../data';
 import { panel, sectionHead, sectionTitle } from './ui';
 
 const riskColumns =
@@ -14,7 +15,17 @@ export function MaterialRisk({
   selectedMaterial: number | null;
   onSelectMaterial: (index: number) => void;
 }) {
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const material = selectedMaterial === null ? null : materials[selectedMaterial];
+
+  const handleRowClick = (index: number) => {
+    if (selectedMaterial === index && drawerOpen) {
+      setDrawerOpen(false);
+    } else {
+      onSelectMaterial(index);
+      setDrawerOpen(true);
+    }
+  };
 
   return (
     <section className={`${panel} relative`}>
@@ -53,7 +64,7 @@ export function MaterialRisk({
               className={`grid min-h-[42px] w-full min-w-[430px] items-center gap-1.5 border-0 border-b border-line bg-transparent px-[5px] py-2.5 text-left text-ink transition-colors compact:min-w-0 compact:px-[7px] compact:py-1.5 tight:gap-2 ${
                 isSelected ? 'bg-raised' : 'hover:bg-raised'
               } ${riskColumns}`}
-              onClick={() => onSelectMaterial(index)}
+              onClick={() => handleRowClick(index)}
             >
               <span className="font-mono text-[11px] font-bold text-muted">
                 {String(index + 1).padStart(2, '0')}
@@ -95,12 +106,10 @@ export function MaterialRisk({
         })}
       </div>
 
-      {material && (
+      {drawerOpen && material && (
         <InspectionDrawer
           material={material}
-          onClose={() => {
-            if (selectedMaterial !== null) onSelectMaterial(selectedMaterial);
-          }}
+          onClose={() => setDrawerOpen(false)}
         />
       )}
     </section>
@@ -111,7 +120,7 @@ function InspectionDrawer({
   material,
   onClose,
 }: {
-  material: (typeof materials)[number];
+  material: Material;
   onClose: () => void;
 }) {
   const elevated = material.state === 'ELEVATED';

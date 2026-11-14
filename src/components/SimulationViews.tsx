@@ -15,9 +15,11 @@ import {
 } from 'recharts';
 import type { MouseHandlerDataParam, TooltipContentProps } from 'recharts';
 import { Flame } from 'lucide-react';
+import type { Material, Readings, ReverseSolverTarget, RfDrivers } from '../data';
+import { NasaEvidenceCard } from './NasaEvidenceCard';
 import { panel, sectionHead, sectionMeta, sectionTitle } from './ui';
 
-const MAX_FLOW = 45;
+const MAX_FLOW = 50;
 
 const axisTick = { fill: '#9CA3AF', fontSize: 11, fontFamily: '"Geist Mono", monospace' };
 const axisLabel = { fill: '#9CA3AF', fontSize: 10, fontFamily: '"Geist Mono", monospace' };
@@ -54,6 +56,8 @@ const curveAnchors = [
   { flow: 40, risk: 26, band: [18, 34] },
   { flow: 42, risk: 24, band: [16, 32] },
   { flow: 45, risk: 20, band: [12, 29] },
+  { flow: 48, risk: 17, band: [10, 26] },
+  { flow: 50, risk: 15, band: [8, 24] },
 ] as const;
 
 const round1 = (value: number) => Math.round(value * 10) / 10;
@@ -74,9 +78,36 @@ const curveData: CurvePoint[] = Array.from({ length: MAX_FLOW * 2 + 1 }, (_, ind
   };
 });
 
-export function SimulationViews() {
+export type SimulationViewsProps = {
+  currentAirflow?: number;
+  readings?: Readings;
+  selectedMaterial?: Material | null;
+  reverseSolverTarget?: ReverseSolverTarget | null;
+  rfDrivers?: RfDrivers | null;
+  onApplyOverride?: (targetFlow: number) => void;
+  onAirflowChange?: (airflow: number) => void;
+};
+
+export function SimulationViews({
+  currentAirflow,
+  readings,
+  selectedMaterial = null,
+  reverseSolverTarget = null,
+  rfDrivers = null,
+  onApplyOverride,
+  onAirflowChange,
+}: SimulationViewsProps = {}) {
   const [chartArmed, setChartArmed] = useState(false);
-  const [curveAirflow, setCurveAirflow] = useState(12);
+  const [localAirflow, setLocalAirflow] = useState<number | null>(null);
+  const [prevCurrentAirflow, setPrevCurrentAirflow] = useState(currentAirflow);
+
+  // Synchronize state when external prop changes during render
+  if (currentAirflow !== prevCurrentAirflow) {
+    setPrevCurrentAirflow(currentAirflow);
+    setLocalAirflow(null);
+  }
+
+  const curveAirflow = localAirflow ?? currentAirflow ?? 12;
   const chartRef = useRef<HTMLDivElement>(null);
   const draggingRef = useRef(false);
 
@@ -87,18 +118,26 @@ export function SimulationViews() {
     if (!element || !chartArmed) return;
     const onWheel = (event: WheelEvent) => {
       event.preventDefault();
-      setCurveAirflow(current => Math.max(0, Math.min(MAX_FLOW, Math.round((current + (event.deltaY < 0 ? 0.5 : -0.5)) / 0.5) * 0.5)));
+      setLocalAirflow(current => {
+        const base = current ?? currentAirflow ?? 12;
+        const next = Math.max(0, Math.min(MAX_FLOW, Math.round((base + (event.deltaY < 0 ? 0.5 : -0.5)) / 0.5) * 0.5));
+        onAirflowChange?.(next);
+        return next;
+      });
     };
     element.addEventListener('wheel', onWheel, { passive: false });
     return () => element.removeEventListener('wheel', onWheel);
-  }, [chartArmed]);
+  }, [chartArmed, currentAirflow, onAirflowChange]);
 
   const setFromChart = (state: MouseHandlerDataParam) => {
     const rawIndex = state.activeTooltipIndex ?? state.activeIndex;
     const index = typeof rawIndex === 'number' ? rawIndex : Number(rawIndex);
     if (!Number.isInteger(index)) return;
     const point = curveData[index];
-    if (point) setCurveAirflow(point.flow);
+    if (point) {
+      setLocalAirflow(point.flow);
+      onAirflowChange?.(point.flow);
+    }
   };
 
   const armChart = () => setChartArmed(true);
@@ -117,77 +156,120 @@ export function SimulationViews() {
     draggingRef.current = false;
   };
 
-
-  return <section className="grid grid-cols-1 gap-2">
-    <article className={`${panel} min-w-0`}>
-      <div className={`${sectionHead} mb-2 items-start`}>
-        <div className="flex min-w-0 items-start gap-2">
-          <Flame size={15} className="mt-0.5 shrink-0 text-warning" aria-hidden="true" />
-          <div className="min-w-0">
-            <h2 className={sectionTitle}>The airflow paradox</h2>
-            <p className="m-0 mt-1 text-[12px] leading-snug text-secondary">Ventilation can feed a fire before it suppresses it.</p>
+  return (
+    <section className="grid grid-cols-1 items-stretch gap-2 deck:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+      {/* Left Column: The Airflow Paradox (~60% width) */}
+      <article className={`${panel} flex flex-col min-w-0`}>
+        <div className={`${sectionHead} mb-2 items-start shrink-0`}>
+          <div className="flex min-w-0 items-start gap-2">
+            <Flame size={15} className="mt-0.5 shrink-0 text-warning" aria-hidden="true" />
+            <div className="min-w-0">
+              <h2 className={sectionTitle}>The airflow paradox</h2>
+              <p className="m-0 mt-1 text-[12px] leading-snug text-secondary">Ventilation can feed a fire before it suppresses it.</p>
+            </div>
+          </div>
+          <span className={sectionMeta}>2D demo curve</span>
+        </div>
+        <div
+          ref={chartRef}
+          className="relative min-h-[220px] flex-1 touch-none overflow-hidden bg-void outline-none"
+          role="slider"
+          tabIndex={0}
+          aria-label="Adjust demo airflow position on the illustrative airflow paradox curve"
+          aria-valuemin={0}
+          aria-valuemax={MAX_FLOW}
+          aria-valuenow={curveAirflow}
+          aria-valuetext={`${curveAirflow.toFixed(1)} centimeters per second; illustrative visual risk ${operatingPoint.risk} percent`}
+          onPointerDown={event => event.currentTarget.focus()}
+          onMouseDown={event => {
+            // Recharts' SVG layers use tabindex="-1"; stop the browser moving focus off the slider.
+            event.preventDefault();
+            event.currentTarget.focus();
+          }}
+          onKeyDown={event => {
+            if (event.key === 'Escape') setChartArmed(false);
+            else if (event.key === 'Home') { event.preventDefault(); armChart(); setLocalAirflow(0); onAirflowChange?.(0); }
+            else if (event.key === 'End') { event.preventDefault(); armChart(); setLocalAirflow(MAX_FLOW); onAirflowChange?.(MAX_FLOW); }
+            else if (event.key === 'ArrowRight' || event.key === 'ArrowUp') {
+              event.preventDefault();
+              armChart();
+              const next = Math.min(MAX_FLOW, curveAirflow + 0.5);
+              setLocalAirflow(next);
+              onAirflowChange?.(next);
+            }
+            else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') {
+              event.preventDefault();
+              armChart();
+              const next = Math.max(0, curveAirflow - 0.5);
+              setLocalAirflow(next);
+              onAirflowChange?.(next);
+            }
+          }}
+        >
+          <ResponsiveContainer width="100%" height="100%">
+            <ComposedChart
+              data={curveData}
+              margin={{ top: 18, right: 42, bottom: 4, left: 24 }}
+              accessibilityLayer={false}
+              className="cursor-crosshair"
+              onMouseDown={onChartDown}
+              onMouseMove={onChartMove}
+              onMouseUp={releaseChart}
+              onMouseLeave={releaseChart}
+              onClick={state => { armChart(); setFromChart(state); }}
+              onTouchStart={onChartDown}
+              onTouchMove={onChartMove}
+              onTouchEnd={releaseChart}
+            >
+              <CartesianGrid stroke="#374151" strokeWidth={1} />
+              <XAxis
+                dataKey="flow"
+                type="number"
+                domain={[0, MAX_FLOW]}
+                ticks={[0, 10, 20, 30, 40, MAX_FLOW]}
+                tick={axisTick}
+                tickLine={false}
+                axisLine={{ stroke: '#374151' }}
+                tickFormatter={value => value === MAX_FLOW ? `${MAX_FLOW} cm/s` : String(value)}
+              />
+              <YAxis type="number" domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} width={38} tick={axisTick} tickLine={false} axisLine={{ stroke: '#374151' }} tickFormatter={value => `${value}%`}>
+                <Label value="Visual risk" angle={-90} position="left" offset={7} style={axisLabel} />
+              </YAxis>
+              <ReferenceArea x1={6} x2={18} fill="#FACC15" fillOpacity={0.06} stroke="none" />
+              <Area type="monotone" dataKey="band" stroke="none" fill="#F97316" fillOpacity={0.12} isAnimationActive={false} />
+              <Line type="monotone" dataKey="risk" stroke="#F97316" strokeWidth={2.5} dot={false} activeDot={{ r: 4, fill: '#F97316', stroke: '#111827', strokeWidth: 2 }} isAnimationActive={false} />
+              <ReferenceLine x={curveAirflow} stroke="#34D399" strokeDasharray="3 4" strokeOpacity={0.85} />
+              <ReferenceDot x={operatingPoint.flow} y={operatingPoint.risk} r={5} fill="#F3F4F6" stroke="#34D399" strokeWidth={2} />
+              <Tooltip content={props => <CurveTooltip {...props} />} cursor={{ stroke: '#374151', strokeDasharray: '3 4' }} wrapperStyle={{ zIndex: 5, outline: 'none' }} />
+            </ComposedChart>
+          </ResponsiveContainer>
+          {chartArmed && <span className="absolute right-2.5 top-2.5 z-[2] bg-critical px-1.5 py-0.5 font-mono text-[9.5px] font-bold text-ink">ARMED</span>}
+          <div className="pointer-events-none absolute top-2.5 left-2.5 z-[2] flex gap-4 bg-surface/90 px-2 py-1.5 backdrop-blur-[2px]">
+            <Readout label="Demo airflow" value={`${curveAirflow.toFixed(1)} cm/s`} />
+            <Readout label="Visual risk" value={`${operatingPoint.risk}%`} tone="warning" />
+            <Readout label="Curve status" value="Illustrative" />
           </div>
         </div>
-        <span className={sectionMeta}>2D demo curve</span>
-      </div>
-      <div ref={chartRef} className="relative h-[230px] touch-none overflow-hidden bg-void outline-none compact:h-[210px]" role="slider" tabIndex={0} aria-label="Adjust demo airflow position on the illustrative airflow paradox curve" aria-valuemin={0} aria-valuemax={MAX_FLOW} aria-valuenow={curveAirflow} aria-valuetext={`${curveAirflow.toFixed(1)} centimeters per second; illustrative visual risk ${operatingPoint.risk} percent`}
-        onPointerDown={event => event.currentTarget.focus()}
-        onMouseDown={event => {
-          // Recharts' SVG layers use tabindex="-1"; stop the browser moving focus off the slider.
-          event.preventDefault();
-          event.currentTarget.focus();
-        }}
-        onKeyDown={event => {
-          if (event.key === 'Escape') setChartArmed(false);
-          else if (event.key === 'Home') { event.preventDefault(); armChart(); setCurveAirflow(0); }
-          else if (event.key === 'End') { event.preventDefault(); armChart(); setCurveAirflow(MAX_FLOW); }
-          else if (event.key === 'ArrowRight' || event.key === 'ArrowUp') { event.preventDefault(); armChart(); setCurveAirflow(current => Math.min(MAX_FLOW, current + 0.5)); }
-          else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') { event.preventDefault(); armChart(); setCurveAirflow(current => Math.max(0, current - 0.5)); }
-        }}>
-        <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart
-            data={curveData}
-            margin={{ top: 18, right: 20, bottom: 4, left: 24 }}
-            accessibilityLayer={false}
-            className="cursor-crosshair"
-            onMouseDown={onChartDown}
-            onMouseMove={onChartMove}
-            onMouseUp={releaseChart}
-            onMouseLeave={releaseChart}
-            onClick={state => { armChart(); setFromChart(state); }}
-            onTouchStart={onChartDown}
-            onTouchMove={onChartMove}
-            onTouchEnd={releaseChart}
-          >
-            <CartesianGrid stroke="#374151" strokeWidth={1} />
-            <XAxis dataKey="flow" type="number" domain={[0, MAX_FLOW]} ticks={[0, 10, 20, 30, 40, MAX_FLOW]} tick={axisTick} tickLine={false} axisLine={{ stroke: '#374151' }} tickFormatter={value => value === MAX_FLOW ? `${MAX_FLOW} cm/s` : String(value)} />
-            <YAxis type="number" domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} width={38} tick={axisTick} tickLine={false} axisLine={{ stroke: '#374151' }} tickFormatter={value => `${value}%`}>
-              <Label value="Visual risk" angle={-90} position="left" offset={7} style={axisLabel} />
-            </YAxis>
-            <ReferenceArea x1={6} x2={18} fill="#FACC15" fillOpacity={0.06} stroke="none" />
-            <Area type="monotone" dataKey="band" stroke="none" fill="#F97316" fillOpacity={0.12} isAnimationActive={false} />
-            <Line type="monotone" dataKey="risk" stroke="#F97316" strokeWidth={2.5} dot={false} activeDot={{ r: 4, fill: '#F97316', stroke: '#111827', strokeWidth: 2 }} isAnimationActive={false} />
-            <ReferenceLine x={curveAirflow} stroke="#34D399" strokeDasharray="3 4" strokeOpacity={0.85} />
-            <ReferenceDot x={operatingPoint.flow} y={operatingPoint.risk} r={5} fill="#F3F4F6" stroke="#34D399" strokeWidth={2} />
-            <Tooltip content={props => <CurveTooltip {...props} />} cursor={{ stroke: '#374151', strokeDasharray: '3 4' }} wrapperStyle={{ zIndex: 5, outline: 'none' }} />
-          </ComposedChart>
-        </ResponsiveContainer>
-        {chartArmed && <span className="absolute right-2.5 top-2.5 z-[2] bg-critical px-1.5 py-0.5 font-mono text-[9.5px] font-bold text-ink">ARMED</span>}
-        <div className="pointer-events-none absolute top-2.5 left-2.5 z-[2] flex gap-4 bg-surface/90 px-2 py-1.5 backdrop-blur-[2px]">
-          <Readout label="Demo airflow" value={`${curveAirflow.toFixed(1)} cm/s`} />
-          <Readout label="Visual risk" value={`${operatingPoint.risk}%`} tone="warning" />
-          <Readout label="Curve status" value="Illustrative" />
+        <div className="mt-2.5 flex shrink-0 flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[10.5px] text-secondary">
+          <span className="flex items-center gap-1.5"><i className="h-0.5 w-4 bg-warning" />Visual risk</span>
+          <span className="flex items-center gap-1.5"><i className="h-2 w-4 border border-warning/60 bg-warning/20" />Uncertainty</span>
+          <span className="flex items-center gap-1.5"><i className="h-3 w-px bg-primary" />Operating point</span>
+          <span className="ml-auto">Click, drag, or use arrows to position the sample</span>
         </div>
-      </div>
-      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[10.5px] text-secondary">
-        <span className="flex items-center gap-1.5"><i className="h-0.5 w-4 bg-warning" />Visual risk</span>
-        <span className="flex items-center gap-1.5"><i className="h-2 w-4 border border-warning/60 bg-warning/20" />Uncertainty</span>
-        <span className="flex items-center gap-1.5"><i className="h-3 w-px bg-primary" />Operating point</span>
-        <span className="ml-auto">Click, drag, or use arrows to position the sample</span>
-      </div>
-    </article>
+      </article>
 
-  </section>;
+      {/* Right Column: NASA PSI-26 Evidence & Reverse-Solver Card (~40% width) */}
+      <NasaEvidenceCard
+        material={selectedMaterial}
+        currentAirflow={curveAirflow}
+        currentOxygen={readings?.oxygen ?? 21}
+        currentPressure={readings?.pressure ?? 101.3}
+        reverseSolverTarget={reverseSolverTarget}
+        rfDrivers={rfDrivers}
+        onApplyOverride={onApplyOverride}
+      />
+    </section>
+  );
 }
 
 function CurveTooltip({ active, payload }: TooltipContentProps) {
