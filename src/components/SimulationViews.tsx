@@ -173,7 +173,7 @@ export function SimulationViews() {
           </ComposedChart>
         </ResponsiveContainer>
         {chartArmed && <span className="absolute right-2.5 top-2.5 z-[2] bg-red-fill px-1.5 py-0.5 font-mono text-[8px] text-red">ARMED</span>}
-        <div className="pointer-events-none absolute bottom-2.5 left-2.5 z-[2] flex gap-4 border border-[#222b37] bg-[#080b10] px-2 py-1.5">
+        <div className="pointer-events-none absolute top-2.5 left-2.5 z-[2] flex gap-4 border border-[#222b37] bg-[#080b10] px-2 py-1.5">
           <Readout label="Demo airflow" value={`${curveAirflow.toFixed(1)} cm/s`} />
           <Readout label="Visual risk" value={`${operatingPoint.risk}%`} tone="amber" />
           <Readout label="Curve status" value="Illustrative" />

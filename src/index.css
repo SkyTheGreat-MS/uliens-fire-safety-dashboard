@@ -89,7 +89,7 @@
 
 @keyframes drawer-enter {
   from {
-    transform: translateX(8px);
+    transform: translateX(100%);
     opacity: 0.7;
   }
   to {
