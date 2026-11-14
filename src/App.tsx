@@ -48,7 +48,7 @@ function App() {
       </div>
     </section>
     <SimulationViews />
-    <footer className="flex flex-col items-start gap-x-[18px] gap-y-2 border border-line bg-surface px-2.5 py-2 font-mono text-[10.5px] text-secondary compact:flex-row compact:flex-wrap compact:items-center compact:justify-between">
+    <footer className="flex flex-col items-start gap-x-[18px] gap-y-2 bg-surface px-2.5 py-2 font-mono text-[10.5px] text-secondary compact:flex-row compact:flex-wrap compact:items-center compact:justify-between">
       <div className="flex flex-wrap gap-3">
         <span className="flex items-center gap-1.5"><i className="inline-block size-1.5 bg-primary" />Sample readout</span>
         <span className="flex items-center gap-1.5"><i className="inline-block size-1.5 bg-warning" />Elevated visual state</span>

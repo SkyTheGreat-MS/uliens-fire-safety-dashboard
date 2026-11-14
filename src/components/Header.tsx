@@ -6,7 +6,7 @@ export function Header() {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
-    <header className="relative flex min-h-[76px] min-w-0 items-center justify-between gap-3 border border-line bg-surface px-3 py-2 sm:px-4 sm:py-2.5">
+    <header className="relative flex min-h-[76px] min-w-0 items-center justify-between gap-3 bg-surface px-3 py-2 sm:px-4 sm:py-2.5">
       {/* Title & Subtitle Section */}
       <div className="flex flex-col justify-center">
         <h1 className="m-0 font-heading text-[24px] font-bold leading-tight tracking-[.01em] text-ink sm:text-[28px]">

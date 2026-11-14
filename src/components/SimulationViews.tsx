@@ -130,7 +130,7 @@ export function SimulationViews() {
         </div>
         <span className={sectionMeta}>2D demo curve</span>
       </div>
-      <div ref={chartRef} className="relative h-[230px] touch-none overflow-hidden border border-line bg-void outline-none compact:h-[210px]" role="slider" tabIndex={0} aria-label="Adjust demo airflow position on the illustrative airflow paradox curve" aria-valuemin={0} aria-valuemax={MAX_FLOW} aria-valuenow={curveAirflow} aria-valuetext={`${curveAirflow.toFixed(1)} centimeters per second; illustrative visual risk ${operatingPoint.risk} percent`}
+      <div ref={chartRef} className="relative h-[230px] touch-none overflow-hidden bg-void outline-none compact:h-[210px]" role="slider" tabIndex={0} aria-label="Adjust demo airflow position on the illustrative airflow paradox curve" aria-valuemin={0} aria-valuemax={MAX_FLOW} aria-valuenow={curveAirflow} aria-valuetext={`${curveAirflow.toFixed(1)} centimeters per second; illustrative visual risk ${operatingPoint.risk} percent`}
         onPointerDown={event => event.currentTarget.focus()}
         onMouseDown={event => {
           // Recharts' SVG layers use tabindex="-1"; stop the browser moving focus off the slider.
@@ -173,7 +173,7 @@ export function SimulationViews() {
           </ComposedChart>
         </ResponsiveContainer>
         {chartArmed && <span className="absolute right-2.5 top-2.5 z-[2] bg-critical px-1.5 py-0.5 font-mono text-[9.5px] font-bold text-ink">ARMED</span>}
-        <div className="pointer-events-none absolute top-2.5 left-2.5 z-[2] flex gap-4 border border-line bg-surface/90 px-2 py-1.5 backdrop-blur-[2px]">
+        <div className="pointer-events-none absolute top-2.5 left-2.5 z-[2] flex gap-4 bg-surface/90 px-2 py-1.5 backdrop-blur-[2px]">
           <Readout label="Demo airflow" value={`${curveAirflow.toFixed(1)} cm/s`} />
           <Readout label="Visual risk" value={`${operatingPoint.risk}%`} tone="warning" />
           <Readout label="Curve status" value="Illustrative" />

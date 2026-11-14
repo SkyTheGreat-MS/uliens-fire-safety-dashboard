@@ -20,7 +20,7 @@ export function StatusPanel({ activeSector, activePreset, onSelectSector, onLoad
     })}</div>
     <hr className="my-2.5 w-full border-0 border-t border-line" />
     <div className={`${sectionHead} mb-[9px]`}><h2 className={sectionTitle}>Demo cases</h2><span className={sectionMeta}>Illustrative</span></div>
-    <div className="grid gap-1">{presets.map(preset => <button key={preset.id} aria-pressed={activePreset === preset.id} className={`grid gap-1.5 border p-[7px] text-left transition-colors ${activePreset === preset.id ? 'border-warning bg-warning/10' : 'border-line bg-void hover:border-warning/50 hover:bg-warning/5'}`} onClick={() => onLoadPreset(preset)}><b className="flex items-start gap-2 text-[12.5px] font-bold text-warning"><span className="font-mono text-[12px] text-warning/80">{preset.id}</span>{preset.title}</b><span className="font-mono text-[11px] leading-[1.4] text-secondary">{preset.description}</span></button>)}</div>
+    <div className="grid gap-1">{presets.map(preset => <button key={preset.id} aria-pressed={activePreset === preset.id} className={`grid gap-1.5 border p-[7px] text-left transition-colors ${activePreset === preset.id ? 'border-warning bg-warning/10' : 'border-transparent bg-void hover:border-warning/50 hover:bg-warning/5'}`} onClick={() => onLoadPreset(preset)}><b className="flex items-start gap-2 text-[12.5px] font-bold text-warning"><span className="font-mono text-[12px] text-warning/80">{preset.id}</span>{preset.title}</b><span className="font-mono text-[11px] leading-[1.4] text-secondary">{preset.description}</span></button>)}</div>
     <p className="mt-3 text-[10.5px] leading-normal text-secondary">Cases update sample readouts only. No prediction or safety decision is generated.</p>
   </aside>;
 }

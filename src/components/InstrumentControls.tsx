@@ -7,7 +7,7 @@ import { panel, sectionHead, sectionMeta, sectionTitle } from './ui';
 export type ControlKey = 'oxygen' | 'airflow' | 'pressure' | 'temperature' | 'gravity';
 type Props = { values: Readings; live: Readings; armedControl: ControlKey | null; onArm: (key: ControlKey | null) => void; onChange: (key: ControlKey, value: number) => void };
 
-const armedShell = (armed: boolean) => armed ? 'border-critical bg-critical/10' : 'border-line bg-void';
+const armedShell = (armed: boolean) => armed ? 'border-critical bg-critical/10' : 'border-transparent bg-void';
 const armedChip = 'absolute right-[7px] top-2 bg-critical px-1.5 py-0.5 font-mono text-[9.5px] font-bold text-ink';
 const gravityButton = 'flex size-8 items-center justify-center border border-line bg-raised text-primary hover:border-primary hover:text-highlight transition-colors';
 
@@ -46,7 +46,7 @@ function Dial({ label, unit, value, baseline, min, max, step, digits, armed, onA
   const spectrumId = `gauge-spectrum-${uid}`;
   const glowId = `gauge-glow-${uid}`;
   const fillLength = valueProgress * 360;
-  const tone = (n: number) => { const p = progress(n); return p <= 0.4 ? 'text-success' : p <= 0.75 ? 'text-caution' : 'text-critical'; };
+
   const format = (n: number) => n.toFixed(digits);
   
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -118,7 +118,7 @@ function TemperatureControl({ value, armed, onArm, onDisarm, onChange }: { value
     }
     interactions.onKeyDown(event);
   };
-  return <div className="flex justify-center w-full compact:w-full tight:w-[60px]"><div ref={interactions.ref} className={`relative grid h-[190px] cursor-pointer touch-none select-none grid-rows-[auto_1fr_auto_auto] p-[7px] pt-[9px] ${armedShell(armed)}`} role="slider" aria-label="Temperature" aria-valuemin={15} aria-valuemax={120} aria-valuenow={value} aria-valuetext={`${value.toFixed(0)} degrees Celsius`} tabIndex={0} onClick={onArm} onKeyDown={onKeyDown} onPointerDown={interactions.onPointerDown} onPointerMove={interactions.onPointerMove} onPointerUp={interactions.onPointerUp}><div className="font-heading text-[10.5px] font-bold uppercase tracking-[.08em] text-secondary">TEMP °C</div>{armed && <span className={armedChip}>ARMED</span>}<div className="flex flex-col-reverse justify-center gap-1 py-2">{Array.from({ length: 10 }, (_, i) => { const threshold = i < 5 ? 15 + (i + 1) * 4 : i < 8 ? 35 + (i - 4) * 10 : 65 + (i - 7) * 27.5; const segmentTone = i < 5 ? 'border-success bg-success' : i < 7 ? 'border-caution bg-caution' : i < 8 ? 'border-warning bg-warning' : 'border-critical bg-critical'; return <i key={i} className={`h-2 border ${value >= threshold ? segmentTone : 'border-line bg-raised'}`} />; })}</div><div className="font-mono text-[18px] font-bold text-ink">{value.toFixed(0)}°</div><small className="font-mono text-[10.5px] text-secondary">15–120 °C</small></div></div>;
+  return <div className="flex justify-center w-full compact:w-full tight:w-[60px]"><div ref={interactions.ref} className={`relative grid h-[190px] cursor-pointer touch-none select-none grid-rows-[auto_1fr_auto_auto] p-[7px] pt-[9px] border ${armedShell(armed)}`} role="slider" aria-label="Temperature" aria-valuemin={15} aria-valuemax={120} aria-valuenow={value} aria-valuetext={`${value.toFixed(0)} degrees Celsius`} tabIndex={0} onClick={onArm} onKeyDown={onKeyDown} onPointerDown={interactions.onPointerDown} onPointerMove={interactions.onPointerMove} onPointerUp={interactions.onPointerUp}><div className="font-heading text-[10.5px] font-bold uppercase tracking-[.08em] text-secondary">TEMP °C</div>{armed && <span className={armedChip}>ARMED</span>}<div className="flex flex-col-reverse justify-center gap-1 py-2">{Array.from({ length: 10 }, (_, i) => { const threshold = i < 5 ? 15 + (i + 1) * 4 : i < 8 ? 35 + (i - 4) * 10 : 65 + (i - 7) * 27.5; const segmentTone = i < 5 ? 'border-success bg-success' : i < 7 ? 'border-caution bg-caution' : i < 8 ? 'border-warning bg-warning' : 'border-critical bg-critical'; return <i key={i} className={`h-2 border ${value >= threshold ? segmentTone : 'border-line bg-raised'}`} />; })}</div><div className="font-mono text-[18px] font-bold text-ink">{value.toFixed(0)}°</div><small className="font-mono text-[10.5px] text-secondary">15–120 °C</small></div></div>;
 }
 
 function GravityControl({ value, armed, onArm, onChange }: { value: number; armed: boolean; onArm: () => void; onChange: (value: number) => void }) {
