@@ -116,6 +116,25 @@
   }
 }
 
+/* Avionics Flight Deck Thin Scrollbar */
+.avionics-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.avionics-scrollbar::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+.avionics-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+}
+.avionics-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
+.avionics-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) var(--color-void);
+}
+
 @keyframes dial-spike-idle {
   to {
     scale: 1 0.94;
