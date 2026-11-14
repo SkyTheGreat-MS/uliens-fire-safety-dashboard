@@ -40,7 +40,7 @@ function App() {
 
   return <main className="mx-auto grid w-full max-w-[1700px] gap-2 p-2 compact:p-3">
     <Header />
-    <section className="grid grid-cols-1 items-start gap-2 deck:grid-cols-[minmax(270px,310px)_minmax(0,1fr)] deck:gap-2.5">
+    <section className="grid grid-cols-1 items-stretch gap-2 deck:grid-cols-[minmax(270px,310px)_minmax(0,1fr)] deck:gap-2.5">
       <StatusPanel activeSector={activeSector} activePreset={activePreset} onSelectSector={selectSector} onLoadPreset={loadPreset} />
       <div className="grid min-w-0 content-start gap-2">
         <InstrumentControls values={readings} live={liveReadings} armedControl={armedControl} onArm={setArmedControl} onChange={updateReading} />
