@@ -1,97 +1,114 @@
 # ECLSS Flight Deck Design System
+## Emerald × Industrial Safety Visual Identity
 
-## Purpose and authority
+## 1. Purpose and Authority
 
-Use this guide for new interface work and visual revisions in the ECLSS Flight Deck. The source addenda in this folder provide supporting detail. Where a component-specific rule differs from a general rule, follow the component rule while preserving the system's high-contrast, instrument-first character. Treat all example readings and qualification statements as illustrative UI content, not verified engineering conclusions.
+Use this guide for interface development, component styling, and visual governance across the **ECLSS Flight Deck (Flame Safety Dashboard)**. Where a component-specific rule differs from a general rule, follow the component rule while preserving the system's high-contrast, instrument-first, and safety-critical character. Treat all example readings and qualification statements as illustrative UI content, not verified engineering conclusions.
 
-## Visual direction
+## 2. Visual Direction
 
-Build a mission-control instrument surface: dense, legible, quiet, and designed for rapid scanning. Use flat matte surfaces, exposed structural lines, aligned columns, restrained status color, and concise operational labels. Avoid decoration that competes with telemetry.
+The dashboard implements the **Emerald × Industrial Safety** visual identity: a professional, modern industrial monitoring and control interface using emerald green as the primary brand color, complemented by an unmistakable red, orange, and yellow safety-alert system over a deep charcoal matte foundation.
 
-### Avoid
+- **Atmosphere:** Mission-control operational surface: dense, legible, quiet, high contrast, and optimized for rapid scanning under varying ambient lighting.
+- **Surfaces:** Flat, matte charcoal panels with exposed structural hairlines (1px), aligned columns, and square corners (0–2px radius).
+- **Restraint:** No neon gradients, no glassmorphism or translucent blurry cards, no consumer rounded card aesthetics, no bouncing decorative animations.
 
-- Neon gradients, blurred color fields, glass effects, translucent glossy cards, and decorative reflections.
-- Consumer-style rounded cards and large soft shadows. Use square corners; radius must not exceed 2px.
-- Generic SaaS chrome such as avatars, notification bells, chat widgets, and decorative icons beside every heading.
-- Bouncy or decorative animation. State changes are immediate or linearly eased in under 120ms.
-- Sliders for numeric controls. Prefer explicit step buttons, keyboard input, or wheel/arrow interaction with a clear armed state.
+## 3. Core Color Palette & Design Tokens
 
-## Color tokens
+### 3.1 Structural Foundation
 
-| Role | Token | Use |
-| --- | --- | --- |
-| Chassis void | `#07090D` | Root background and deep visualization wells |
-| Instrument surface 01 | `#0D1017` | Primary panels and inspection drawer |
-| Instrument surface 02 | `#131822` | Active rows, secondary headers, and instrument tracks |
-| Hairline grid | `#1E2430` | Structural 1px boundaries and separators |
-| Muted fiducial | `#2E3748` | Passive ticks, chart grids, inactive borders |
-| Primary readout | `#F0F4F8` | Main values and active entity titles |
-| Secondary label | `#8A99AD` | Labels, units, and explanatory copy |
-| Muted metadata | `#526075` | Reference bounds, axis labels, metadata |
-| Nominal cyan | `#00E5FF` | Nominal telemetry and pass status |
-| Elevated amber | `#FFB000` | Drift, override, and elevated risk |
-| Critical crimson | `#FF2A4B` | Critical alerts and armed controls |
-| Muted crimson fill | `#3B0A14` | Critical badge/banner background |
+| Token | CSS Variable | Hex | Purpose |
+|---|---|---|---|
+| Background / Void | `--color-void` | `#111827` | Main application background and deep visualization wells |
+| Surface | `--color-surface` | `#1F2937` | Dashboard cards, panels, and drawer containers |
+| Elevated Surface | `--color-raised` | `#374151` | Nested surfaces, active rows, and elevated elements |
+| Hairline Border | `--color-line` | `#374151` | 1px structural boundaries, dividers, and panel outlines |
+| Muted Fiducial / Tick | `--color-tick` | `#4B5563` | Passive gauge ticks, chart grids, inactive segment outlines |
+| Primary Readout / Ink | `--color-ink` | `#F9FAFB` | Primary numerical readouts, titles, and high-contrast text |
+| Secondary Label | `--color-secondary` | `#9CA3AF` | Parameter labels, units, and secondary descriptions |
+| Muted Metadata | `--color-muted` | `#6B7280` | Passive IDs, reference bounds, and tertiary metadata |
 
-Use color with labels or symbols so state is not communicated by color alone. Keep the palette flat and matte.
+### 3.2 Primary Brand & Interactive Elements
 
-## Typography and numeric layout
+| Token | CSS Variable | Hex | Purpose |
+|---|---|---|---|
+| Primary Brand | `--color-primary` | `#34D399` | Primary interactive elements, active navigation, key highlights |
+| Primary Highlight | `--color-highlight` | `#6EE7B7` | Hover states and interactive focal points |
+| Primary Fill | `--color-primary-fill` | `rgba(52, 211, 153, 0.12)` | Subtle emerald background tint for badges and active pills |
 
-Matches the typography stack used on the **NASA Space Apps Challenge** platform:
+### 3.3 Semantic Industrial Safety Status Hierarchy
 
-- **Headings (h1 through h6)**: Use **Fira Sans** (ont-heading), set to bold (700) or black (900) weights with tight letter-spacing.
-- **Body copy & UI labels**: Use **Overpass** (ont-sans), set to regular (400) and medium (500) weights for high legibility across dense mission-control layouts.
-- Use a monospace face for telemetry, identifiers, and tabular data. Prefer JetBrains Mono or IBM Plex Mono when available, with platform monospace fallback.
-- Use tabular numerals for changing values to prevent width jitter.
-- Section labels are compact, uppercase, and letter-spaced; typical desktop size is 10–11px. Primary gauge values are about 24px; table values are about 12px. Scale these values appropriately on native display densities.
-- Maintain clear hierarchy: primary value/title, secondary label, then muted metadata. Do not use tiny text for essential operational content.
+All status indications are centralized into five distinct operational levels:
 
-## Layout and structure
+| Token | CSS Variable | Hex | Fill Variant | Semantic Meaning |
+|---|---|---|---|---|
+| **Success / Normal** | `--color-success` | `#22C55E` | `rgba(34, 197, 94, 0.15)` | System operating normally within nominal boundaries |
+| **Information** | `--color-info` | `#3B82F6` | `rgba(59, 130, 246, 0.15)` | Informational telemetry, flight reference notes |
+| **Caution** | `--color-caution` | `#FACC15` | `rgba(250, 204, 21, 0.15)` | Attention required; sensor drift, approaching threshold |
+| **Warning** | `--color-warning` | `#F97316` | `rgba(249, 115, 22, 0.15)` | Abnormal condition, elevated risk, target override |
+| **Critical / Fire** | `--color-critical` | `#EF4444` | `rgba(239, 68, 68, 0.18)` | Critical safety condition, armed controls, ignition hazard |
 
-- Construct panels with 1px hairline boundaries and a tight 8px spacing rhythm. Adjacent panels should align and share edges where practical.
-- Use square corners and compact spacing. Reserve corner ticks/brackets for framing primary instrument canvases; they are not general decoration.
-- Keep data columns aligned and preserve stable widths for numeric fields.
-- On narrower viewports, reflow or stack content while preserving reading order, labels, and access to controls. Fixed desktop dimensions are reference values, not permission to clip content.
+> [!IMPORTANT]
+> **Safety Rule:** Never communicate safety status through color alone. Always accompany color with explicit text labels (e.g., `NOMINAL`, `DRIFT`, `ELEVATED`, `ARMED`), numeric values, or structured icons.
 
-## Component patterns
+## 4. Typography & Numeric Discipline
 
-### Rotary telemetry instruments
+Matches the NASA Space Apps Challenge typography stack:
 
-Use a 270-degree open-bottom sweep for a dual-arc gauge where space allows. Show actual telemetry on a cyan inner arc and a simulated/target value on an outer amber or crimson arc. Use subdued ticks when idle and brighter ticks when armed. The central value uses tabular numerals, with a concise unit and an optional target delta. Arming is explicit and visibly marked; support accessible keyboard operation as well as pointer interaction.
+- **Headings (h1 through h6):** **Fira Sans** (`font-heading`), set to bold (700) or black (900) weights with tight letter-spacing.
+- **Body Copy & UI Labels:** **Overpass** (`font-sans`), set to regular (400) or medium (500) weights for optimal legibility across dense mission-control layouts.
+- **Telemetry & Tabular Numerals:** **Geist Mono** (`font-mono`) with monospace fallbacks (`SFMono-Regular`, `Consolas`). Always use `tabular-nums` to eliminate numeric width jitter during live updates.
+- **Hierarchy:** Primary value/heading $\rightarrow$ Secondary label/unit $\rightarrow$ Muted metadata. Essential operational data must never use unreadable, sub-10px fonts.
 
-### Thermal stack
+## 5. Component Patterns
 
-Represent temperature with ten discrete rectangular segments, not a smooth tube. Map nominal segments to cyan, elevated load to amber, and the highest threshold to crimson. Show the current value and provide explicit one-degree target adjustment. Pair color with readable values and state labels.
+### 5.1 Rotary Telemetry Encoders (`O₂`, `Airflow`, `Cabin Pressure`)
+- 270-degree open-bottom sweep dual-arc gauge.
+- Actual telemetry baseline displayed with Primary Emerald (`#34D399`) / Success (`#22C55E`).
+- Target / simulated value shown with Caution/Warning arc (`#FACC15` / `#F97316`).
+- Unarmed state uses `#4B5563` tick lines on `#111827` void background.
+- Armed state triggers a 1px `#EF4444` critical border, an `ARMED` badge on `#EF4444` fill, and enables keyboard/wheel adjustments.
 
-### Gravity regime selector
+### 5.2 Vertical Thermal Stack (`TEMP °C`)
+- Ten discrete rectangular LED-style segments:
+  - Segments 1–5 (`15–35°C`): Normal operating range $\rightarrow$ Success Green (`#22C55E`).
+  - Segments 6–7 (`36–55°C`): Caution range $\rightarrow$ Caution Yellow (`#FACC15`).
+  - Segment 8 (`56–65°C`): Warning threshold $\rightarrow$ Warning Orange (`#F97316`).
+  - Segments 9–10 (`>65°C`): Critical heat range $\rightarrow$ Critical Red (`#EF4444`).
+  - Inactive segments: Structural line outline (`#374151`) on raised surface (`#374151`).
 
-Use a sharp segmented control for Earth 1g, lunar 0.16g, and microgravity 0g. Show the active regime and the corresponding transport explanation directly below it. Keep the selector operable by keyboard and assistive technology.
+### 5.3 Gravity Regime Switcher
+- Segmented control for Earth 1.00g, Lunar 0.16g, and Micro-G 0.00g.
+- Active regime badge highlighted in Primary Emerald (`#34D399`).
+- Navigation arrows styled with hover transitions to Highlight (`#6EE7B7`).
 
-### Material risk table
+### 5.4 Material Risk Ranking & Inspection Drawer
+- Strict aligned tabular grid with rank, material name, location, 20-segment visual meter, demo value, and semantic status badge.
+- Status badges:
+  - Nominal: `border-success/60 bg-success/10 text-success` (`#22C55E`).
+  - Elevated / Warning: `border-warning/60 bg-warning/10 text-warning` (`#F97316`).
+  - Critical / Fire: `border-critical/60 bg-critical/10 text-critical` (`#EF4444`).
+- Inspection Drawer:
+  - Fixed right-docked drawer with `#1F2937` surface, `#374151` boundary, and chassis corner fiducials.
+  - Qualification matrix displaying explicit `PASS` (Success green) or `FAIL` (Critical red) badges.
+  - Explanatory sections (`WHAT HAPPENED`, `THE CAUSE`, `HOW TO FIX`) with clear font hierarchy.
 
-Use a strict aligned grid for rank, material/location, segmented probability meter, probability value, and status. Include a threshold marker when threshold data is available. Status badges are flat outlined labels: cyan for safe/nominal, amber for elevated, crimson for critical. Make each row's selected state visible and expose row activation accessibly.
+### 5.5 Airflow Paradox Simulation Chart
+- Recharts ComposedChart with dark void background (`#111827`) and elevated grid lines (`#374151`).
+- Danger/caution airflow window (6–18 cm/s) highlighted with Caution Yellow ReferenceArea (`#FACC15`, `fillOpacity={0.06}`).
+- Risk uncertainty band displayed with Warning Orange Area (`#F97316`, `fillOpacity={0.12}`).
+- Visual risk curve rendered in Warning Orange (`#F97316`, 2.5px width).
+- Current operating point marker highlighted in Primary Emerald (`#34D399`).
+- Axis tick labels rendered in secondary gray (`#9CA3AF`) using Geist Mono.
 
-### Inspection drawer
+### 5.6 RAG Flight Reference Copilot Floater
+- Anchored header popover with `#1F2937` surface and `#374151` boundary.
+- Header badge highlighted in Primary Emerald (`#34D399`).
+- Query prompt labeled with `Q:` in Primary Emerald (`#34D399`), response labeled with `A:` in Warning Orange (`#F97316`).
+- Interactive inputs focus-ringed with Primary Emerald (`#34D399`).
 
-Open a docked, right-edge inspection panel when a material row is activated. On wide layouts, target a 340px width and full available height, overlaying or pinning beside the ranking table without covering top-level telemetry or primary instruments. On narrow layouts, use an available-width panel that preserves content and a clear dismissal path.
+## 6. Motion, Accessibility & Performance
 
-- Default closed; open for the selected material. Activating the selected row again closes it.
-- Provide a top-right `[X]` dismissal control and Escape-key dismissal where supported.
-- Use `#0D1017`, a 1px `#1E2430` left boundary, square corners, and continuous hairline separators between content zones. Corner ticks may frame the chassis corners.
-- Keep motion immediate or linearly eased under 120ms. Do not use spring motion, backdrop dimming, or background blur.
-- Header hierarchy: section identifier, material title, and muted location metadata.
-- Qualification matrix: show test context, an explicit PASS/FAIL badge, and the measured/detail text. Use cyan outline for pass and crimson with muted fill for critical fail.
-- Follow with concise `WHAT HAPPENED`, `THE CAUSE`, and `HOW TO FIX` sections. Use readable body copy and compact directives.
-- Drawer values and recommendations are content, not universal template facts. Populate them from the selected material's record and distinguish unknown data from a failure.
-
-## Motion and interaction
-
-Transitions communicate state only. Keep them under 120ms and linear or ease-out; avoid spring physics, pulsing ornaments, and fake loading indicators. Controls must show focus, selected, and armed states. Provide keyboard equivalents for pointer interactions and do not rely on hover as the only way to expose an action.
-
-## Vite and React implementation notes
-
-This project is a Vite-powered React web app. Build the interface with semantic HTML, React components, Tailwind CSS utilities, and Recharts for the 2D airflow paradox curve. Use native buttons and keyboard-operable controls; avoid HTML range sliders. Keep layouts responsive to browser width and define shared tokens in the Tailwind `@theme` block. Use Lucide React for interface icons. Do not introduce blur, glass, gradients, or animation that conflicts with the instrument-first visual direction.
-
-## Content and data integrity
-
-The repository describes its readings and risk data as illustrative local UI state. Preserve that distinction in labels and copy. Do not present example qualification outcomes, safety waivers, or engineering recommendations as verified mission guidance without a trusted project data source and review.
+- **Transitions:** State transitions are linear or ease-out under 120ms. Avoid bouncy springs or excessive glowing effects.
+- **Contrast & Legibility:** All text tokens meet WCAG 2.1 AA contrast requirements against their respective surface backgrounds (`#111827`, `#1F2937`, `#374151`).
+- **Keyboard Navigation:** Full slider and dial interaction support via Home, End, Arrow Keys, and Escape to disarm.

@@ -7,9 +7,9 @@ import { panel, sectionHead, sectionMeta, sectionTitle } from './ui';
 export type ControlKey = 'oxygen' | 'airflow' | 'pressure' | 'temperature' | 'gravity';
 type Props = { values: Readings; live: Readings; armedControl: ControlKey | null; onArm: (key: ControlKey | null) => void; onChange: (key: ControlKey, value: number) => void };
 
-const armedShell = (armed: boolean) => armed ? 'border-red bg-[#100c12]' : 'border-line bg-[#0a0d13]';
-const armedChip = 'absolute right-[7px] top-2 bg-red-fill px-1 py-0.5 font-mono text-[8px] text-red';
-const gravityButton = 'flex size-8 items-center justify-center border border-line bg-raised text-cyan hover:border-cyan';
+const armedShell = (armed: boolean) => armed ? 'border-critical bg-critical/10' : 'border-line bg-void';
+const armedChip = 'absolute right-[7px] top-2 bg-critical px-1.5 py-0.5 font-mono text-[9.5px] font-bold text-ink';
+const gravityButton = 'flex size-8 items-center justify-center border border-line bg-raised text-primary hover:border-primary hover:text-highlight transition-colors';
 
 // 270° clockwise sweep from 135° (bottom-left) to 405° (bottom-right), matching the radial ticks.
 const gaugeArc = (radius: number) => {
@@ -33,11 +33,15 @@ function Dial({ label, unit, value, baseline, min, max, step, digits, armed, onA
   const adjust = useCallback((amount: number) => onChange(Math.max(min, Math.min(max, Math.round((value + amount) / step) * step))), [max, min, onChange, step, value]);
   const interactions = useAvionicsControl({ armed, step, onArm, onAdjust: adjust, onDisarm });
   const progress = (n: number) => Math.max(0, Math.min(1, (n - min) / (max - min)));
+<<<<<<< HEAD
   const valueProgress = progress(value);
   const uid = useId().replace(/[^a-zA-Z0-9_-]/g, '');
   const spectrumId = `gauge-spectrum-${uid}`;
   const glowId = `gauge-glow-${uid}`;
   const fillLength = valueProgress * 360;
+=======
+  const tone = (n: number) => { const p = progress(n); return p <= 0.4 ? 'text-success' : p <= 0.75 ? 'text-caution' : 'text-critical'; };
+>>>>>>> ae29496dc6949392820dd90d74efa6ed7af32864
   const format = (n: number) => n.toFixed(digits);
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Home' || event.key === 'End') {
@@ -50,8 +54,9 @@ function Dial({ label, unit, value, baseline, min, max, step, digits, armed, onA
   };
   return <div className="flex min-w-0 flex-col items-center">
     <div ref={interactions.ref} className={`relative flex min-h-[190px] w-full cursor-pointer touch-none select-none flex-col items-center border p-2 ${armedShell(armed)}`} role="slider" aria-label={label} aria-valuemin={min} aria-valuemax={max} aria-valuenow={value} aria-valuetext={`${format(value)} ${unit}; sample ${format(baseline)} ${unit}`} tabIndex={0} onClick={onArm} onKeyDown={onKeyDown} onPointerDown={interactions.onPointerDown} onPointerMove={interactions.onPointerMove} onPointerUp={interactions.onPointerUp}>
-      <div className="self-start text-[9px] font-semibold uppercase tracking-[.08em] text-secondary">{label}</div>{armed && <span className={armedChip}>ARMED</span>}
+      <div className="self-start font-heading text-[11px] font-bold uppercase tracking-[.08em] text-secondary">{label}</div>{armed && <span className={armedChip}>ARMED</span>}
       <svg viewBox="0 0 140 140" className="mt-auto h-auto w-[min(100%,156px)] overflow-visible" aria-hidden="true">
+<<<<<<< HEAD
         <defs>
           <linearGradient id={spectrumId} gradientUnits="userSpaceOnUse" x1="31" y1="70" x2="109" y2="70">
             <stop offset="0%" stopColor="#2ee66b" />
@@ -72,6 +77,10 @@ function Dial({ label, unit, value, baseline, min, max, step, digits, armed, onA
         <path className="fill-none stroke-[10]" stroke={`url(#${spectrumId})`} d={gaugeArc(55)} pathLength="360" strokeDasharray={`${fillLength} 360`} strokeLinecap="butt" />
         <text className="fill-ink font-mono text-[20px] font-semibold [dominant-baseline:central] [text-anchor:middle]" x="70" y="70">{format(value)}</text><text className="fill-secondary font-mono text-[8px] [dominant-baseline:central] [text-anchor:middle]" x="70" y="84">{unit}</text></svg>
       <div className="mt-0 font-mono text-[8px] text-secondary">Sample <b className="font-normal text-cyan">{format(baseline)}</b><span className="mx-[5px] text-muted">/</span>Target <b className="font-normal text-amber">{format(value)}</b></div>
+=======
+        <g>{Array.from({ length: 37 }, (_, index) => { const a = ((135 + index * 270 / 36) * Math.PI) / 180; const r1 = 58; const r2 = index % 3 === 0 ? 65 : 62; return <line key={index} className={`${armed ? 'stroke-secondary' : 'stroke-tick'} stroke-[0.8]`} x1={70 + Math.cos(a) * r1} y1={70 + Math.sin(a) * r1} x2={70 + Math.cos(a) * r2} y2={70 + Math.sin(a) * r2} />; })}</g><circle className="fill-none stroke-raised stroke-[5]" cx="70" cy="70" r="48" strokeDasharray="226 302" transform="rotate(135 70 70)" /><circle className={`fill-none stroke-current stroke-4 transition-[stroke-dasharray,color] duration-100 ease-linear ${tone(value)}`} cx="70" cy="70" r="48" strokeDasharray={`${progress(value) * 226} ${302 - progress(value) * 226}`} transform="rotate(135 70 70)" /><circle className="fill-none stroke-caution stroke-2 transition-[stroke-dasharray] duration-100 ease-linear" cx="70" cy="70" r="57" strokeDasharray={`${progress(value) * 358} ${358 - progress(value) * 358}`} transform="rotate(135 70 70)" /><text className="fill-ink font-mono text-[22px] font-bold [dominant-baseline:central] [text-anchor:middle]" x="70" y="69">{format(value)}</text><text className="fill-secondary font-mono text-[10px] [dominant-baseline:central] [text-anchor:middle]" x="70" y="85">{unit}</text></svg>
+      <div className="mt-0 font-mono text-[10px] text-secondary">Sample <b className="font-semibold text-primary">{format(baseline)}</b><span className="mx-[5px] text-muted">/</span>Target <b className="font-semibold text-warning">{format(value)}</b></div>
+>>>>>>> ae29496dc6949392820dd90d74efa6ed7af32864
     </div>
   </div>;
 }
@@ -88,10 +97,10 @@ function TemperatureControl({ value, armed, onArm, onDisarm, onChange }: { value
     }
     interactions.onKeyDown(event);
   };
-  return <div className="flex justify-center w-full compact:w-full tight:w-[60px]"><div ref={interactions.ref} className={`relative grid h-[190px] cursor-pointer touch-none select-none grid-rows-[auto_1fr_auto_auto] p-[7px] pt-[9px] ${armedShell(armed)}`} role="slider" aria-label="Temperature" aria-valuemin={15} aria-valuemax={120} aria-valuenow={value} aria-valuetext={`${value.toFixed(0)} degrees Celsius`} tabIndex={0} onClick={onArm} onKeyDown={onKeyDown} onPointerDown={interactions.onPointerDown} onPointerMove={interactions.onPointerMove} onPointerUp={interactions.onPointerUp}><div className="text-[8px] font-semibold uppercase tracking-[.08em] text-secondary">TEMP °C</div>{armed && <span className={armedChip}>ARMED</span>}<div className="flex flex-col-reverse justify-center gap-1 py-2">{Array.from({ length: 10 }, (_, i) => { const threshold = i < 5 ? 15 + (i + 1) * 4 : i < 8 ? 35 + (i - 4) * 10 : 65 + (i - 7) * 27.5; const segmentTone = i < 5 ? 'border-cyan bg-cyan' : i < 8 ? 'border-amber bg-amber' : 'border-red bg-red'; return <i key={i} className={`h-2 border ${value >= threshold ? segmentTone : 'border-[#232b37] bg-[#1a202b]'}`} />; })}</div><div className="font-mono text-[16px] text-ink">{value.toFixed(0)}°</div><small className="font-mono text-[10px] text-secondary">15–120 °C</small></div></div>;
+  return <div className="flex justify-center w-full compact:w-full tight:w-[60px]"><div ref={interactions.ref} className={`relative grid h-[190px] cursor-pointer touch-none select-none grid-rows-[auto_1fr_auto_auto] p-[7px] pt-[9px] ${armedShell(armed)}`} role="slider" aria-label="Temperature" aria-valuemin={15} aria-valuemax={120} aria-valuenow={value} aria-valuetext={`${value.toFixed(0)} degrees Celsius`} tabIndex={0} onClick={onArm} onKeyDown={onKeyDown} onPointerDown={interactions.onPointerDown} onPointerMove={interactions.onPointerMove} onPointerUp={interactions.onPointerUp}><div className="font-heading text-[10.5px] font-bold uppercase tracking-[.08em] text-secondary">TEMP °C</div>{armed && <span className={armedChip}>ARMED</span>}<div className="flex flex-col-reverse justify-center gap-1 py-2">{Array.from({ length: 10 }, (_, i) => { const threshold = i < 5 ? 15 + (i + 1) * 4 : i < 8 ? 35 + (i - 4) * 10 : 65 + (i - 7) * 27.5; const segmentTone = i < 5 ? 'border-success bg-success' : i < 7 ? 'border-caution bg-caution' : i < 8 ? 'border-warning bg-warning' : 'border-critical bg-critical'; return <i key={i} className={`h-2 border ${value >= threshold ? segmentTone : 'border-line bg-raised'}`} />; })}</div><div className="font-mono text-[18px] font-bold text-ink">{value.toFixed(0)}°</div><small className="font-mono text-[10.5px] text-secondary">15–120 °C</small></div></div>;
 }
 
 function GravityControl({ value, armed, onArm, onChange }: { value: number; armed: boolean; onArm: () => void; onChange: (value: number) => void }) {
   const regime = gravityRegimes[value];
-  return <div className={`relative min-h-[190px] border p-[9px] col-span-2 compact:col-span-2 tight:col-span-1 ${armedShell(armed)}`}><div className="text-[9px] font-semibold uppercase tracking-[.08em] text-secondary" role="group" aria-label="Gravity regime" tabIndex={0} onClick={onArm} onKeyDown={event => { if (event.key === 'Escape') onArm(); }}>{armed && <span className={armedChip}>ARMED</span>}<span>Gravity regime</span></div><div className="mb-3 mt-[19px] grid grid-cols-[32px_1fr_32px] items-center gap-1"><button className={gravityButton} aria-label="Previous gravity" onClick={() => { onArm(); onChange((value + 2) % 3); }}><ChevronLeft size={16} aria-hidden="true" /></button><div className="grid justify-items-center gap-[3px]"><b className="font-mono text-[12px] text-ink">{regime.value}</b><span className="font-mono text-[8px] tracking-[.08em] text-cyan">{regime.name}</span></div><button className={gravityButton} aria-label="Next gravity" onClick={() => { onArm(); onChange((value + 1) % 3); }}><ChevronRight size={16} aria-hidden="true" /></button></div><div className="mt-auto border-t border-line pt-2 font-mono text-[9px] leading-[1.45] text-secondary">Transport<br />{regime.detail}</div></div>;
+  return <div className={`relative min-h-[190px] border p-[9px] col-span-2 compact:col-span-2 tight:col-span-1 ${armedShell(armed)}`}><div className="font-heading text-[10.5px] font-bold uppercase tracking-[.08em] text-secondary" role="group" aria-label="Gravity regime" tabIndex={0} onClick={onArm} onKeyDown={event => { if (event.key === 'Escape') onArm(); }}>{armed && <span className={armedChip}>ARMED</span>}<span>Gravity regime</span></div><div className="mb-3 mt-[19px] grid grid-cols-[32px_1fr_32px] items-center gap-1"><button className={gravityButton} aria-label="Previous gravity" onClick={() => { onArm(); onChange((value + 2) % 3); }}><ChevronLeft size={16} aria-hidden="true" /></button><div className="grid justify-items-center gap-[3px]"><b className="font-mono text-[14px] font-bold text-ink">{regime.value}</b><span className="font-mono text-[10px] font-bold tracking-[.08em] text-primary">{regime.name}</span></div><button className={gravityButton} aria-label="Next gravity" onClick={() => { onArm(); onChange((value + 1) % 3); }}><ChevronRight size={16} aria-hidden="true" /></button></div><div className="mt-auto border-t border-line pt-2 font-mono text-[10.5px] leading-[1.45] text-secondary">Transport<br />{regime.detail}</div></div>;
 }

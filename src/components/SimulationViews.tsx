@@ -19,8 +19,8 @@ import { panel, sectionHead, sectionMeta, sectionTitle } from './ui';
 
 const MAX_FLOW = 45;
 
-const axisTick = { fill: '#9aa8b9', fontSize: 11, fontFamily: '"Geist Mono", monospace' };
-const axisLabel = { fill: '#9aa8b9', fontSize: 10, fontFamily: '"Geist Mono", monospace' };
+const axisTick = { fill: '#9CA3AF', fontSize: 11, fontFamily: '"Geist Mono", monospace' };
+const axisLabel = { fill: '#9CA3AF', fontSize: 10, fontFamily: '"Geist Mono", monospace' };
 
 type CurvePoint = {
   flow: number;
@@ -122,15 +122,15 @@ export function SimulationViews() {
     <article className={`${panel} min-w-0`}>
       <div className={`${sectionHead} mb-2 items-start`}>
         <div className="flex min-w-0 items-start gap-2">
-          <Flame size={15} className="mt-0.5 shrink-0 text-amber" aria-hidden="true" />
+          <Flame size={15} className="mt-0.5 shrink-0 text-warning" aria-hidden="true" />
           <div className="min-w-0">
             <h2 className={sectionTitle}>The airflow paradox</h2>
-            <p className="m-0 mt-1 text-[11px] leading-snug text-secondary">Ventilation can feed a fire before it suppresses it.</p>
+            <p className="m-0 mt-1 text-[12px] leading-snug text-secondary">Ventilation can feed a fire before it suppresses it.</p>
           </div>
         </div>
         <span className={sectionMeta}>2D demo curve</span>
       </div>
-      <div ref={chartRef} className="relative h-[230px] touch-none overflow-hidden border border-line bg-[#090c12] outline-none compact:h-[210px]" role="slider" tabIndex={0} aria-label="Adjust demo airflow position on the illustrative airflow paradox curve" aria-valuemin={0} aria-valuemax={MAX_FLOW} aria-valuenow={curveAirflow} aria-valuetext={`${curveAirflow.toFixed(1)} centimeters per second; illustrative visual risk ${operatingPoint.risk} percent`}
+      <div ref={chartRef} className="relative h-[230px] touch-none overflow-hidden border border-line bg-void outline-none compact:h-[210px]" role="slider" tabIndex={0} aria-label="Adjust demo airflow position on the illustrative airflow paradox curve" aria-valuemin={0} aria-valuemax={MAX_FLOW} aria-valuenow={curveAirflow} aria-valuetext={`${curveAirflow.toFixed(1)} centimeters per second; illustrative visual risk ${operatingPoint.risk} percent`}
         onPointerDown={event => event.currentTarget.focus()}
         onMouseDown={event => {
           // Recharts' SVG layers use tabindex="-1"; stop the browser moving focus off the slider.
@@ -159,30 +159,30 @@ export function SimulationViews() {
             onTouchMove={onChartMove}
             onTouchEnd={releaseChart}
           >
-            <CartesianGrid stroke="#252e3a" strokeWidth={1} />
-            <XAxis dataKey="flow" type="number" domain={[0, MAX_FLOW]} ticks={[0, 10, 20, 30, 40, MAX_FLOW]} tick={axisTick} tickLine={false} axisLine={{ stroke: '#252e3a' }} tickFormatter={value => value === MAX_FLOW ? `${MAX_FLOW} cm/s` : String(value)} />
-            <YAxis type="number" domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} width={38} tick={axisTick} tickLine={false} axisLine={{ stroke: '#252e3a' }} tickFormatter={value => `${value}%`}>
+            <CartesianGrid stroke="#374151" strokeWidth={1} />
+            <XAxis dataKey="flow" type="number" domain={[0, MAX_FLOW]} ticks={[0, 10, 20, 30, 40, MAX_FLOW]} tick={axisTick} tickLine={false} axisLine={{ stroke: '#374151' }} tickFormatter={value => value === MAX_FLOW ? `${MAX_FLOW} cm/s` : String(value)} />
+            <YAxis type="number" domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} width={38} tick={axisTick} tickLine={false} axisLine={{ stroke: '#374151' }} tickFormatter={value => `${value}%`}>
               <Label value="Visual risk" angle={-90} position="left" offset={7} style={axisLabel} />
             </YAxis>
-            <ReferenceArea x1={6} x2={18} fill="#ffb000" fillOpacity={0.05} stroke="none" />
-            <Area type="monotone" dataKey="band" stroke="none" fill="#ffb000" fillOpacity={0.12} isAnimationActive={false} />
-            <Line type="monotone" dataKey="risk" stroke="#ffb000" strokeWidth={2.5} dot={false} activeDot={{ r: 4, fill: '#ffb000', stroke: '#07090d', strokeWidth: 2 }} isAnimationActive={false} />
-            <ReferenceLine x={curveAirflow} stroke="#00e5ff" strokeDasharray="3 4" strokeOpacity={0.85} />
-            <ReferenceDot x={operatingPoint.flow} y={operatingPoint.risk} r={5} fill="#f0f4f8" stroke="#00e5ff" strokeWidth={2} />
-            <Tooltip content={props => <CurveTooltip {...props} />} cursor={{ stroke: '#2e3748', strokeDasharray: '3 4' }} wrapperStyle={{ zIndex: 5, outline: 'none' }} />
+            <ReferenceArea x1={6} x2={18} fill="#FACC15" fillOpacity={0.06} stroke="none" />
+            <Area type="monotone" dataKey="band" stroke="none" fill="#F97316" fillOpacity={0.12} isAnimationActive={false} />
+            <Line type="monotone" dataKey="risk" stroke="#F97316" strokeWidth={2.5} dot={false} activeDot={{ r: 4, fill: '#F97316', stroke: '#111827', strokeWidth: 2 }} isAnimationActive={false} />
+            <ReferenceLine x={curveAirflow} stroke="#34D399" strokeDasharray="3 4" strokeOpacity={0.85} />
+            <ReferenceDot x={operatingPoint.flow} y={operatingPoint.risk} r={5} fill="#F3F4F6" stroke="#34D399" strokeWidth={2} />
+            <Tooltip content={props => <CurveTooltip {...props} />} cursor={{ stroke: '#374151', strokeDasharray: '3 4' }} wrapperStyle={{ zIndex: 5, outline: 'none' }} />
           </ComposedChart>
         </ResponsiveContainer>
-        {chartArmed && <span className="absolute right-2.5 top-2.5 z-[2] bg-red-fill px-1.5 py-0.5 font-mono text-[8px] text-red">ARMED</span>}
-        <div className="pointer-events-none absolute top-2.5 left-2.5 z-[2] flex gap-4 border border-[#222b37] bg-[#080b10] px-2 py-1.5">
+        {chartArmed && <span className="absolute right-2.5 top-2.5 z-[2] bg-critical px-1.5 py-0.5 font-mono text-[9.5px] font-bold text-ink">ARMED</span>}
+        <div className="pointer-events-none absolute top-2.5 left-2.5 z-[2] flex gap-4 border border-line bg-surface/90 px-2 py-1.5 backdrop-blur-[2px]">
           <Readout label="Demo airflow" value={`${curveAirflow.toFixed(1)} cm/s`} />
-          <Readout label="Visual risk" value={`${operatingPoint.risk}%`} tone="amber" />
+          <Readout label="Visual risk" value={`${operatingPoint.risk}%`} tone="warning" />
           <Readout label="Curve status" value="Illustrative" />
         </div>
       </div>
-      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[8px] text-secondary">
-        <span className="flex items-center gap-1.5"><i className="h-0.5 w-4 bg-amber" />Visual risk</span>
-        <span className="flex items-center gap-1.5"><i className="h-2 w-4 border border-[#584317] bg-[#ffb0001f]" />Uncertainty</span>
-        <span className="flex items-center gap-1.5"><i className="h-3 w-px bg-cyan" />Operating point</span>
+      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[10.5px] text-secondary">
+        <span className="flex items-center gap-1.5"><i className="h-0.5 w-4 bg-warning" />Visual risk</span>
+        <span className="flex items-center gap-1.5"><i className="h-2 w-4 border border-warning/60 bg-warning/20" />Uncertainty</span>
+        <span className="flex items-center gap-1.5"><i className="h-3 w-px bg-primary" />Operating point</span>
         <span className="ml-auto">Click, drag, or use arrows to position the sample</span>
       </div>
     </article>
@@ -193,13 +193,13 @@ export function SimulationViews() {
 function CurveTooltip({ active, payload }: TooltipContentProps) {
   const point = payload?.[0]?.payload as CurvePoint | undefined;
   if (!active || !point) return null;
-  return <div className="border border-line bg-[#0a0d13] px-2 py-1.5 font-mono text-[9px]">
-    <div className="mb-1 text-[8px] uppercase tracking-[.08em] text-secondary">Airflow {point.flow.toFixed(1)} cm/s</div>
-    <div className="flex justify-between gap-4"><span className="text-secondary">Visual risk</span><b className="text-amber">{point.risk}%</b></div>
-    <div className="flex justify-between gap-4"><span className="text-secondary">Uncertainty</span><b className="text-ink">{point.band[0]}–{point.band[1]}%</b></div>
+  return <div className="border border-line bg-surface px-2.5 py-2 font-mono text-[11px] shadow-lg">
+    <div className="mb-1 text-[9.5px] uppercase tracking-[.08em] text-secondary">Airflow {point.flow.toFixed(1)} cm/s</div>
+    <div className="flex justify-between gap-4"><span className="text-secondary">Visual risk</span><b className="text-[12px] font-bold text-warning">{point.risk}%</b></div>
+    <div className="flex justify-between gap-4"><span className="text-secondary">Uncertainty</span><b className="text-[12px] font-bold text-ink">{point.band[0]}–{point.band[1]}%</b></div>
   </div>;
 }
 
-function Readout({ label, value, tone }: { label: string; value: string; tone?: 'amber' }) {
-  return <div className="grid gap-px"><span className="font-mono text-[8px] text-secondary">{label}</span><b className={`font-mono text-[9px] font-semibold ${tone === 'amber' ? 'text-amber' : 'text-ink'}`}>{value}</b></div>;
+function Readout({ label, value, tone }: { label: string; value: string; tone?: 'warning' | 'primary' | 'critical' }) {
+  return <div className="grid gap-px"><span className="font-mono text-[10px] text-secondary">{label}</span><b className={`font-mono text-[13px] font-bold ${tone === 'warning' ? 'text-warning' : tone === 'primary' ? 'text-primary' : tone === 'critical' ? 'text-critical' : 'text-ink'}`}>{value}</b></div>;
 }

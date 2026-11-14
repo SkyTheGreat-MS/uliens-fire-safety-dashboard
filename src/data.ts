@@ -29,9 +29,9 @@ export const presets: Preset[] = [
 ];
 
 export const statuses = [
-  { co: '2.1', smoke: '0.02', state: 'NOMINAL', tone: 'cyan' },
-  { co: '8.4', smoke: '0.08', state: 'DRIFT', tone: 'amber' },
-  { co: '3.7', smoke: '0.03', state: 'NOMINAL', tone: 'cyan' },
+  { co: '2.1', smoke: '0.02', state: 'NOMINAL', tone: 'success' },
+  { co: '8.4', smoke: '0.08', state: 'DRIFT', tone: 'caution' },
+  { co: '3.7', smoke: '0.03', state: 'NOMINAL', tone: 'success' },
 ] as const;
 
 export const materials = [
