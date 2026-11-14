@@ -29,7 +29,7 @@ export function MaterialRisk({
         </div>
         <div className="grid min-w-[86px] justify-items-end gap-1">
           <span className="text-[11.5px] text-secondary">Active volume</span>
-          <b className="font-mono text-[12px] font-bold text-cyan">{sectors[activeSector].short}</b>
+          <b className="font-mono text-[12px] font-bold text-primary">{sectors[activeSector].short}</b>
         </div>
       </div>
 
@@ -50,7 +50,7 @@ export function MaterialRisk({
             <button
               key={item.name}
               aria-pressed={isSelected}
-              className={`grid min-h-[42px] w-full min-w-[430px] items-center gap-1.5 border-0 border-b border-[#171d27] bg-transparent px-[5px] py-2.5 text-left text-ink transition-colors compact:min-w-0 compact:px-[7px] compact:py-1.5 tight:gap-2 ${
+              className={`grid min-h-[42px] w-full min-w-[430px] items-center gap-1.5 border-0 border-b border-line bg-transparent px-[5px] py-2.5 text-left text-ink transition-colors compact:min-w-0 compact:px-[7px] compact:py-1.5 tight:gap-2 ${
                 isSelected ? 'bg-raised' : 'hover:bg-raised'
               } ${riskColumns}`}
               onClick={() => onSelectMaterial(index)}
@@ -75,7 +75,7 @@ export function MaterialRisk({
                   <i
                     key={n}
                     className={`flex-1 ${
-                      n < item.level ? (index === 0 ? 'bg-amber' : 'bg-cyan') : 'bg-[#1a202b]'
+                      n < item.level ? (index === 0 ? 'bg-warning' : 'bg-primary') : 'bg-raised'
                     }`}
                   />
                 ))}
@@ -85,7 +85,7 @@ export function MaterialRisk({
               </span>
               <span
                 className={`col-start-3 row-span-2 row-start-1 justify-self-end border px-1.5 py-0.5 font-mono text-[9.5px] font-bold compact:col-auto compact:row-auto ${
-                  index === 0 ? 'border-[#6d5011] text-amber' : 'border-[#14505a] text-cyan'
+                  index === 0 ? 'border-warning/60 bg-warning/10 text-warning' : 'border-success/60 bg-success/10 text-success'
                 }`}
               >
                 {item.state}
@@ -135,11 +135,11 @@ function InspectionDrawer({
       >
         {/* Chassis corner ticks */}
         <div
-          className="pointer-events-none absolute -left-px top-0 h-1.5 w-1.5 border-l-2 border-t-2 border-[#333c4d]"
+          className="pointer-events-none absolute -left-px top-0 h-1.5 w-1.5 border-l-2 border-t-2 border-elevated"
           aria-hidden="true"
         />
         <div
-          className="pointer-events-none absolute -left-px bottom-0 h-1.5 w-1.5 border-b-2 border-l-2 border-[#333c4d]"
+          className="pointer-events-none absolute -left-px bottom-0 h-1.5 w-1.5 border-b-2 border-l-2 border-elevated"
           aria-hidden="true"
         />
 
@@ -157,7 +157,7 @@ function InspectionDrawer({
             </span>
           </div>
           <button
-            className="flex size-7 shrink-0 items-center justify-center border border-line bg-[#0a0d13] text-secondary transition-colors hover:border-cyan hover:text-cyan"
+            className="flex size-7 shrink-0 items-center justify-center border border-line bg-void text-secondary transition-colors hover:border-primary hover:text-primary"
             type="button"
             aria-label="Close material inspection"
             onClick={onClose}
@@ -178,7 +178,7 @@ function InspectionDrawer({
               <span className="text-[12px] font-medium text-secondary">Microgravity sample case</span>
               <b
                 className={`border px-2 py-0.5 font-mono text-[11px] font-bold ${
-                  elevated ? 'border-red bg-red-fill text-red' : 'border-cyan bg-cyan/10 text-cyan'
+                  elevated ? 'border-critical bg-critical/15 text-critical' : 'border-success bg-success/15 text-success'
                 }`}
               >
                 {elevated ? 'FAIL' : 'PASS'}
@@ -199,7 +199,7 @@ function InspectionDrawer({
             </h4>
             <p className="m-0 text-[12.5px] leading-relaxed text-ink">
               This local demo ranks the material at{' '}
-              <span className="font-mono font-semibold text-amber">{material.probability}</span> visual probability.
+              <span className="font-mono font-bold text-warning">{material.probability}</span> visual probability.
             </p>
           </section>
 

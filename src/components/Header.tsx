@@ -9,7 +9,7 @@ export function Header() {
       {/* Intro Text Section */}
       <div className="flex items-center gap-2.5 sm:gap-3">
         <div
-          className="grid size-8 place-items-center border border-cyan font-mono text-[12px] font-bold text-cyan"
+          className="grid size-8 place-items-center border border-primary bg-primary/10 font-mono text-[12px] font-bold text-primary"
           aria-hidden="true"
         >
           ECL
@@ -34,8 +34,8 @@ export function Header() {
           aria-label="Toggle RAG Reference Copilot"
           className={`flex items-center gap-2 border px-2 py-1.5 transition-colors ${
             isChatOpen
-              ? 'border-cyan bg-cyan/10 text-cyan'
-              : 'border-line bg-[#0a0d13] text-secondary hover:border-cyan hover:bg-[#10151f]'
+              ? 'border-primary bg-primary/15 text-primary'
+              : 'border-line bg-void text-secondary hover:border-primary hover:bg-raised'
           }`}
         >
           <img
@@ -47,7 +47,7 @@ export function Header() {
             <span className="font-mono text-[12px] font-bold uppercase tracking-[.08em] text-ink">
               RAG Copilot
             </span>
-            <span className="font-mono text-[10px] font-medium text-cyan">
+            <span className="font-mono text-[10px] font-medium text-primary">
               Flight References
             </span>
           </div>

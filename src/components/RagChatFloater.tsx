@@ -121,7 +121,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
               <span className="font-mono text-[12px] font-bold uppercase tracking-[.06em] text-ink">
                 RAG Copilot
               </span>
-              <span className="border border-cyan/40 bg-cyan/10 px-1.5 py-0.2 font-mono text-[9.5px] font-bold uppercase tracking-[.08em] text-cyan">
+              <span className="border border-primary/40 bg-primary/10 px-1.5 py-0.2 font-mono text-[9.5px] font-bold uppercase tracking-[.08em] text-primary">
                 Standby Template
               </span>
             </div>
@@ -135,7 +135,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
           type="button"
           onClick={onClose}
           aria-label="Close RAG Copilot"
-          className="grid size-6 place-items-center border border-line bg-[#0a0d13] text-secondary transition-colors hover:border-cyan hover:text-cyan"
+          className="grid size-6 place-items-center border border-line bg-void text-secondary transition-colors hover:border-primary hover:text-primary"
         >
           <X className="size-3.5" />
         </button>
@@ -147,13 +147,13 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
           <div className="flex flex-col gap-2">
             {/* Last Query Prompt */}
             <div className="flex items-start gap-1.5 border-b border-line/60 pb-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-cyan">Q:</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-primary">Q:</span>
               <span className="text-[12.5px] font-semibold text-ink">{result.prompt}</span>
             </div>
 
             {/* Response Content */}
             <div className="flex items-start gap-1.5 pt-1 text-[12px] leading-relaxed text-secondary">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-amber">A:</span>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-warning">A:</span>
               <div className="flex-1 whitespace-pre-wrap">{result.response}</div>
             </div>
 
@@ -169,7 +169,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
                       key={idx}
                       className="inline-flex items-center gap-1 border border-line bg-surface px-1.5 py-0.5 font-mono text-[10px] text-secondary"
                     >
-                      <FileText className="size-2.5 text-cyan" />
+                      <FileText className="size-2.5 text-primary" />
                       <span>{cite.source}</span>
                       {cite.page && <span className="text-muted">p.{cite.page}</span>}
                     </span>
@@ -201,12 +201,12 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           placeholder="Ask a question based on flight references..."
-          className="flex-1 border border-line bg-void px-2.5 py-1.5 font-mono text-[12px] text-ink placeholder:text-muted focus:border-cyan focus:outline-none"
+          className="flex-1 border border-line bg-void px-2.5 py-1.5 font-mono text-[12px] text-ink placeholder:text-muted focus:border-primary focus:outline-none"
         />
         <button
           type="submit"
           disabled={!prompt.trim() || isLoading}
-          className="flex items-center gap-1 border border-cyan bg-cyan/10 px-2.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[.06em] text-cyan transition-colors hover:bg-cyan/20 disabled:cursor-not-allowed disabled:border-line disabled:bg-transparent disabled:text-muted"
+          className="flex items-center gap-1 border border-primary bg-primary/15 px-2.5 py-1.5 font-mono text-[11px] font-bold uppercase tracking-[.06em] text-primary transition-colors hover:bg-primary/25 disabled:cursor-not-allowed disabled:border-line disabled:bg-transparent disabled:text-muted"
         >
           <Send className="size-3" />
           <span>Send</span>
