@@ -1,0 +1,4714 @@
+[
+  {
+    "test_id": "BASS1-1",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 22.1,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.08,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-42",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 22.1,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.08,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-18",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 22.1,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.08,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-7",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.06,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-8",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.28,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-43",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.05,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-44",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.05,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-45",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.05,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-19",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.33,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.44,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-20",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.33,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.44,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-21",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.33,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 1.0,
+    "flame_spread_mm_s": 0.66,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-4",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 99.67,
+    "oxygen_pct": 21.6,
+    "flow_velocity_cm_s": 22.0,
+    "flame_spread_mm_s": 3.89,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-10",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 99.67,
+    "oxygen_pct": 21.6,
+    "flow_velocity_cm_s": 11.0,
+    "flame_spread_mm_s": 2.2,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-12",
+    "material_name": "Nomex Ht90-40",
+    "pressure_kpa": 99.67,
+    "oxygen_pct": 21.6,
+    "flow_velocity_cm_s": 15.0,
+    "flame_spread_mm_s": 2.81,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      0.0,
+      5.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points."
+  },
+  {
+    "test_id": "BASS1-54",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.7,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 11.0,
+    "flame_spread_mm_s": 2.2,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-55",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.7,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 6.5,
+    "flame_spread_mm_s": 1.51,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-56",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.7,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.43,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-57",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.7,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 7.0,
+    "flame_spread_mm_s": 1.58,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-110",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.7,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 6.5,
+    "flame_spread_mm_s": 1.51,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-30",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.5,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 5.5,
+    "flame_spread_mm_s": 1.33,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-31",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.5,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.41,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-32",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.5,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.26,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-33",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.5,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.26,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-12-R",
+    "material_name": "Nomex Ht90-40",
+    "pressure_kpa": 98.5,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.86,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      0.0,
+      5.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points."
+  },
+  {
+    "test_id": "BASS1-12-R2",
+    "material_name": "Nomex Ht90-40",
+    "pressure_kpa": 98.5,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.86,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      0.0,
+      5.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points."
+  },
+  {
+    "test_id": "BASS1-46",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.9,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 9.5,
+    "flame_spread_mm_s": 1.94,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-47",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.9,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.86,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-48",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.9,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.86,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-49",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.9,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.86,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-22",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.11,
+    "oxygen_pct": 20.9,
+    "flow_velocity_cm_s": 9.75,
+    "flame_spread_mm_s": 1.96,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-23",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.11,
+    "oxygen_pct": 20.9,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.99,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-24",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.11,
+    "oxygen_pct": 20.9,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.99,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-25",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.11,
+    "oxygen_pct": 20.9,
+    "flow_velocity_cm_s": 4.0,
+    "flame_spread_mm_s": 1.1,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-58",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.9,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.43,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-59",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.9,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 6.5,
+    "flame_spread_mm_s": 1.51,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-60",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.9,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 7.0,
+    "flame_spread_mm_s": 1.58,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-61",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.9,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 6.5,
+    "flame_spread_mm_s": 1.51,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-5",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 98.95,
+    "oxygen_pct": 22.0,
+    "flow_velocity_cm_s": 5.75,
+    "flame_spread_mm_s": 1.4,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-14",
+    "material_name": "Nomex Ht90-40",
+    "pressure_kpa": 98.95,
+    "oxygen_pct": 22.0,
+    "flow_velocity_cm_s": 14.5,
+    "flame_spread_mm_s": 2.78,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      0.0,
+      5.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points."
+  },
+  {
+    "test_id": "BASS1-66",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.95,
+    "oxygen_pct": 22.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.07,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-67",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.95,
+    "oxygen_pct": 22.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-34",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.01,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 0.0,
+    "flame_spread_mm_s": 0.5,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-35",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.01,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 0.0,
+    "flame_spread_mm_s": 0.5,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-16",
+    "material_name": "Ultem Polyetherimide",
+    "pressure_kpa": 100.01,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 14.5,
+    "flame_spread_mm_s": 2.77,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-5b",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 100.01,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.06,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-6",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 100.06,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.93,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-82",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 100.06,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.09,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-82a",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 100.06,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 7.0,
+    "flame_spread_mm_s": 1.61,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-82b",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 100.06,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-68",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.06,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.45,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-69",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.11,
+    "oxygen_pct": 22.4,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.1,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-111",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.11,
+    "oxygen_pct": 22.4,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.1,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-112",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.11,
+    "oxygen_pct": 22.4,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.1,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-113",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.11,
+    "oxygen_pct": 22.4,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.1,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-2",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 100.81,
+    "oxygen_pct": 22.7,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.96,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-3",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.72,
+    "oxygen_pct": 22.7,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.12,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-15",
+    "material_name": "Nomex Ht90-40",
+    "pressure_kpa": 102.1,
+    "oxygen_pct": 22.5,
+    "flow_velocity_cm_s": 30.0,
+    "flame_spread_mm_s": 5.32,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      0.0,
+      5.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points."
+  },
+  {
+    "test_id": "BASS1-13",
+    "material_name": "Nomex Ht90-40",
+    "pressure_kpa": 102.1,
+    "oxygen_pct": 22.5,
+    "flow_velocity_cm_s": 15.0,
+    "flame_spread_mm_s": 2.91,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      0.0,
+      5.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points."
+  },
+  {
+    "test_id": "BASS1-17",
+    "material_name": "Ultem Polyetherimide",
+    "pressure_kpa": 102.1,
+    "oxygen_pct": 22.5,
+    "flow_velocity_cm_s": 8.0,
+    "flame_spread_mm_s": 1.79,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-114",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 102.1,
+    "oxygen_pct": 22.5,
+    "flow_velocity_cm_s": 6.5,
+    "flame_spread_mm_s": 1.54,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-62",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 102.21,
+    "oxygen_pct": 22.6,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-63",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 102.21,
+    "oxygen_pct": 22.6,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-64",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 102.21,
+    "oxygen_pct": 22.6,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.31,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-65",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 102.21,
+    "oxygen_pct": 22.6,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.31,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-118",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 102.21,
+    "oxygen_pct": 22.6,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.31,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-11",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 100.38,
+    "oxygen_pct": 21.5,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 3.57,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-9",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 100.38,
+    "oxygen_pct": 21.6,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.04,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS1-102",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.38,
+    "oxygen_pct": 21.6,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.27,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-83a",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 98.53,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 0.0,
+    "flame_spread_mm_s": 0.5,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-83b",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 98.53,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.8,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-83c",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 98.53,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.8,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-84a",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 98.53,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.8,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-84b",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 98.53,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.8,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-86a",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 98.53,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.8,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-86b",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 98.53,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.8,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-86c",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 98.53,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 1.0,
+    "flame_spread_mm_s": 0.65,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-70",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.55,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.91,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-71",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.55,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.91,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-74",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.55,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.28,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-75",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.55,
+    "oxygen_pct": 21.9,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.44,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-98",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 17.1,
+    "flow_velocity_cm_s": 12.0,
+    "flame_spread_mm_s": 1.97,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-99",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 17.1,
+    "flow_velocity_cm_s": 12.0,
+    "flame_spread_mm_s": 1.97,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-115",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.5,
+    "oxygen_pct": 21.1,
+    "flow_velocity_cm_s": 7.5,
+    "flame_spread_mm_s": 1.63,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-116",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.5,
+    "oxygen_pct": 21.1,
+    "flow_velocity_cm_s": 8.0,
+    "flame_spread_mm_s": 1.71,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-117",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.5,
+    "oxygen_pct": 21.1,
+    "flow_velocity_cm_s": 8.0,
+    "flame_spread_mm_s": 1.71,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-117a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.5,
+    "oxygen_pct": 21.1,
+    "flow_velocity_cm_s": 8.0,
+    "flame_spread_mm_s": 1.71,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-100",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 21.1,
+    "flow_velocity_cm_s": 8.0,
+    "flame_spread_mm_s": 1.71,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-85",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 21.1,
+    "flow_velocity_cm_s": 3.0,
+    "flame_spread_mm_s": 0.95,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-93",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 21.1,
+    "flow_velocity_cm_s": 3.0,
+    "flame_spread_mm_s": 0.95,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-26",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.31,
+    "oxygen_pct": 17.3,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-27",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.31,
+    "oxygen_pct": 17.1,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-28",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.31,
+    "oxygen_pct": 17.1,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-87",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 15.9,
+    "flow_velocity_cm_s": 1.0,
+    "flame_spread_mm_s": 0.61,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-103",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 17.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-104",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 17.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-105",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.29,
+    "oxygen_pct": 20.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.23,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-38",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.89,
+    "oxygen_pct": 16.7,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.22,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-39",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.89,
+    "oxygen_pct": 16.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.1,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-40",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.89,
+    "oxygen_pct": 17.8,
+    "flow_velocity_cm_s": 8.0,
+    "flame_spread_mm_s": 1.52,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-72",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.89,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.85,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-73",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.89,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 15.0,
+    "flame_spread_mm_s": 2.75,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-119",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.6,
+    "oxygen_pct": 17.3,
+    "flow_velocity_cm_s": 8.0,
+    "flame_spread_mm_s": 1.49,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-89",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 99.5,
+    "oxygen_pct": 16.1,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.08,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-95",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 99.5,
+    "oxygen_pct": 16.1,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.08,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-92",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 99.5,
+    "oxygen_pct": 16.3,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.08,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS1-78",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.5,
+    "oxygen_pct": 16.3,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.08,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-50",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.99,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-51",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.99,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-52",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.99,
+    "oxygen_pct": 17.1,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.72,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-53",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 98.99,
+    "oxygen_pct": 17.1,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.72,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-106",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.73,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-107",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-108",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-109",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 99.3,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-79",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.95,
+    "oxygen_pct": 17.4,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-80",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.95,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.01,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS1-53a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 100.95,
+    "oxygen_pct": 21.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.26,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B1",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.35,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B2",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.35,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B4",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.35,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B6",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 3.0,
+    "flame_spread_mm_s": 0.94,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B8",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.2,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B9",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.76,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B10",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.3,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B11",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.3,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B14",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.04,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B15",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.2,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B16",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.3,
+    "flow_velocity_cm_s": 3.0,
+    "flame_spread_mm_s": 0.84,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B17",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B18",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.4,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.89,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B19",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.3,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.88,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B20",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.4,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B21",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.8,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-B22",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-F1",
+    "material_name": "Nomex Ht90-40",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 9.5,
+    "flame_spread_mm_s": 2.21,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      0.0,
+      5.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points."
+  },
+  {
+    "test_id": "BASS2-F2",
+    "material_name": "Nomex Ht90-40",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 15.0,
+    "flame_spread_mm_s": 3.1,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      0.0,
+      5.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points."
+  },
+  {
+    "test_id": "BASS2-F3",
+    "material_name": "Nomex Ht90-40",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 8.0,
+    "flame_spread_mm_s": 1.89,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      0.0,
+      5.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points."
+  },
+  {
+    "test_id": "BASS2-F4",
+    "material_name": "Paraffin Wax",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.4,
+    "flow_velocity_cm_s": 3.0,
+    "flame_spread_mm_s": 0.85,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-GEN",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      0.0,
+      15.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record."
+  },
+  {
+    "test_id": "BASS2-M1",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.3,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M2",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 4.21,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M3",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.8,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.18,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M4",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.8,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.33,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M5",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 4.21,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M6",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.8,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.27,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M7",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.9,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.02,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M8",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 19.1,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.04,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M9",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.94,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M10",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.1,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.12,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M11",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M12",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.7,
+    "flow_velocity_cm_s": 1.0,
+    "flame_spread_mm_s": 0.59,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M13",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.8,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.47,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M14",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.3,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M15",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.2,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M16",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 19.2,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.05,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M17",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.8,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.01,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M18",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.9,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.93,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M19",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 19.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.03,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-M20",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.94,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O1",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 4.21,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O2",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.2,
+    "flow_velocity_cm_s": 0.0,
+    "flame_spread_mm_s": 0.4,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O3a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.17,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O3b",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.17,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O4",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 14.8,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.03,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O5a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.1,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.05,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O5b",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 14.2,
+    "flow_velocity_cm_s": 49.0,
+    "flame_spread_mm_s": 6.36,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O6",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O7",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.09,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O8a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.07,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O8b",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.06,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O9",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.04,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O10",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O11",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.4,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.06,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O12",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 13.6,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 0.98,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O13a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.9,
+    "flow_velocity_cm_s": 49.0,
+    "flame_spread_mm_s": 7.08,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O13b",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 14.6,
+    "flow_velocity_cm_s": 7.0,
+    "flame_spread_mm_s": 1.28,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O14",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.3,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.1,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O15a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.1,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.13,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O15b",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O16",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 14.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.02,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O17",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.1,
+    "flow_velocity_cm_s": 3.0,
+    "flame_spread_mm_s": 0.79,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O18",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.05,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O19",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.3,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.06,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O20",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.11,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O21",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.9,
+    "flow_velocity_cm_s": 28.0,
+    "flame_spread_mm_s": 4.22,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-O22",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 15.4,
+    "flow_velocity_cm_s": 4.0,
+    "flame_spread_mm_s": 0.93,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P1",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.16,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P2",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.4,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P3a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.16,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P3b",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.4,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P4",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.19,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P5",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 19.3,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.23,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P6",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.9,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.21,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P8",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.4,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.1,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P9",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.6,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P10",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.13,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P12",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P13a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P13b",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.6,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.28,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P15",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.17,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P16",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.2,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.18,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P17",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.8,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P18",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.0,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.74,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P19",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P20",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 19.0,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.73,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P21a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.3,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.1,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P21b",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.3,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.1,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P22a",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.8,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P22b",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.0,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.26,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P23",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.2,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.71,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P24",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 19.0,
+    "flow_velocity_cm_s": 2.0,
+    "flame_spread_mm_s": 0.73,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-P25",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.9,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.3,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "BASS2-T1",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.5,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.99,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T2",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.5,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.83,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T4",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.7,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.84,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T5",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.8,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 2.01,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T6",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.8,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.21,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T9",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.4,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.81,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T10",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.4,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.1,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T11",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.1,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.13,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T12",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.8,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T13",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.5,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T14",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.9,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.12,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T15",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.7,
+    "flow_velocity_cm_s": 9.0,
+    "flame_spread_mm_s": 1.84,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T16",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.6,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T17",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 16.9,
+    "flow_velocity_cm_s": 6.0,
+    "flame_spread_mm_s": 1.27,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T18",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.4,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.15,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T19",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 11.0,
+    "flame_spread_mm_s": 2.02,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T20",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 11.0,
+    "flame_spread_mm_s": 2.02,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T21",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 11.0,
+    "flame_spread_mm_s": 2.02,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T22",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.1,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.87,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T23",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 17.2,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.87,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T24",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 18.2,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 1.96,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T25",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.8,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T26",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.8,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T27",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T28a",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T28b",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "BASS2-T29",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 20.7,
+    "flow_velocity_cm_s": 5.0,
+    "flame_spread_mm_s": 1.29,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "SAF2-2-1",
+    "material_name": "Silicone Rtv-560",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.5,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 1.2,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "Saffire-II (Cygnus Flight Burns)",
+    "psi_investigation_id": "PSI-99",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99",
+    "loi_threshold_pct": 29.0,
+    "critical_flow_window_cms": [
+      2.0,
+      12.0
+    ],
+    "historical_finding": "Saffire-II: Generates porous silica ash layer that insulates fuel and sustains flameless internal smolder under quiescent or low-flow conditions."
+  },
+  {
+    "test_id": "SAF2-2-2",
+    "material_name": "Silicone Rtv-560",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.1,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 1.2,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "Saffire-II (Cygnus Flight Burns)",
+    "psi_investigation_id": "PSI-99",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99",
+    "loi_threshold_pct": 29.0,
+    "critical_flow_window_cms": [
+      2.0,
+      12.0
+    ],
+    "historical_finding": "Saffire-II: Generates porous silica ash layer that insulates fuel and sustains flameless internal smolder under quiescent or low-flow conditions."
+  },
+  {
+    "test_id": "SAF2-2-3",
+    "material_name": "Silicone Rtv-560",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.1,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 1.2,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "Saffire-II (Cygnus Flight Burns)",
+    "psi_investigation_id": "PSI-99",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99",
+    "loi_threshold_pct": 29.0,
+    "critical_flow_window_cms": [
+      2.0,
+      12.0
+    ],
+    "historical_finding": "Saffire-II: Generates porous silica ash layer that insulates fuel and sustains flameless internal smolder under quiescent or low-flow conditions."
+  },
+  {
+    "test_id": "SAF2-2-4",
+    "material_name": "Silicone Rtv-560",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.1,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 1.2,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "Saffire-II (Cygnus Flight Burns)",
+    "psi_investigation_id": "PSI-99",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99",
+    "loi_threshold_pct": 29.0,
+    "critical_flow_window_cms": [
+      2.0,
+      12.0
+    ],
+    "historical_finding": "Saffire-II: Generates porous silica ash layer that insulates fuel and sustains flameless internal smolder under quiescent or low-flow conditions."
+  },
+  {
+    "test_id": "SAF2-2-5",
+    "material_name": "Sibal Fabric Blend",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.1,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 2.1,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "Saffire-II (Cygnus Flight Burns)",
+    "psi_investigation_id": "PSI-98",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 19.5,
+    "critical_flow_window_cms": [
+      2.0,
+      25.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning."
+  },
+  {
+    "test_id": "SAF2-2-7",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.1,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 1.2,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "Saffire-II (Cygnus Flight Burns)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "SAF2-2-8",
+    "material_name": "Pmma Cast Acrylic",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 22.1,
+    "flow_velocity_cm_s": 20.0,
+    "flame_spread_mm_s": 4.0,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "Saffire-II (Cygnus Flight Burns)",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 21.0,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests."
+  },
+  {
+    "test_id": "STD-KAP-01",
+    "material_name": "Kapton Hn",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 0.0,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "NASA-STD-6001B Benchmark",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 4",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 36.0,
+    "critical_flow_window_cms": [
+      0.0,
+      20.0
+    ],
+    "historical_finding": "Apollo 13 / BASS-II: Polyimide insulation self-extinguishes in nominal cabin air, but undergoes explosive arc-tracking flashover under enriched O2 (>30%)."
+  },
+  {
+    "test_id": "STD-KAP-02",
+    "material_name": "Kapton Hn",
+    "pressure_kpa": 70.3,
+    "oxygen_pct": 34.0,
+    "flow_velocity_cm_s": 15.0,
+    "flame_spread_mm_s": 0.85,
+    "test_outcome": "SUSTAINED",
+    "mission_source": "NASA-STD-6001B Benchmark",
+    "psi_investigation_id": "PSI-25",
+    "standard_ref": "NASA-STD-6001B Test 4",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 36.0,
+    "critical_flow_window_cms": [
+      0.0,
+      20.0
+    ],
+    "historical_finding": "Apollo 13 / BASS-II: Polyimide insulation self-extinguishes in nominal cabin air, but undergoes explosive arc-tracking flashover under enriched O2 (>30%)."
+  },
+  {
+    "test_id": "STD-PTFE-01",
+    "material_name": "Ptfe Teflon",
+    "pressure_kpa": 101.3,
+    "oxygen_pct": 21.0,
+    "flow_velocity_cm_s": 10.0,
+    "flame_spread_mm_s": 0.0,
+    "test_outcome": "EXTINGUISHED",
+    "mission_source": "NASA-STD-6001B Benchmark",
+    "psi_investigation_id": "PSI-26",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 95.0,
+    "critical_flow_window_cms": [
+      0.0,
+      0.0
+    ],
+    "historical_finding": "NASA-STD-6001B: Extremely low flammability envelope; poses zero flame propagation at operational cabin levels, but releases toxic fluorochemical pyrolyzates above 300\u00b0C."
+  }
+]
