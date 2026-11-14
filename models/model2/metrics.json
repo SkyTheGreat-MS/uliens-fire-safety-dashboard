@@ -1,0 +1,44 @@
+{
+  "validation_rows": 50,
+  "positive_label": "SUSTAINED",
+  "negative_label": "EXTINGUISHED",
+  "probability_threshold_for_metrics": 0.5,
+  "accuracy": 0.8,
+  "precision_sustained": 0.8461538461538461,
+  "recall_sustained": 0.8918918918918919,
+  "f1_sustained": 0.868421052631579,
+  "roc_auc": 0.7411642411642412,
+  "confusion_matrix_labels": [
+    "EXTINGUISHED",
+    "SUSTAINED"
+  ],
+  "confusion_matrix": [
+    [
+      7,
+      6
+    ],
+    [
+      4,
+      33
+    ]
+  ],
+  "split": {
+    "method": "stratified random holdout",
+    "test_size": 0.2,
+    "seed": 42
+  },
+  "training_rows": 198,
+  "class_counts": {
+    "EXTINGUISHED": 62,
+    "SUSTAINED": 186
+  },
+  "feature_columns": [
+    "oxygen_pct",
+    "pressure_kpa",
+    "flow_velocity_cm_s",
+    "loi_threshold_pct",
+    "material_name"
+  ],
+  "model": "degree-2 PolynomialFeatures + LogisticRegression(class_weight=balanced)",
+  "warning": "Small, source-correlated dataset; holdout metrics are exploratory, not operational validation."
+}
