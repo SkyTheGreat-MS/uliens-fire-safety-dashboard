@@ -87,7 +87,7 @@ Transitions communicate state only. Keep them under 120ms and linear or ease-out
 
 ## Vite and React implementation notes
 
-This project is a Vite-powered React web app. Build the interface with semantic HTML, React components, SVG, and CSS. Use native buttons and keyboard-operable controls; avoid HTML range sliders. Keep layouts responsive to browser width and use CSS variables for the shared tokens. Do not introduce blur, glass, gradients, or animation that conflicts with the instrument-first visual direction.
+This project is a Vite-powered React web app. Build the interface with semantic HTML, React components, Tailwind CSS utilities, and Recharts for the 2D airflow paradox curve. Use native buttons and keyboard-operable controls; avoid HTML range sliders. Keep layouts responsive to browser width and define shared tokens in the Tailwind `@theme` block. Use Lucide React for interface icons. Do not introduce blur, glass, gradients, or animation that conflicts with the instrument-first visual direction.
 
 ## Content and data integrity
 

@@ -1,64 +1,263 @@
 import { useEffect, useRef, useState } from 'react';
+import {
+  Area,
+  CartesianGrid,
+  ComposedChart,
+  Label,
+  Line,
+  ReferenceArea,
+  ReferenceDot,
+  ReferenceLine,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
+import type { MouseHandlerDataParam, TooltipContentProps } from 'recharts';
+import { CloudFog, Flame, Wind } from 'lucide-react';
+import { panel, sectionHead, sectionMeta, sectionTitle } from './ui';
 
-export function SimulationViews({ airflow, onAirflowChange }: { airflow: number; onAirflowChange: (value: number) => void }) {
+const MAX_FLOW = 45;
+
+const axisTick = { fill: '#9aa8b9', fontSize: 11, fontFamily: '"Geist Mono", monospace' };
+const axisLabel = { fill: '#9aa8b9', fontSize: 10, fontFamily: '"Geist Mono", monospace' };
+
+type CurvePoint = {
+  flow: number;
+  risk: number;
+  band: [number, number];
+};
+
+/**
+ * Anchors stay illustrative. The curve peaks at a moderate airflow, then falls
+ * again as ventilation starts removing heat and fuel faster than it feeds the flame.
+ */
+const curveAnchors = [
+  { flow: 0, risk: 46, band: [39, 53] },
+  { flow: 2, risk: 53, band: [45, 60] },
+  { flow: 4, risk: 60, band: [50, 68] },
+  { flow: 6, risk: 67, band: [55, 76] },
+  { flow: 8, risk: 73, band: [62, 82] },
+  { flow: 10, risk: 77, band: [68, 86] },
+  { flow: 12, risk: 78, band: [70, 87] },
+  { flow: 14, risk: 76, band: [68, 85] },
+  { flow: 16, risk: 72, band: [62, 82] },
+  { flow: 18, risk: 67, band: [56, 78] },
+  { flow: 20, risk: 61, band: [50, 72] },
+  { flow: 22, risk: 55, band: [44, 67] },
+  { flow: 25, risk: 47, band: [37, 58] },
+  { flow: 28, risk: 41, band: [32, 51] },
+  { flow: 30, risk: 37, band: [29, 45] },
+  { flow: 33, risk: 33, band: [25, 40] },
+  { flow: 35, risk: 31, band: [23, 39] },
+  { flow: 38, risk: 28, band: [20, 36] },
+  { flow: 40, risk: 26, band: [18, 34] },
+  { flow: 42, risk: 24, band: [16, 32] },
+  { flow: 45, risk: 20, band: [12, 29] },
+] as const;
+
+const round1 = (value: number) => Math.round(value * 10) / 10;
+
+/** Resample the anchors at 0.5 cm/s so pointer scrubbing follows the same step as the control. */
+const curveData: CurvePoint[] = Array.from({ length: MAX_FLOW * 2 + 1 }, (_, index) => {
+  const flow = index * 0.5;
+  const upperIndex = curveAnchors.findIndex(anchor => anchor.flow >= flow);
+  const upper = curveAnchors[upperIndex === -1 ? curveAnchors.length - 1 : upperIndex];
+  const lower = curveAnchors[Math.max(0, (upperIndex === -1 ? curveAnchors.length - 1 : upperIndex) - 1)];
+  const span = upper.flow - lower.flow;
+  const ratio = span === 0 ? 0 : (flow - lower.flow) / span;
+  const mix = (start: number, end: number) => start + (end - start) * ratio;
+  return {
+    flow,
+    risk: round1(mix(lower.risk, upper.risk)),
+    band: [round1(mix(lower.band[0], upper.band[0])), round1(mix(lower.band[1], upper.band[1]))],
+  };
+});
+
+const zones = [
+  {
+    id: 'stagnation',
+    label: 'Stagnation',
+    range: '0–6 cm/s',
+    flow: 4.5,
+    detail: 'Smoke and ignition products linger because the cabin volume is not being cleared.',
+    icon: CloudFog,
+    text: 'text-cyan',
+    active: 'border-[#14505a] bg-[#0a1418]',
+  },
+  {
+    id: 'paradox',
+    label: 'Paradox window',
+    range: '6–18 cm/s',
+    flow: 12,
+    detail: 'Added oxygen can accelerate flame spread before cooling and fuel removal take over.',
+    icon: Flame,
+    text: 'text-amber',
+    active: 'border-[#6d5011] bg-[#17140d]',
+  },
+  {
+    id: 'ventilation',
+    label: 'Ventilation-limited',
+    range: '18–45 cm/s',
+    flow: 24,
+    detail: 'Heat and fuel removal begin to outweigh the extra oxygen supplied by the airflow.',
+    icon: Wind,
+    text: 'text-green',
+    active: 'border-[#1f5637] bg-[#0a1710]',
+  },
+] as const;
+
+export function SimulationViews() {
   const [chartArmed, setChartArmed] = useState(false);
+  const [selectedZoneId, setSelectedZoneId] = useState<(typeof zones)[number]['id']>(zones[1].id);
+  const [curveAirflow, setCurveAirflow] = useState(12);
   const chartRef = useRef<HTMLDivElement>(null);
+  const draggingRef = useRef(false);
+
+  const operatingPoint = curveData[Math.max(0, Math.min(curveData.length - 1, Math.round(curveAirflow * 2)))];
+  const selectedZone = zones.find(zone => zone.id === selectedZoneId) ?? zones[1];
 
   useEffect(() => {
     const element = chartRef.current;
     if (!element || !chartArmed) return;
     const onWheel = (event: WheelEvent) => {
       event.preventDefault();
-      onAirflowChange(Math.max(0, Math.min(45, Math.round((airflow + (event.deltaY < 0 ? 0.5 : -0.5)) / 0.5) * 0.5)));
+      setCurveAirflow(current => Math.max(0, Math.min(MAX_FLOW, Math.round((current + (event.deltaY < 0 ? 0.5 : -0.5)) / 0.5) * 0.5)));
     };
     element.addEventListener('wheel', onWheel, { passive: false });
     return () => element.removeEventListener('wheel', onWheel);
-  }, [airflow, chartArmed, onAirflowChange]);
+  }, [chartArmed]);
 
-  const scrub = (clientX: number, element: HTMLDivElement) => {
-    const rect = element.getBoundingClientRect();
-    const x = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
-    onAirflowChange(Math.round((x * 45) / 0.5) * 0.5);
+  const setFromChart = (state: MouseHandlerDataParam) => {
+    const rawIndex = state.activeTooltipIndex ?? state.activeIndex;
+    const index = typeof rawIndex === 'number' ? rawIndex : Number(rawIndex);
+    if (!Number.isInteger(index)) return;
+    const point = curveData[index];
+    if (point) setCurveAirflow(point.flow);
   };
 
-  return <section className="simulation-grid">
-    <article className="panel simulation-panel curve-panel">
-      <div className="section-head"><h2>Airflow vs. visual risk</h2><span>Illustrative demo curve</span></div>
-      <p className="subnote">Static visual only · not a prediction</p>
-      <div className="viewport curve-viewport">
-        <RiskCurveSvg airflow={airflow} />
-        <div ref={chartRef} className={`chart-interaction ${chartArmed ? 'armed' : ''}`} role="slider" tabIndex={0} aria-label="Adjust demo airflow position on the illustrative risk curve" aria-valuemin={0} aria-valuemax={45} aria-valuenow={airflow} aria-valuetext={`${airflow.toFixed(1)} centimeters per second`}
-          onClick={event => { setChartArmed(true); scrub(event.clientX, event.currentTarget); }}
-          onPointerDown={event => { setChartArmed(true); event.currentTarget.setPointerCapture(event.pointerId); scrub(event.clientX, event.currentTarget); }}
-          onPointerMove={event => { if (event.buttons > 0) scrub(event.clientX, event.currentTarget); }}
-          onKeyDown={event => {
-            if (event.key === 'Escape') setChartArmed(false);
-            else if (event.key === 'Home') { event.preventDefault(); setChartArmed(true); onAirflowChange(0); }
-            else if (event.key === 'End') { event.preventDefault(); setChartArmed(true); onAirflowChange(45); }
-            else if (event.key === 'ArrowRight' || event.key === 'ArrowUp') { event.preventDefault(); setChartArmed(true); onAirflowChange(Math.min(45, airflow + 0.5)); }
-            else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') { event.preventDefault(); setChartArmed(true); onAirflowChange(Math.max(0, airflow - 0.5)); }
-          }}
-        />
-        {chartArmed && <span className="chart-armed">ARMED</span>}
-        <div className="overlay"><Readout label="Demo airflow" value={`${airflow.toFixed(1)} cm/s`} /><Readout label="Curve status" value="Illustrative" tone="amber" /></div>
+  const armChart = () => setChartArmed(true);
+
+  const onChartDown = (state: MouseHandlerDataParam) => {
+    draggingRef.current = true;
+    armChart();
+    setFromChart(state);
+  };
+
+  const onChartMove = (state: MouseHandlerDataParam) => {
+    if (draggingRef.current) setFromChart(state);
+  };
+
+  const releaseChart = () => {
+    draggingRef.current = false;
+  };
+
+  const selectZone = (id: (typeof zones)[number]['id']) => {
+    setSelectedZoneId(id);
+  };
+
+  return <section className="grid grid-cols-1 gap-2">
+    <article className={`${panel} min-w-0`}>
+      <div className={`${sectionHead} mb-2 items-start`}>
+        <div className="flex min-w-0 items-start gap-2">
+          <Flame size={15} className="mt-0.5 shrink-0 text-amber" aria-hidden="true" />
+          <div className="min-w-0">
+            <h2 className={sectionTitle}>The airflow paradox</h2>
+            <p className="m-0 mt-1 text-[11px] leading-snug text-secondary">Ventilation can feed a fire before it suppresses it.</p>
+          </div>
+        </div>
+        <span className={sectionMeta}>2D demo curve</span>
       </div>
-      <div className="chart-caption"><span>Lower airflow</span><span>Higher airflow</span></div>
+      <div ref={chartRef} className="relative h-[230px] touch-none overflow-hidden border border-line bg-[#090c12] outline-none compact:h-[210px]" role="slider" tabIndex={0} aria-label="Adjust demo airflow position on the illustrative airflow paradox curve" aria-valuemin={0} aria-valuemax={MAX_FLOW} aria-valuenow={curveAirflow} aria-valuetext={`${curveAirflow.toFixed(1)} centimeters per second; illustrative visual risk ${operatingPoint.risk} percent`}
+        onPointerDown={event => event.currentTarget.focus()}
+        onMouseDown={event => {
+          // Recharts' SVG layers use tabindex="-1"; stop the browser moving focus off the slider.
+          event.preventDefault();
+          event.currentTarget.focus();
+        }}
+        onKeyDown={event => {
+          if (event.key === 'Escape') setChartArmed(false);
+          else if (event.key === 'Home') { event.preventDefault(); armChart(); setCurveAirflow(0); }
+          else if (event.key === 'End') { event.preventDefault(); armChart(); setCurveAirflow(MAX_FLOW); }
+          else if (event.key === 'ArrowRight' || event.key === 'ArrowUp') { event.preventDefault(); armChart(); setCurveAirflow(current => Math.min(MAX_FLOW, current + 0.5)); }
+          else if (event.key === 'ArrowLeft' || event.key === 'ArrowDown') { event.preventDefault(); armChart(); setCurveAirflow(current => Math.max(0, current - 0.5)); }
+        }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <ComposedChart
+            data={curveData}
+            margin={{ top: 18, right: 20, bottom: 4, left: 24 }}
+            accessibilityLayer={false}
+            className="cursor-crosshair"
+            onMouseDown={onChartDown}
+            onMouseMove={onChartMove}
+            onMouseUp={releaseChart}
+            onMouseLeave={releaseChart}
+            onClick={state => { armChart(); setFromChart(state); }}
+            onTouchStart={onChartDown}
+            onTouchMove={onChartMove}
+            onTouchEnd={releaseChart}
+          >
+            <CartesianGrid stroke="#252e3a" strokeWidth={1} />
+            <XAxis dataKey="flow" type="number" domain={[0, MAX_FLOW]} ticks={[0, 10, 20, 30, 40, MAX_FLOW]} tick={axisTick} tickLine={false} axisLine={{ stroke: '#252e3a' }} tickFormatter={value => value === MAX_FLOW ? `${MAX_FLOW} cm/s` : String(value)} />
+            <YAxis type="number" domain={[0, 100]} ticks={[0, 25, 50, 75, 100]} width={38} tick={axisTick} tickLine={false} axisLine={{ stroke: '#252e3a' }} tickFormatter={value => `${value}%`}>
+              <Label value="Visual risk" angle={-90} position="left" offset={7} style={axisLabel} />
+            </YAxis>
+            <ReferenceArea x1={6} x2={18} fill="#ffb000" fillOpacity={0.05} stroke="none" />
+            <Area type="monotone" dataKey="band" stroke="none" fill="#ffb000" fillOpacity={0.12} isAnimationActive={false} />
+            <Line type="monotone" dataKey="risk" stroke="#ffb000" strokeWidth={2.5} dot={false} activeDot={{ r: 4, fill: '#ffb000', stroke: '#07090d', strokeWidth: 2 }} isAnimationActive={false} />
+            <ReferenceLine x={curveAirflow} stroke="#00e5ff" strokeDasharray="3 4" strokeOpacity={0.85} />
+            <ReferenceDot x={operatingPoint.flow} y={operatingPoint.risk} r={5} fill="#f0f4f8" stroke="#00e5ff" strokeWidth={2} />
+            <Tooltip content={props => <CurveTooltip {...props} />} cursor={{ stroke: '#2e3748', strokeDasharray: '3 4' }} wrapperStyle={{ zIndex: 5, outline: 'none' }} />
+          </ComposedChart>
+        </ResponsiveContainer>
+        {chartArmed && <span className="absolute right-2.5 top-2.5 z-[2] bg-red-fill px-1.5 py-0.5 font-mono text-[8px] text-red">ARMED</span>}
+        <div className="pointer-events-none absolute bottom-2.5 left-2.5 z-[2] flex gap-4 border border-[#222b37] bg-[#080b10] px-2 py-1.5">
+          <Readout label="Demo airflow" value={`${curveAirflow.toFixed(1)} cm/s`} />
+          <Readout label="Visual risk" value={`${operatingPoint.risk}%`} tone="amber" />
+          <Readout label="Curve status" value="Illustrative" />
+        </div>
+      </div>
+      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[8px] text-secondary">
+        <span className="flex items-center gap-1.5"><i className="h-0.5 w-4 bg-amber" />Visual risk</span>
+        <span className="flex items-center gap-1.5"><i className="h-2 w-4 border border-[#584317] bg-[#ffb0001f]" />Uncertainty</span>
+        <span className="flex items-center gap-1.5"><i className="h-3 w-px bg-cyan" />Operating point</span>
+        <span className="ml-auto">Click, drag, or use arrows to position the sample</span>
+      </div>
     </article>
+
+    <aside className={`${panel} flex min-w-0 flex-col`}>
+      <div className="grid gap-1">
+        {zones.map(zone => {
+          const Icon = zone.icon;
+          const selected = selectedZone.id === zone.id;
+          return <button key={zone.id} type="button" aria-pressed={selected} onClick={() => selectZone(zone.id)} className={`grid grid-cols-[20px_minmax(0,1fr)_auto] items-center gap-2 border px-2 py-1.5 text-left ${selected ? zone.active : 'border-line bg-[#0a0d13] hover:border-[#2e3748] hover:bg-raised'}`}>
+            <Icon size={15} className={selected ? zone.text : 'text-muted'} aria-hidden="true" />
+            <span className="min-w-0"><b className={`block text-[10px] font-semibold ${selected ? zone.text : 'text-ink'}`}>{zone.label}</b><small className="block font-mono text-[8px] text-secondary">{zone.range}</small></span>
+            <span className={`font-mono text-[8px] ${selected ? zone.text : 'text-muted'}`}>{selected ? 'ACTIVE' : 'SET'}</span>
+          </button>;
+        })}
+      </div>
+      <div className="mt-2 border-t border-line pt-2">
+        <div className="flex items-center justify-between gap-2 font-mono text-[9px]"><span className="text-secondary">Operating point</span><b className="text-cyan">{curveAirflow.toFixed(1)} cm/s</b></div>
+        <div className="mt-1 flex items-center justify-between gap-2 font-mono text-[9px]"><span className="text-secondary">Visual risk</span><b className="text-amber">{operatingPoint.risk}%</b></div>
+        <div className="mt-1.5 h-1.5 border border-line bg-raised"><div className="h-full bg-amber transition-[width] duration-100 ease-linear" style={{ width: `${operatingPoint.risk}%` }} /></div>
+        <p className="m-0 mt-2 text-[10px] leading-snug text-secondary">{selectedZone.detail}</p>
+      </div>
+      <p className="m-0 mt-auto pt-2 font-mono text-[8px] leading-normal text-muted">Illustrative shape only · not a fire-behavior prediction</p>
+    </aside>
   </section>;
 }
 
-function RiskCurveSvg({ airflow }: { airflow: number }) {
-  const x = 56 + (airflow / 50) * 620;
-  return <svg viewBox="0 0 700 220" className="scene-svg" preserveAspectRatio="none" aria-label="Illustrative airflow and risk curve">
-    <path className="chart-grid" d="M56 25H676M56 65H676M56 105H676M56 145H676M56 185H676M56 25V185M180 25V185M304 25V185M428 25V185M552 25V185M676 25V185" />
-    <path className="target-zone" d="M56 25H76V185H56Z" />
-    <path className="uncertainty" d="M56 100 C120 80 155 45 235 53 S350 107 432 117 S566 123 676 158 L676 178 C570 147 510 145 428 138 S324 130 235 77 S128 108 56 123Z" />
-    <path className="risk-line" d="M56 112 C121 94 162 55 235 64 S340 115 428 127 S567 132 676 166" />
-    <path className="solver-line" d={`M${x} 25V185`} /><circle className="operating-point" cx={x} cy="72" r="5" />
-    <text x="25" y="29">100%</text><text x="39" y="188">0</text><text x="51" y="205">0</text><text x="173" y="205">10</text><text x="297" y="205">20</text><text x="421" y="205">30</text><text x="545" y="205">40</text><text x="656" y="205">50 cm/s</text><text x="80" y="38">Low-flow zone</text><text x="8" y="112" transform="rotate(-90 8 112)">Visual risk</text>
-  </svg>;
+function CurveTooltip({ active, payload }: TooltipContentProps) {
+  const point = payload?.[0]?.payload as CurvePoint | undefined;
+  if (!active || !point) return null;
+  return <div className="border border-line bg-[#0a0d13] px-2 py-1.5 font-mono text-[9px]">
+    <div className="mb-1 text-[8px] uppercase tracking-[.08em] text-secondary">Airflow {point.flow.toFixed(1)} cm/s</div>
+    <div className="flex justify-between gap-4"><span className="text-secondary">Visual risk</span><b className="text-amber">{point.risk}%</b></div>
+    <div className="flex justify-between gap-4"><span className="text-secondary">Uncertainty</span><b className="text-ink">{point.band[0]}–{point.band[1]}%</b></div>
+  </div>;
 }
 
 function Readout({ label, value, tone }: { label: string; value: string; tone?: 'amber' }) {
-  return <div className="readout"><span>{label}</span><b className={tone === 'amber' ? 'amber-text' : ''}>{value}</b></div>;
+  return <div className="grid gap-px"><span className="font-mono text-[8px] text-secondary">{label}</span><b className={`font-mono text-[9px] font-semibold ${tone === 'amber' ? 'text-amber' : 'text-ink'}`}>{value}</b></div>;
 }
