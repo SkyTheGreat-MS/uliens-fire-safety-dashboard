@@ -76,16 +76,6 @@ const curveData: CurvePoint[] = Array.from({ length: MAX_FLOW * 2 + 1 }, (_, ind
 
 const zones = [
   {
-    id: 'stagnation',
-    label: 'Stagnation',
-    range: '0–6 cm/s',
-    flow: 4.5,
-    detail: 'Smoke and ignition products linger because the cabin volume is not being cleared.',
-    icon: CloudFog,
-    text: 'text-cyan',
-    active: 'border-[#14505a] bg-[#0a1418]',
-  },
-  {
     id: 'paradox',
     label: 'Paradox window',
     range: '6–18 cm/s',
@@ -109,7 +99,7 @@ const zones = [
 
 export function SimulationViews() {
   const [chartArmed, setChartArmed] = useState(false);
-  const [selectedZoneId, setSelectedZoneId] = useState<(typeof zones)[number]['id']>(zones[1].id);
+  const [selectedZoneId, setSelectedZoneId] = useState<(typeof zones)[number]['id']>(zones[0].id);
   const [curveAirflow, setCurveAirflow] = useState(12);
   const chartRef = useRef<HTMLDivElement>(null);
   const draggingRef = useRef(false);
@@ -227,23 +217,7 @@ export function SimulationViews() {
 
     <aside className={`${panel} flex min-w-0 flex-col`}>
       <div className="grid gap-1">
-        {zones.map(zone => {
-          const Icon = zone.icon;
-          const selected = selectedZone.id === zone.id;
-          return <button key={zone.id} type="button" aria-pressed={selected} onClick={() => selectZone(zone.id)} className={`grid grid-cols-[20px_minmax(0,1fr)_auto] items-center gap-2 border px-2 py-1.5 text-left ${selected ? zone.active : 'border-line bg-[#0a0d13] hover:border-[#2e3748] hover:bg-raised'}`}>
-            <Icon size={15} className={selected ? zone.text : 'text-muted'} aria-hidden="true" />
-            <span className="min-w-0"><b className={`block text-[10px] font-semibold ${selected ? zone.text : 'text-ink'}`}>{zone.label}</b><small className="block font-mono text-[8px] text-secondary">{zone.range}</small></span>
-            <span className={`font-mono text-[8px] ${selected ? zone.text : 'text-muted'}`}>{selected ? 'ACTIVE' : 'SET'}</span>
-          </button>;
-        })}
       </div>
-      <div className="mt-2 border-t border-line pt-2">
-        <div className="flex items-center justify-between gap-2 font-mono text-[9px]"><span className="text-secondary">Operating point</span><b className="text-cyan">{curveAirflow.toFixed(1)} cm/s</b></div>
-        <div className="mt-1 flex items-center justify-between gap-2 font-mono text-[9px]"><span className="text-secondary">Visual risk</span><b className="text-amber">{operatingPoint.risk}%</b></div>
-        <div className="mt-1.5 h-1.5 border border-line bg-raised"><div className="h-full bg-amber transition-[width] duration-100 ease-linear" style={{ width: `${operatingPoint.risk}%` }} /></div>
-        <p className="m-0 mt-2 text-[10px] leading-snug text-secondary">{selectedZone.detail}</p>
-      </div>
-      <p className="m-0 mt-auto pt-2 font-mono text-[8px] leading-normal text-muted">Illustrative shape only · not a fire-behavior prediction</p>
     </aside>
   </section>;
 }
