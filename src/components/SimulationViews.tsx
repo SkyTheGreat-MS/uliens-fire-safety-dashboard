@@ -14,7 +14,7 @@ import {
   YAxis,
 } from 'recharts';
 import type { MouseHandlerDataParam, TooltipContentProps } from 'recharts';
-import { CloudFog, Flame, Wind } from 'lucide-react';
+import { Flame } from 'lucide-react';
 import { panel, sectionHead, sectionMeta, sectionTitle } from './ui';
 
 const MAX_FLOW = 45;
@@ -74,38 +74,13 @@ const curveData: CurvePoint[] = Array.from({ length: MAX_FLOW * 2 + 1 }, (_, ind
   };
 });
 
-const zones = [
-  {
-    id: 'paradox',
-    label: 'Paradox window',
-    range: '6–18 cm/s',
-    flow: 12,
-    detail: 'Added oxygen can accelerate flame spread before cooling and fuel removal take over.',
-    icon: Flame,
-    text: 'text-amber',
-    active: 'border-[#6d5011] bg-[#17140d]',
-  },
-  {
-    id: 'ventilation',
-    label: 'Ventilation-limited',
-    range: '18–45 cm/s',
-    flow: 24,
-    detail: 'Heat and fuel removal begin to outweigh the extra oxygen supplied by the airflow.',
-    icon: Wind,
-    text: 'text-green',
-    active: 'border-[#1f5637] bg-[#0a1710]',
-  },
-] as const;
-
 export function SimulationViews() {
   const [chartArmed, setChartArmed] = useState(false);
-  const [selectedZoneId, setSelectedZoneId] = useState<(typeof zones)[number]['id']>(zones[0].id);
   const [curveAirflow, setCurveAirflow] = useState(12);
   const chartRef = useRef<HTMLDivElement>(null);
   const draggingRef = useRef(false);
 
   const operatingPoint = curveData[Math.max(0, Math.min(curveData.length - 1, Math.round(curveAirflow * 2)))];
-  const selectedZone = zones.find(zone => zone.id === selectedZoneId) ?? zones[1];
 
   useEffect(() => {
     const element = chartRef.current;
@@ -142,9 +117,6 @@ export function SimulationViews() {
     draggingRef.current = false;
   };
 
-  const selectZone = (id: (typeof zones)[number]['id']) => {
-    setSelectedZoneId(id);
-  };
 
   return <section className="grid grid-cols-1 gap-2">
     <article className={`${panel} min-w-0`}>
@@ -215,10 +187,6 @@ export function SimulationViews() {
       </div>
     </article>
 
-    <aside className={`${panel} flex min-w-0 flex-col`}>
-      <div className="grid gap-1">
-      </div>
-    </aside>
   </section>;
 }
 
