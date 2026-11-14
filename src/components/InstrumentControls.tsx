@@ -1,4 +1,4 @@
-import { useCallback, type KeyboardEvent } from 'react';
+import { useCallback, useId, type KeyboardEvent } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { gravityRegimes, type Readings } from '../data';
 import { useAvionicsControl } from '../hooks/useAvionicsControl';
@@ -10,6 +10,12 @@ type Props = { values: Readings; live: Readings; armedControl: ControlKey | null
 const armedShell = (armed: boolean) => armed ? 'border-red bg-[#100c12]' : 'border-line bg-[#0a0d13]';
 const armedChip = 'absolute right-[7px] top-2 bg-red-fill px-1 py-0.5 font-mono text-[8px] text-red';
 const gravityButton = 'flex size-8 items-center justify-center border border-line bg-raised text-cyan hover:border-cyan';
+
+// 270° clockwise sweep from 135° (bottom-left) to 405° (bottom-right), matching the radial ticks.
+const gaugeArc = (radius: number) => {
+  const offset = radius * Math.SQRT1_2;
+  return `M ${(70 - offset).toFixed(3)} ${(70 + offset).toFixed(3)} A ${radius} ${radius} 0 1 1 ${(70 + offset).toFixed(3)} ${(70 + offset).toFixed(3)}`;
+};
 
 export function InstrumentControls({ values, live, armedControl, onArm, onChange }: Props) {
   return <section className={`${panel}`}><div className={`${sectionHead} mb-[9px]`}><h2 className={sectionTitle}>Environmental controls</h2><span className={sectionMeta}>Local demo state</span></div><div className="grid grid-cols-2 items-stretch gap-[7px] compact:grid-cols-3 tight:grid-cols-[repeat(3,minmax(145px,1fr))_84px_minmax(190px,1.15fr)]">
@@ -27,7 +33,11 @@ function Dial({ label, unit, value, baseline, min, max, step, digits, armed, onA
   const adjust = useCallback((amount: number) => onChange(Math.max(min, Math.min(max, Math.round((value + amount) / step) * step))), [max, min, onChange, step, value]);
   const interactions = useAvionicsControl({ armed, step, onArm, onAdjust: adjust, onDisarm });
   const progress = (n: number) => Math.max(0, Math.min(1, (n - min) / (max - min)));
-  const tone = (n: number) => { const p = progress(n); return p <= 0.4 ? 'text-green' : p <= 0.75 ? 'text-amber' : 'text-red'; };
+  const valueProgress = progress(value);
+  const uid = useId().replace(/[^a-zA-Z0-9_-]/g, '');
+  const spectrumId = `gauge-spectrum-${uid}`;
+  const glowId = `gauge-glow-${uid}`;
+  const fillLength = valueProgress * 360;
   const format = (n: number) => n.toFixed(digits);
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'Home' || event.key === 'End') {
@@ -42,7 +52,25 @@ function Dial({ label, unit, value, baseline, min, max, step, digits, armed, onA
     <div ref={interactions.ref} className={`relative flex min-h-[190px] w-full cursor-pointer touch-none select-none flex-col items-center border p-2 ${armedShell(armed)}`} role="slider" aria-label={label} aria-valuemin={min} aria-valuemax={max} aria-valuenow={value} aria-valuetext={`${format(value)} ${unit}; sample ${format(baseline)} ${unit}`} tabIndex={0} onClick={onArm} onKeyDown={onKeyDown} onPointerDown={interactions.onPointerDown} onPointerMove={interactions.onPointerMove} onPointerUp={interactions.onPointerUp}>
       <div className="self-start text-[9px] font-semibold uppercase tracking-[.08em] text-secondary">{label}</div>{armed && <span className={armedChip}>ARMED</span>}
       <svg viewBox="0 0 140 140" className="mt-auto h-auto w-[min(100%,156px)] overflow-visible" aria-hidden="true">
-        <g>{Array.from({ length: 37 }, (_, index) => { const a = ((135 + index * 270 / 36) * Math.PI) / 180; const r1 = 58; const r2 = index % 3 === 0 ? 65 : 62; return <line key={index} className={`${armed ? 'stroke-secondary' : 'stroke-tick'} stroke-[0.8]`} x1={70 + Math.cos(a) * r1} y1={70 + Math.sin(a) * r1} x2={70 + Math.cos(a) * r2} y2={70 + Math.sin(a) * r2} />; })}</g><circle className="fill-none stroke-raised stroke-[5]" cx="70" cy="70" r="48" strokeDasharray="226 302" transform="rotate(135 70 70)" /><circle className={`fill-none stroke-current stroke-4 transition-[stroke-dasharray,color] duration-100 ease-linear ${tone(value)}`} cx="70" cy="70" r="48" strokeDasharray={`${progress(value) * 226} ${302 - progress(value) * 226}`} transform="rotate(135 70 70)" /><circle className="fill-none stroke-amber stroke-2 transition-[stroke-dasharray] duration-100 ease-linear" cx="70" cy="70" r="57" strokeDasharray={`${progress(value) * 358} ${358 - progress(value) * 358}`} transform="rotate(135 70 70)" /><text className="fill-ink font-mono text-[20px] font-semibold [dominant-baseline:central] [text-anchor:middle]" x="70" y="70">{format(value)}</text><text className="fill-secondary font-mono text-[8px] [dominant-baseline:central] [text-anchor:middle]" x="70" y="84">{unit}</text></svg>
+        <defs>
+          <linearGradient id={spectrumId} gradientUnits="userSpaceOnUse" x1="31" y1="70" x2="109" y2="70">
+            <stop offset="0%" stopColor="#2ee66b" />
+            <stop offset="50%" stopColor="#ffb000" />
+            <stop offset="100%" stopColor="#ff2a4b" />
+          </linearGradient>
+          <filter id={glowId} x="-25%" y="-25%" width="150%" height="150%">
+            <feGaussianBlur stdDeviation="1.2" />
+          </filter>
+        </defs>
+        <circle className="fill-none stroke-line stroke-[0.6] opacity-70" cx="70" cy="70" r="41" />
+        <circle className="fill-none stroke-line stroke-[0.6] opacity-60" cx="70" cy="70" r="33" />
+        <g>{Array.from({ length: 37 }, (_, index) => { const a = ((135 + index * 270 / 36) * Math.PI) / 180; const r1 = 51; const r2 = index % 3 === 0 ? 59 : 57; return <line key={index} className={`${armed ? 'stroke-secondary' : 'stroke-tick'} stroke-[0.8]`} x1={70 + Math.cos(a) * r1} y1={70 + Math.sin(a) * r1} x2={70 + Math.cos(a) * r2} y2={70 + Math.sin(a) * r2} />; })}</g>
+        <path className="fill-none stroke-raised stroke-[5]" d={gaugeArc(47)} />
+        <path className="fill-none stroke-green stroke-4" d={gaugeArc(47)} />
+        <path className="fill-none stroke-amber stroke-2" d={gaugeArc(62)} />
+        <path className="fill-none stroke-[10] opacity-30" stroke={`url(#${spectrumId})`} filter={`url(#${glowId})`} d={gaugeArc(55)} pathLength="360" strokeDasharray={`${fillLength} 360`} strokeLinecap="butt" />
+        <path className="fill-none stroke-[10]" stroke={`url(#${spectrumId})`} d={gaugeArc(55)} pathLength="360" strokeDasharray={`${fillLength} 360`} strokeLinecap="butt" />
+        <text className="fill-ink font-mono text-[20px] font-semibold [dominant-baseline:central] [text-anchor:middle]" x="70" y="70">{format(value)}</text><text className="fill-secondary font-mono text-[8px] [dominant-baseline:central] [text-anchor:middle]" x="70" y="84">{unit}</text></svg>
       <div className="mt-0 font-mono text-[8px] text-secondary">Sample <b className="font-normal text-cyan">{format(baseline)}</b><span className="mx-[5px] text-muted">/</span>Target <b className="font-normal text-amber">{format(value)}</b></div>
     </div>
   </div>;
