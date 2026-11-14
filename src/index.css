@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 @font-face {
   font-family: "Geist Sans";
   src: url("/fonts/geist/Geist-Variable.woff2") format("woff2");
@@ -14,39 +16,84 @@
   font-display: swap;
 }
 
-:root {
-  color-scheme: dark;
-  --void: #07090d;
-  --surface: #0d1017;
-  --surface-raised: #131822;
-  --line: #1e2430;
-  --tick: #2e3748;
-  --text: #f0f4f8;
-  --secondary: #8a99ad;
-  --muted: #526075;
-  --cyan: #00e5ff;
-  --amber: #ffb000;
-  --red: #ff2a4b;
-  --type-caption: 11px;
-  --type-body: 13px;
-  --type-section: 14px;
-  --type-title: 19px;
-  --radius-panel: 0px;
-  --mono: "Geist Mono", "SFMono-Regular", Consolas, monospace;
-  --sans: "Geist Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  font-family: var(--sans);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: var(--text);
-  background: var(--void);
-  font-variant-numeric: tabular-nums;
-  font-size: 14px;
+@theme {
+  --color-void: #07090d;
+  --color-surface: #0d1017;
+  --color-raised: #131822;
+  --color-line: #1e2430;
+  --color-tick: #2e3748;
+  --color-ink: #f0f4f8;
+  --color-secondary: #8a99ad;
+  --color-muted: #526075;
+  --color-cyan: #00e5ff;
+  --color-amber: #ffb000;
+  --color-red: #ff2a4b;
+  --color-green: #2ee66b;
+  --color-red-fill: #3b0a14;
+
+  --font-sans: "Geist Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono", "SFMono-Regular", Consolas, monospace;
+
+  --breakpoint-compact: 620px;
+  --breakpoint-tight: 880px;
+  --breakpoint-deck: 1240px;
 }
 
-* { box-sizing: border-box; }
-html, body, #root { min-width: 320px; min-height: 100%; margin: 0; }
-body { min-height: 100vh; background: var(--void); }
-button { font: inherit; color: inherit; }
-button:focus-visible,[tabindex="0"]:focus-visible { outline: 1px solid var(--cyan); outline-offset: 2px; }
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    min-width: 320px;
+    min-height: 100%;
+    margin: 0;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--color-void);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-variant-numeric: tabular-nums;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+
+  button:focus-visible,
+  [tabindex="0"]:focus-visible {
+    outline: 1px solid var(--color-cyan);
+    outline-offset: 2px;
+  }
+}
+
+@keyframes dial-spike-idle {
+  to {
+    scale: 1 0.94;
+  }
+}
+
+@keyframes drawer-enter {
+  from {
+    transform: translateX(8px);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

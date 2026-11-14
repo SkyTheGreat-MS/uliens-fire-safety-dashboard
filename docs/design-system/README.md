@@ -10,4 +10,4 @@ This folder is the design reference for the ECLSS Flight Deck interface. The int
 
 ## Scope
 
-The current application is a Vite-powered React web app. Implement the visual system with semantic HTML, accessible React controls, and CSS; use responsive browser layouts and keyboard/pointer interactions. Do not add range sliders or blur/glass effects. Sample readings and qualification copy remain illustrative unless backed by project data.
+The current application is a Vite-powered React web app. Implement the visual system with semantic HTML, accessible React controls, Tailwind CSS utilities, Lucide React icons, and Recharts for the 2D airflow paradox curve; use responsive browser layouts and keyboard/pointer interactions. Do not add range sliders or blur/glass effects. Sample readings and qualification copy remain illustrative unless backed by project data.

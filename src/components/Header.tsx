@@ -1,29 +1,64 @@
-import type { Sector } from '../data';
-import { sectors } from '../data';
+import { useState } from 'react';
+import { RagChatFloater } from './RagChatFloater';
 
-type Props = { activeSector: Sector; onSelectSector: (sector: Sector) => void };
+export function Header() {
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
-export function Header({ activeSector, onSelectSector }: Props) {
-  return <>
-    <header className="topbar">
-      <section className="panel brand-panel"><div className="brandline"><div className="mark">ECL</div><h1>ECLSS Flight Deck</h1></div><p>Environmental control · Interface study</p></section>
-      <section className="panel pipeline"><div className="between"><span className="eyebrow">Mission context</span><span className="live"><i className="dot" />DEMO</span></div><div className="mission-context"><strong>ISS / Artemis</strong><span>Environmental systems overview</span></div></section>
-      <section className="panel orbit"><div className="orbit-copy"><div className="eyebrow">Hull temperature</div><div className="mono">Sunlit <strong>+118 °C</strong></div><div className="muted">Sample boundary value</div></div><HabitatRing activeSector={activeSector} onSelectSector={onSelectSector} /><div className="orbit-copy right"><div className="eyebrow">Selected sector</div><div className="mono">{sectors[activeSector].short}</div><div className="muted">Pressurized volume</div></div></section>
+  return (
+    <header className="relative flex min-h-[72px] min-w-0 items-center justify-between gap-3 border border-line bg-surface p-2.5 sm:px-3 sm:py-2.5">
+      {/* Intro Text Section */}
+      <div className="flex items-center gap-2.5 sm:gap-3">
+        <div
+          className="grid size-8 place-items-center border border-cyan font-mono text-[11px] font-bold text-cyan"
+          aria-hidden="true"
+        >
+          ECL
+        </div>
+        <div>
+          <h1 className="m-0 font-mono text-[16px] font-bold leading-tight tracking-[.05em] text-ink sm:text-[19px]">
+            ECLSS Flight Deck
+          </h1>
+          <p className="m-0 font-mono text-[9.5px] tracking-[.06em] text-secondary sm:text-[10.5px]">
+            Environmental Control &amp; Life Support · Interface Study
+          </p>
+        </div>
+      </div>
+
+      {/* Chatbot Trigger Button & Floater */}
+      <div className="relative flex items-center">
+        <button
+          type="button"
+          onClick={() => setIsChatOpen((prev) => !prev)}
+          aria-expanded={isChatOpen}
+          aria-haspopup="dialog"
+          aria-label="Toggle RAG Reference Copilot"
+          className={`flex items-center gap-2 border px-2 py-1.5 transition-colors ${
+            isChatOpen
+              ? 'border-cyan bg-cyan/10 text-cyan'
+              : 'border-line bg-[#0a0d13] text-secondary hover:border-cyan hover:bg-[#10151f]'
+          }`}
+        >
+          <img
+            src="/Ethereal%20Teal%20Spirit%20Flame.png"
+            alt="Chatbot Icon"
+            className="size-6 object-contain sm:size-7"
+          />
+          <div className="hidden flex-col text-left sm:flex">
+            <span className="font-mono text-[10px] font-bold uppercase tracking-[.08em] text-ink">
+              RAG Copilot
+            </span>
+            <span className="font-mono text-[8.5px] text-cyan">
+              Flight References
+            </span>
+          </div>
+        </button>
+
+        {/* Anchored Popover Floater */}
+        <RagChatFloater
+          isOpen={isChatOpen}
+          onClose={() => setIsChatOpen(false)}
+        />
+      </div>
     </header>
-    <nav className="sector-strip" aria-label="Select habitat sector">{sectors.map(item => <button key={item.id} className={`sector-button ${activeSector === item.id ? 'active' : ''}`} onClick={() => onSelectSector(item.id)}><b>{String(item.id + 1).padStart(2, '0')} / {item.label}</b><span>{item.sub}</span></button>)}</nav>
-  </>;
+  );
 }
-
-function HabitatRing({ activeSector, onSelectSector }: Props) {
-  const arcs = [
-    'M 24 61 A 56 56 0 0 1 50 12',
-    'M 57 9 A 56 56 0 0 1 106 9',
-    'M 113 12 A 56 56 0 0 1 137 61',
-  ];
-  return <svg className="ring" viewBox="0 0 160 80" role="img" aria-label="Three sector habitat ring">
-    {arcs.map((path, index) => <path key={path} d={path} className={activeSector === index ? 'active' : ''} onClick={() => onSelectSector(index as Sector)} />)}
-    <circle className="vent" cx="80" cy="49" r="23" /><text x="80" y="52" textAnchor="middle">Vent loop</text>
-    <text className={activeSector === 0 ? 'active-label' : ''} x="31" y="37">01</text><text className={activeSector === 1 ? 'active-label' : ''} x="77" y="12">02</text><text className={activeSector === 2 ? 'active-label' : ''} x="121" y="37">03</text>
-  </svg>;
-}
-
