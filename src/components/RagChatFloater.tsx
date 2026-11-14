@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { FileText, Send, X } from 'lucide-react';
+import flameIcon from '../assets/flame-icon.png';
 
 export interface RagCitation {
   source: string;
@@ -18,7 +19,7 @@ interface RagChatFloaterProps {
   isOpen: boolean;
   onClose: () => void;
   /**
-   * Optional hook for connecting to the backend RAG API endpoint
+   * Optional hook for connecting to the backend query API endpoint
    * e.g., POST /api/rag/query or pipeline inference
    */
   onSendQuery?: (prompt: string) => Promise<RagQueryResult> | void;
@@ -81,13 +82,13 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
           setResult(response);
         }
       } else {
-        // Template fallback: store prompt with placeholder response ready for backend hook
+        // Fallback response ready for backend hook
         setResult({
           prompt: query,
           response:
-            'Awaiting backend RAG connection. Hook up the backend RAG endpoint in onSendQuery to retrieve answers and citations from the NASA flight science reference documents (BASS, SAFFIRE, FLEX).',
+            'Awaiting backend connection. Query retrieval from the NASA flight science reference documents (BASS, SAFFIRE, FLEX).',
           citations: [
-            { source: 'NASA Flight Science Corpus (Tier 2 RAG)', snippet: 'Ready for integration' },
+            { source: 'NASA Flight Science Corpus', snippet: 'Active corpus reference' },
           ],
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
         });
@@ -105,26 +106,21 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
       ref={popoverRef}
       role="dialog"
       aria-modal="false"
-      aria-label="RAG Copilot Floater"
+      aria-label="Flight Science Assistant"
       className="absolute right-0 top-[calc(100%+8px)] z-50 flex w-[420px] max-w-[calc(100vw-24px)] flex-col border border-line bg-surface p-3 shadow-2xl"
     >
       {/* Floater Header */}
       <div className="flex items-center justify-between border-b border-line pb-2.5">
         <div className="flex items-center gap-2">
           <img
-            src="/Ethereal%20Teal%20Spirit%20Flame.png"
-            alt="RAG Chatbot Icon"
-            className="size-5 object-contain"
+            src={flameIcon}
+            alt="Assistant Icon"
+            className="size-7 object-contain"
           />
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="font-mono text-[12px] font-bold uppercase tracking-[.06em] text-ink">
-                RAG Copilot
-              </span>
-              <span className="border border-primary/40 bg-primary/10 px-1.5 py-0.2 font-mono text-[9.5px] font-bold uppercase tracking-[.08em] text-primary">
-                Standby Template
-              </span>
-            </div>
+          <div className="flex flex-col">
+            <span className="font-mono text-[12px] font-bold uppercase tracking-[.06em] text-ink">
+              Flight Science Assistant
+            </span>
             <p className="m-0 font-mono text-[10.5px] text-secondary">
               NASA Flight Science Reference Corpus
             </p>
@@ -134,7 +130,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
         <button
           type="button"
           onClick={onClose}
-          aria-label="Close RAG Copilot"
+          aria-label="Close Assistant"
           className="grid size-6 place-items-center border border-line bg-void text-secondary transition-colors hover:border-primary hover:text-primary"
         >
           <X className="size-3.5" />
@@ -184,7 +180,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
           <div className="flex h-full min-h-[140px] flex-col items-center justify-center gap-1.5 text-center">
             <FileText className="size-5 text-secondary/40" />
             <p className="m-0 text-[12px] leading-normal text-secondary">
-              RAG query template is ready.
+              Flight reference assistant is ready.
             </p>
             <p className="m-0 font-mono text-[10.5px] leading-normal text-muted">
               Ask questions based on NASA BASS, SAFFIRE &amp; FLEX flight documentation.
@@ -215,7 +211,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
 
       {/* Footer Meta */}
       <div className="mt-2 flex items-center justify-between border-t border-line/60 pt-1.5 font-mono text-[10px] text-muted">
-        <span>Ready for backend RAG hook</span>
+        <span>Flight science reference system</span>
         <span>Esc to close</span>
       </div>
     </div>

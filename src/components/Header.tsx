@@ -1,56 +1,37 @@
 import { useState } from 'react';
 import { RagChatFloater } from './RagChatFloater';
+import flameIcon from '../assets/flame-icon.png';
 
 export function Header() {
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   return (
-    <header className="relative flex min-h-[72px] min-w-0 items-center justify-between gap-3 border border-line bg-surface p-2.5 sm:px-3 sm:py-2.5">
-      {/* Intro Text Section */}
-      <div className="flex items-center gap-2.5 sm:gap-3">
-        <div
-          className="grid size-8 place-items-center border border-primary bg-primary/10 font-mono text-[12px] font-bold text-primary"
-          aria-hidden="true"
-        >
-          ECL
-        </div>
-        <div>
-          <h1 className="m-0 font-heading text-[18px] font-bold leading-tight tracking-[.02em] text-ink sm:text-[22px]">
-            ECLSS Flight Deck
-          </h1>
-          <p className="m-0 font-sans text-[11.5px] tracking-[.03em] text-secondary sm:text-[12.5px]">
-            Environmental Control &amp; Life Support · Interface Study
-          </p>
-        </div>
+    <header className="relative flex min-h-[76px] min-w-0 items-center justify-between gap-3 border border-line bg-surface px-3 py-2 sm:px-4 sm:py-2.5">
+      {/* Title & Subtitle Section */}
+      <div className="flex flex-col justify-center">
+        <h1 className="m-0 font-heading text-[24px] font-bold leading-tight tracking-[.01em] text-ink sm:text-[28px]">
+          ECLSS Flight Deck
+        </h1>
+        <p className="m-0 mt-0.5 font-sans text-[12px] font-normal tracking-[.02em] text-secondary sm:text-[13px]">
+          Environmental Control &amp; Life Support · Interface Study
+        </p>
       </div>
 
-      {/* Chatbot Trigger Button & Floater */}
+      {/* Standalone Agent Chat Icon Entry & Floater */}
       <div className="relative flex items-center">
         <button
           type="button"
           onClick={() => setIsChatOpen((prev) => !prev)}
           aria-expanded={isChatOpen}
           aria-haspopup="dialog"
-          aria-label="Toggle RAG Reference Copilot"
-          className={`flex items-center gap-2 border px-2 py-1.5 transition-colors ${
-            isChatOpen
-              ? 'border-primary bg-primary/15 text-primary'
-              : 'border-line bg-void text-secondary hover:border-primary hover:bg-raised'
-          }`}
+          aria-label="Toggle Agent Chat"
+          className="group relative flex cursor-pointer items-center justify-center border-0 bg-transparent p-0 outline-none transition-transform hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
         >
           <img
-            src="/Ethereal%20Teal%20Spirit%20Flame.png"
-            alt="Chatbot Icon"
-            className="size-6 object-contain sm:size-7"
+            src={flameIcon}
+            alt="ECLSS Agent Chat"
+            className="h-14 w-auto object-contain transition-transform duration-150 select-none sm:h-16 drop-shadow-[0_0_14px_rgba(52,211,153,0.35)]"
           />
-          <div className="hidden flex-col text-left sm:flex">
-            <span className="font-mono text-[12px] font-bold uppercase tracking-[.08em] text-ink">
-              RAG Copilot
-            </span>
-            <span className="font-mono text-[10px] font-medium text-primary">
-              Flight References
-            </span>
-          </div>
         </button>
 
         {/* Anchored Popover Floater */}
