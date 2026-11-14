@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Geist Sans";
+  src: url("/fonts/geist/Geist-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/fonts/geist/GeistMono-Variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --void: #07090d;
+  --surface: #0d1017;
+  --surface-raised: #131822;
+  --line: #1e2430;
+  --tick: #2e3748;
+  --text: #f0f4f8;
+  --secondary: #8a99ad;
+  --muted: #526075;
+  --cyan: #00e5ff;
+  --amber: #ffb000;
+  --red: #ff2a4b;
+  --type-caption: 11px;
+  --type-body: 13px;
+  --type-section: 14px;
+  --type-title: 19px;
+  --radius-panel: 0px;
+  --mono: "Geist Mono", "SFMono-Regular", Consolas, monospace;
+  --sans: "Geist Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text);
+  background: var(--void);
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { min-width: 320px; min-height: 100%; margin: 0; }
+body { min-height: 100vh; background: var(--void); }
+button { font: inherit; color: inherit; }
+button:focus-visible,[tabindex="0"]:focus-visible { outline: 1px solid var(--cyan); outline-offset: 2px; }
