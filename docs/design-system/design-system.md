@@ -37,7 +37,10 @@ Use color with labels or symbols so state is not communicated by color alone. Ke
 
 ## Typography and numeric layout
 
-- Use a legible system sans for labels and explanatory copy. Prefer Inter or IBM Plex Sans when available, with platform sans fallback.
+Matches the typography stack used on the **NASA Space Apps Challenge** platform:
+
+- **Headings (h1 through h6)**: Use **Fira Sans** (ont-heading), set to bold (700) or black (900) weights with tight letter-spacing.
+- **Body copy & UI labels**: Use **Overpass** (ont-sans), set to regular (400) and medium (500) weights for high legibility across dense mission-control layouts.
 - Use a monospace face for telemetry, identifiers, and tabular data. Prefer JetBrains Mono or IBM Plex Mono when available, with platform monospace fallback.
 - Use tabular numerals for changing values to prevent width jitter.
 - Section labels are compact, uppercase, and letter-spaced; typical desktop size is 10–11px. Primary gauge values are about 24px; table values are about 12px. Scale these values appropriately on native display densities.

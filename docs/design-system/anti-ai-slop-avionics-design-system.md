@@ -45,7 +45,9 @@ Flat, high-contrast, matte hex values for low-ambient-light Mission Control room
 
 ## 3. Typography & Numerical Discipline
 
-- UI and structural labels: Inter, IBM Plex Sans, or system sans. Section headers: 11px, semibold, uppercase, 0.12em letter spacing, `#8A99AD`.
+- Headings (h1–h6): Fira Sans (font-heading), bold (700) or black (900) weights (NASA Space Apps Challenge stack).
+- Body copy and UI labels: Overpass (font-sans), regular (400) or medium (500) weights.
+- Section headers: 11px, bold, uppercase, 0.12em letter spacing, #8A99AD.
 - Telemetry and mathematical readouts: JetBrains Mono, IBM Plex Mono, or monospace fallback with tabular numerals.
 - Primary gauge value: 24px, semibold, `#F0F4F8`.
 - Delta/override value: 12px, medium, `#FFB000`.

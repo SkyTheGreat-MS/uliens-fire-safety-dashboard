@@ -15,10 +15,10 @@ export function Header() {
           ECL
         </div>
         <div>
-          <h1 className="m-0 font-mono text-[16px] font-bold leading-tight tracking-[.05em] text-ink sm:text-[19px]">
+          <h1 className="m-0 font-heading text-[16px] font-bold leading-tight tracking-[.05em] text-ink sm:text-[19px]">
             ECLSS Flight Deck
           </h1>
-          <p className="m-0 font-mono text-[9.5px] tracking-[.06em] text-secondary sm:text-[10.5px]">
+          <p className="m-0 font-sans text-[9.5px] tracking-[.06em] text-secondary sm:text-[10.5px]">
             Environmental Control &amp; Life Support · Interface Study
           </p>
         </div>
