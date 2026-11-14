@@ -40,7 +40,7 @@ function App() {
   }, []);
 
   return <main className="flight-deck">
-    <Header activeSector={activeSector} onSelectSector={selectSector} />
+    <Header />
     <section className="dashboard-grid">
       <StatusPanel activeSector={activeSector} activePreset={activePreset} onSelectSector={selectSector} onLoadPreset={loadPreset} />
       <div className="dashboard-main">

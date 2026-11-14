@@ -44,16 +44,6 @@ export function SimulationViews({ airflow, onAirflowChange }: { airflow: number;
       </div>
       <div className="chart-caption"><span>Lower airflow</span><span>Higher airflow</span></div>
     </article>
-    <article className="panel actions-panel">
-      <div className="section-head"><h2>Suggested review steps</h2><span>Example content</span></div>
-      <p className="actions-intro">Use the sample controls to explore this interface.</p>
-      <ol className="action-list">
-        <li><span>01</span><p>Compare the selected demo case with its readouts.</p></li>
-        <li><span>02</span><p>Move the airflow marker along the illustrative curve.</p></li>
-        <li><span>03</span><p>Select a material to highlight its entry in the ranking.</p></li>
-      </ol>
-      <div className="actions-note"><span className="note-mark">i</span><p>Demo interface only. No model output or safety recommendation is provided.</p></div>
-    </article>
   </section>;
 }
 
