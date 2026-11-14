@@ -21,7 +21,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DATA = ROOT / "data" / "processed" / "clean_combustion_data.csv"
+DEFAULT_DATA = ROOT / "data" / "processed" / "clean_combustion_data_v2.csv"
 ARTIFACT_DIR = ROOT / "models" / "model3"
 TARGET = "hazard_regime"
 REGIME_LABELS = ["NOMINAL", "ELEVATED", "CRITICAL"]

@@ -6,14 +6,12 @@
   },
   "material_median_sustained_spread_mm_s": {
     "Kapton Hn": 0.85,
-    "Nomex Ht90-40": 2.78,
-    "Paraffin Wax": 0.8,
-    "Pmma Cast Acrylic": 1.29,
-    "Sibal Fabric Blend": 1.9449999999999998,
-    "Silicone Rtv-560": 1.2,
-    "Ultem Polyetherimide": 2.77
+    "Nomex Ht90-40": 2.5,
+    "Paraffin Wax": 1.08,
+    "Pmma Cast Acrylic": 1.46,
+    "Sibal Fabric Blend": 2.44
   },
-  "global_median_sustained_spread_mm_s": 1.29,
+  "global_median_sustained_spread_mm_s": 1.58,
   "ui_badge_color_mapping": {
     "NOMINAL": "green",
     "ELEVATED": "amber",

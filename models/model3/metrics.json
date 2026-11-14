@@ -6,29 +6,29 @@
     "ELEVATED",
     "CRITICAL"
   ],
-  "validation_rows": 50,
-  "training_rows": 198,
-  "accuracy": 0.9,
-  "macro_f1": 0.5993265993265994,
-  "weighted_f1": 0.9006060606060606,
+  "validation_rows": 53,
+  "training_rows": 209,
+  "accuracy": 0.9245283018867925,
+  "macro_f1": 0.9377958079783637,
+  "weighted_f1": 0.9254468215392858,
   "per_class_metrics": {
     "NOMINAL": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1_score": 0.0,
-      "support": 0
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 7
     },
     "ELEVATED": {
-      "precision": 0.9615384615384616,
-      "recall": 0.8620689655172413,
-      "f1_score": 0.9090909090909091,
-      "support": 29
+      "precision": 0.9642857142857143,
+      "recall": 0.9,
+      "f1_score": 0.9310344827586207,
+      "support": 30
     },
     "CRITICAL": {
       "precision": 0.8333333333333334,
-      "recall": 0.9523809523809523,
-      "f1_score": 0.8888888888888888,
-      "support": 21
+      "recall": 0.9375,
+      "f1_score": 0.8823529411764706,
+      "support": 16
     }
   },
   "confusion_matrix_labels": [
@@ -38,25 +38,25 @@
   ],
   "confusion_matrix": [
     [
-      0,
+      7,
       0,
       0
     ],
     [
       0,
-      25,
-      4
+      27,
+      3
     ],
     [
       0,
       1,
-      20
+      15
     ]
   ],
   "class_counts_total": {
-    "NOMINAL": 2,
-    "ELEVATED": 141,
-    "CRITICAL": 105
+    "NOMINAL": 35,
+    "ELEVATED": 148,
+    "CRITICAL": 79
   },
   "feature_columns": [
     "oxygen_pct",
