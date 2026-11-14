@@ -17,19 +17,27 @@ export function Header() {
         </p>
       </div>
 
-      {/* Standalone Agent Chat Icon Entry & Floater */}
-      <div className="relative flex items-center">
+      {/* Standalone FLAMIE Agent Entry & Floater */}
+      <div className="relative flex items-center gap-2.5">
+        <div className="hidden sm:flex flex-col items-end text-right">
+          <div className="flex items-center gap-1.5 font-heading text-[12px] font-bold uppercase tracking-[.08em] text-ink">
+            <span className="size-1.5 rounded-full bg-success animate-pulse" />
+            <span>FLAMIE</span>
+          </div>
+          <span className="font-mono text-[10px] text-muted">8 NASA FLIGHT PDFs</span>
+        </div>
+
         <button
           type="button"
           onClick={() => setIsChatOpen((prev) => !prev)}
           aria-expanded={isChatOpen}
           aria-haspopup="dialog"
-          aria-label="Toggle Agent Chat"
+          aria-label="Toggle FLAMIE"
           className="group relative flex cursor-pointer items-center justify-center border-0 bg-transparent p-0 outline-none transition-transform hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/60"
         >
           <img
             src={flameIcon}
-            alt="ECLSS Agent Chat"
+            alt="FLAMIE"
             className="h-14 w-auto object-contain transition-transform duration-150 select-none sm:h-16 drop-shadow-[0_0_14px_rgba(52,211,153,0.35)]"
           />
         </button>
