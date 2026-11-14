@@ -125,7 +125,7 @@ export function SimulationViews() {
           <Flame size={15} className="mt-0.5 shrink-0 text-amber" aria-hidden="true" />
           <div className="min-w-0">
             <h2 className={sectionTitle}>The airflow paradox</h2>
-            <p className="m-0 mt-1 text-[11px] leading-snug text-secondary">Ventilation can feed a fire before it suppresses it.</p>
+            <p className="m-0 mt-1 text-[12px] leading-snug text-secondary">Ventilation can feed a fire before it suppresses it.</p>
           </div>
         </div>
         <span className={sectionMeta}>2D demo curve</span>
@@ -172,14 +172,14 @@ export function SimulationViews() {
             <Tooltip content={props => <CurveTooltip {...props} />} cursor={{ stroke: '#2e3748', strokeDasharray: '3 4' }} wrapperStyle={{ zIndex: 5, outline: 'none' }} />
           </ComposedChart>
         </ResponsiveContainer>
-        {chartArmed && <span className="absolute right-2.5 top-2.5 z-[2] bg-red-fill px-1.5 py-0.5 font-mono text-[8px] text-red">ARMED</span>}
+        {chartArmed && <span className="absolute right-2.5 top-2.5 z-[2] bg-red-fill px-1.5 py-0.5 font-mono text-[9.5px] font-bold text-red">ARMED</span>}
         <div className="pointer-events-none absolute top-2.5 left-2.5 z-[2] flex gap-4 border border-[#222b37] bg-[#080b10] px-2 py-1.5">
           <Readout label="Demo airflow" value={`${curveAirflow.toFixed(1)} cm/s`} />
           <Readout label="Visual risk" value={`${operatingPoint.risk}%`} tone="amber" />
           <Readout label="Curve status" value="Illustrative" />
         </div>
       </div>
-      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[8px] text-secondary">
+      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-[10.5px] text-secondary">
         <span className="flex items-center gap-1.5"><i className="h-0.5 w-4 bg-amber" />Visual risk</span>
         <span className="flex items-center gap-1.5"><i className="h-2 w-4 border border-[#584317] bg-[#ffb0001f]" />Uncertainty</span>
         <span className="flex items-center gap-1.5"><i className="h-3 w-px bg-cyan" />Operating point</span>
@@ -193,13 +193,13 @@ export function SimulationViews() {
 function CurveTooltip({ active, payload }: TooltipContentProps) {
   const point = payload?.[0]?.payload as CurvePoint | undefined;
   if (!active || !point) return null;
-  return <div className="border border-line bg-[#0a0d13] px-2 py-1.5 font-mono text-[9px]">
-    <div className="mb-1 text-[8px] uppercase tracking-[.08em] text-secondary">Airflow {point.flow.toFixed(1)} cm/s</div>
-    <div className="flex justify-between gap-4"><span className="text-secondary">Visual risk</span><b className="text-amber">{point.risk}%</b></div>
-    <div className="flex justify-between gap-4"><span className="text-secondary">Uncertainty</span><b className="text-ink">{point.band[0]}–{point.band[1]}%</b></div>
+  return <div className="border border-line bg-[#0a0d13] px-2.5 py-2 font-mono text-[11px]">
+    <div className="mb-1 text-[9.5px] uppercase tracking-[.08em] text-secondary">Airflow {point.flow.toFixed(1)} cm/s</div>
+    <div className="flex justify-between gap-4"><span className="text-secondary">Visual risk</span><b className="text-[12px] font-bold text-amber">{point.risk}%</b></div>
+    <div className="flex justify-between gap-4"><span className="text-secondary">Uncertainty</span><b className="text-[12px] font-bold text-ink">{point.band[0]}–{point.band[1]}%</b></div>
   </div>;
 }
 
 function Readout({ label, value, tone }: { label: string; value: string; tone?: 'amber' }) {
-  return <div className="grid gap-px"><span className="font-mono text-[8px] text-secondary">{label}</span><b className={`font-mono text-[9px] font-semibold ${tone === 'amber' ? 'text-amber' : 'text-ink'}`}>{value}</b></div>;
+  return <div className="grid gap-px"><span className="font-mono text-[10px] text-secondary">{label}</span><b className={`font-mono text-[13px] font-bold ${tone === 'amber' ? 'text-amber' : 'text-ink'}`}>{value}</b></div>;
 }

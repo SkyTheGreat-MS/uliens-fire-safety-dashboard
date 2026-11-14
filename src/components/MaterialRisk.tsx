@@ -23,19 +23,19 @@ export function MaterialRisk({
           <div className={`${sectionHead} mb-1`}>
             <h2 className={sectionTitle}>Material risk ranking</h2>
           </div>
-          <p className="mb-2.5 text-[11px] leading-snug text-secondary">
+          <p className="mb-2.5 text-[12px] leading-snug text-secondary">
             Illustrative values · not a flammability model
           </p>
         </div>
         <div className="grid min-w-[86px] justify-items-end gap-1">
-          <span className="text-[11px] text-secondary">Active volume</span>
-          <b className="font-mono text-[11px] text-cyan">{sectors[activeSector].short}</b>
+          <span className="text-[11.5px] text-secondary">Active volume</span>
+          <b className="font-mono text-[12px] font-bold text-cyan">{sectors[activeSector].short}</b>
         </div>
       </div>
 
       <div className="overflow-x-auto border-t border-line">
         <div
-          className={`hidden items-center gap-1.5 border-b border-line px-[7px] py-1.5 font-mono text-[8px] uppercase tracking-[.05em] text-muted compact:grid tight:gap-2 ${riskColumns}`}
+          className={`hidden items-center gap-1.5 border-b border-line px-[7px] py-1.5 font-mono text-[10.5px] font-semibold uppercase tracking-[.06em] text-muted compact:grid tight:gap-2 ${riskColumns}`}
         >
           <span>Rank</span>
           <span>Material / location</span>
@@ -55,14 +55,14 @@ export function MaterialRisk({
               } ${riskColumns}`}
               onClick={() => onSelectMaterial(index)}
             >
-              <span className="font-mono text-[10px] text-muted">
+              <span className="font-mono text-[11px] font-bold text-muted">
                 {String(index + 1).padStart(2, '0')}
               </span>
               <span className="grid min-w-0 gap-1">
-                <b className="whitespace-normal text-[10px] font-semibold text-ink compact:overflow-hidden compact:text-ellipsis compact:whitespace-nowrap">
+                <b className="whitespace-normal font-heading text-[13px] font-bold text-ink compact:overflow-hidden compact:text-ellipsis compact:whitespace-nowrap">
                   {item.name}
                 </b>
-                <small className="font-mono text-[8px] text-secondary">
+                <small className="font-mono text-[10.5px] text-secondary">
                   {item.location} · ULOI reference {item.uloi}
                 </small>
               </span>
@@ -80,11 +80,11 @@ export function MaterialRisk({
                   />
                 ))}
               </span>
-              <span className="hidden justify-self-end text-right font-mono text-[9px] text-ink compact:block">
+              <span className="hidden justify-self-end text-right font-mono text-[12px] font-bold text-ink compact:block">
                 {item.probability}
               </span>
               <span
-                className={`col-start-3 row-span-2 row-start-1 justify-self-end border px-1 py-0.5 font-mono text-[8px] compact:col-auto compact:row-auto ${
+                className={`col-start-3 row-span-2 row-start-1 justify-self-end border px-1.5 py-0.5 font-mono text-[9.5px] font-bold compact:col-auto compact:row-auto ${
                   index === 0 ? 'border-[#6d5011] text-amber' : 'border-[#14505a] text-cyan'
                 }`}
               >
@@ -146,13 +146,13 @@ function InspectionDrawer({
         {/* Header well */}
         <header className="flex items-start justify-between gap-3 border-b border-line pb-3">
           <div className="min-w-0">
-            <span className="font-mono text-[8px] font-semibold tracking-[.08em] text-muted">
+            <span className="font-mono text-[10px] font-bold tracking-[.08em] text-muted">
               SEC 04 // MATERIAL INSPECTION
             </span>
-            <h3 id="inspection-title" className="mb-1 mt-1 text-[15px] font-semibold leading-tight text-ink">
+            <h3 id="inspection-title" className="mb-1 mt-1 font-heading text-[18px] font-bold leading-tight text-ink">
               {material.name}
             </h3>
-            <span className="font-mono text-[8.5px] tracking-[.08em] text-muted">
+            <span className="font-mono text-[11px] tracking-[.06em] text-secondary">
               {material.location.toUpperCase()} · ULOI {material.uloi}
             </span>
           </div>
@@ -170,60 +170,60 @@ function InspectionDrawer({
         <div className="flex-1 overflow-y-auto pr-1">
           {/* Qualification audit matrix */}
           <section className="border-b border-line py-3" aria-label="Illustrative qualification matrix">
-            <h4 className="mb-2 flex items-center justify-between text-[9px] font-semibold uppercase tracking-[.1em] text-secondary">
+            <h4 className="mb-2 flex items-center justify-between font-heading text-[11.5px] font-bold uppercase tracking-[.08em] text-secondary">
               <span>QUALIFICATION MATRIX</span>
-              <span className="font-mono text-[8px] text-muted">DEMO ONLY</span>
+              <span className="font-mono text-[10px] text-muted">DEMO ONLY</span>
             </h4>
             <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-2 gap-y-1.5">
-              <span className="text-[10.5px] text-secondary">Microgravity sample case</span>
+              <span className="text-[12px] font-medium text-secondary">Microgravity sample case</span>
               <b
-                className={`border px-2 py-0.5 font-mono text-[9px] font-semibold ${
+                className={`border px-2 py-0.5 font-mono text-[11px] font-bold ${
                   elevated ? 'border-red bg-red-fill text-red' : 'border-cyan bg-cyan/10 text-cyan'
                 }`}
               >
                 {elevated ? 'FAIL' : 'PASS'}
               </b>
-              <small className="col-span-full font-mono text-[9px] text-secondary">
+              <small className="col-span-full font-mono text-[11px] text-secondary">
                 {elevated ? 'Elevated visual flammability state' : 'Nominal visual flammability state'}
               </small>
             </div>
-            <p className="mb-0 mt-2 text-[8px] leading-relaxed text-muted">
+            <p className="mb-0 mt-2 text-[10px] leading-relaxed text-muted">
               Illustrative UI state; this is not a test result or material qualification.
             </p>
           </section>
 
           {/* Operational flow sections */}
           <section className="border-b border-line py-3">
-            <h4 className="mb-1.5 text-[9px] font-semibold uppercase tracking-[.1em] text-secondary">
+            <h4 className="mb-1.5 font-heading text-[11.5px] font-bold uppercase tracking-[.08em] text-secondary">
               WHAT HAPPENED
             </h4>
-            <p className="m-0 text-[11px] leading-relaxed text-ink">
+            <p className="m-0 text-[12.5px] leading-relaxed text-ink">
               This local demo ranks the material at{' '}
               <span className="font-mono font-semibold text-amber">{material.probability}</span> visual probability.
             </p>
           </section>
 
           <section className="border-b border-line py-3">
-            <h4 className="mb-1.5 text-[9px] font-semibold uppercase tracking-[.1em] text-secondary">
+            <h4 className="mb-1.5 font-heading text-[11.5px] font-bold uppercase tracking-[.08em] text-secondary">
               THE CAUSE
             </h4>
-            <p className="m-0 text-[11px] leading-relaxed text-secondary">
+            <p className="m-0 text-[12.5px] leading-relaxed text-secondary">
               The displayed value is sample content and is not produced by a validated flammability model.
             </p>
           </section>
 
           <section className="border-b border-line py-3">
-            <h4 className="mb-1.5 text-[9px] font-semibold uppercase tracking-[.1em] text-secondary">
+            <h4 className="mb-1.5 font-heading text-[11.5px] font-bold uppercase tracking-[.08em] text-secondary">
               HOW TO FIX
             </h4>
-            <p className="m-0 text-[11px] leading-relaxed text-secondary">
+            <p className="m-0 text-[12.5px] leading-relaxed text-secondary">
               Use reviewed, material-specific qualification data from NASA test standards for any real mission assessment.
             </p>
           </section>
         </div>
 
         {/* Footer */}
-        <footer className="border-t border-line pt-2.5 font-mono text-[8px] tracking-[.08em] text-muted">
+        <footer className="border-t border-line pt-2.5 font-mono text-[10px] tracking-[.08em] text-muted">
           DEMO RECORD · NO OPERATIONAL GUIDANCE
         </footer>
       </aside>
