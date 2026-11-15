@@ -1,451 +1,199 @@
-/**
- * NASA PSI-26 Avionics ML Service & FastAPI Client
- * Connects directly to FastAPI backend `POST /api/avionics/evaluate` (or `/api/evaluate`).
- * Provides high-fidelity empirical fallback grounded in NASA PSI-26 / BASS-II dataset
- * when backend is offline or connecting.
- */
-
-import {
-  materials,
-  type AirflowSweepPoint,
-  type AvionicsEvaluationResponse,
-  type EvidenceAndActuation,
-  type Material,
-  type MaterialRiskItem,
-  type SectorTriageItem,
-  type SpreadRateMeter,
-} from '../data';
-
-export interface AvionicsEvaluationRequest {
+export type EvaluationRequest = {
   material: string;
   oxygen_pct: number;
   pressure_kpa: number;
   flow_velocity_cm_s: number;
-  gravity?: number; // 0 = 0.00g Microgravity, 1 = 1.00g Earth Baseline
-  cutoff_probability?: number;
-  spread_threshold_mm_s?: number;
-  sweep_points?: number;
+  cutoff_probability: number;
+  spread_threshold_mm_s: number;
+  sweep_points: number;
+};
+
+type VersionInfo = {
+  model_version: string;
+  dataset_version: string;
+};
+
+export type Provenance = {
+  material_name: string;
+  psi_investigation_id: string | null;
+  mission_source: string | null;
+  standard_ref: string | null;
+  source_doi_url: string | null;
+  loi_threshold_pct: number | null;
+  critical_flow_window_cms: [number, number] | null;
+  historical_finding: string | null;
+  total_nasa_test_records: number | null;
+};
+
+export type Catalog = VersionInfo & { materials: Provenance[] };
+
+export type Spread = {
+  flame_spread_mm_s: number;
+  uncertainty_2sigma_mm_s: number;
+  spread_lower_mm_s: number;
+  spread_upper_mm_s: number;
+  out_of_material_training_range: boolean;
+};
+
+export type SweepPoint = Spread & {
+  flow_velocity_cm_s: number;
+  probability_sustained: number;
+};
+
+const regimes = ['NOMINAL', 'ELEVATED', 'CRITICAL'] as const;
+const riskStatuses = ['HIGH', 'ELEVATED', 'LOW'] as const;
+const solverStatuses = [
+  'dual_constraint_quench_found',
+  'probability_cutoff_only_quench_found',
+  'no_supported_quench_point_found',
+  'conditions_outside_material_training_range',
+] as const;
+
+export type Triage = {
+  material_name: string;
+  hazard_regime: (typeof regimes)[number];
+  badge_color: string;
+  probability_sustained: number;
+  flame_spread_mm_s: number;
+  out_of_material_training_range: boolean;
+};
+
+export type RankingRow = Triage & Spread & {
+  probability_extinguished: number;
+  risk_status: (typeof riskStatuses)[number];
+  predicted_outcome: 'SUSTAINED' | 'EXTINGUISHED';
+};
+
+export type SolverResult = {
+  material_name: string;
+  status: (typeof solverStatuses)[number];
+  satisfies_dual_constraints: boolean;
+  out_of_material_training_range: boolean;
+  recommended_flow_velocity_cm_s: number | null;
+  probability_sustained: number | null;
+  flame_spread_mm_s: number | null;
+  uncertainty_2sigma_mm_s: number | null;
+  search_range_cm_s: [number, number];
+  warning: string;
+};
+
+export type Evidence = {
+  active_regime: Triage['hazard_regime'];
+  hazard_drivers: { feature: string; label: string; importance_pct: number }[];
+  reverse_solver_recommendation: SolverResult;
+  nasa_provenance: Provenance;
+};
+
+export type Evaluation = VersionInfo & {
+  inputs: EvaluationRequest;
+  spread_rate_meter: Spread;
+  sector_triage: Triage[];
+  material_risk_ranking: RankingRow[];
+  airflow_simulation: {
+    material_name: string;
+    critical_flow_window_cms: [number, number];
+    quench_target: SolverResult;
+    sweep_points: SweepPoint[];
+  };
+  evidence_and_actuation: Evidence;
+  warning: string;
+};
+
+const apiBaseUrl = (import.meta.env?.VITE_API_URL ?? '').replace(/\/+$/, '');
+const isObject = (value: unknown): value is Record<string, unknown> =>
+  typeof value === 'object' && value !== null && !Array.isArray(value);
+const isNumber = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value);
+const isText = (value: unknown) => typeof value === 'string';
+const isBoolean = (value: unknown) => typeof value === 'boolean';
+const nullableNumber = (value: unknown) => value === null || isNumber(value);
+const nullableText = (value: unknown) => value === null || isText(value);
+const numberPair = (value: unknown) => Array.isArray(value) && value.length === 2 && value.every(isNumber);
+const each = (value: unknown, check: (entry: unknown) => boolean) =>
+  Array.isArray(value) && value.every(check);
+const oneOf = (value: unknown, options: readonly string[]) =>
+  typeof value === 'string' && options.includes(value);
+
+const isVersioned = (value: Record<string, unknown>) =>
+  isText(value.model_version) && isText(value.dataset_version);
+const isProvenance = (value: unknown) => isObject(value) &&
+  isText(value.material_name) &&
+  [value.psi_investigation_id, value.mission_source, value.standard_ref,
+    value.source_doi_url, value.historical_finding].every(nullableText) &&
+  [value.loi_threshold_pct, value.total_nasa_test_records].every(nullableNumber) &&
+  (value.critical_flow_window_cms === null || numberPair(value.critical_flow_window_cms));
+
+const isSpread = (value: unknown) => isObject(value) &&
+  [value.flame_spread_mm_s, value.uncertainty_2sigma_mm_s,
+    value.spread_lower_mm_s, value.spread_upper_mm_s].every(isNumber) &&
+  isBoolean(value.out_of_material_training_range);
+
+const isTriage = (value: unknown) => isObject(value) &&
+  isText(value.material_name) && isText(value.badge_color) && oneOf(value.hazard_regime, regimes) &&
+  isNumber(value.flame_spread_mm_s) && isNumber(value.probability_sustained) &&
+  isBoolean(value.out_of_material_training_range);
+
+const isSolver = (value: unknown, material: string) => isObject(value) &&
+  value.material_name === material && oneOf(value.status, solverStatuses) &&
+  isBoolean(value.satisfies_dual_constraints) && isBoolean(value.out_of_material_training_range) &&
+  [value.recommended_flow_velocity_cm_s, value.probability_sustained,
+    value.flame_spread_mm_s, value.uncertainty_2sigma_mm_s].every(nullableNumber) &&
+  numberPair(value.search_range_cm_s) && isText(value.warning);
+
+function isEvaluation(value: unknown, request: EvaluationRequest): value is Evaluation {
+  if (!isObject(value) || !isVersioned(value) || !isText(value.warning)) return false;
+  const { inputs, airflow_simulation: sweep, evidence_and_actuation: evidence } = value;
+  return isObject(inputs) && Object.entries(request).every(([key, input]) => inputs[key] === input) &&
+    isSpread(value.spread_rate_meter) &&
+    each(value.sector_triage, isTriage) &&
+    each(value.material_risk_ranking, (row) => isObject(row) && isTriage(row) && isSpread(row) &&
+      isNumber(row.probability_extinguished) && oneOf(row.risk_status, riskStatuses) &&
+      oneOf(row.predicted_outcome, ['SUSTAINED', 'EXTINGUISHED'])) &&
+    isObject(sweep) && sweep.material_name === request.material &&
+    numberPair(sweep.critical_flow_window_cms) && isSolver(sweep.quench_target, request.material) &&
+    Array.isArray(sweep.sweep_points) && sweep.sweep_points.length === request.sweep_points &&
+    each(sweep.sweep_points, (point) => isObject(point) && isSpread(point) &&
+      isNumber(point.flow_velocity_cm_s) && isNumber(point.probability_sustained)) &&
+    isObject(evidence) && oneOf(evidence.active_regime, regimes) &&
+    isSolver(evidence.reverse_solver_recommendation, request.material) &&
+    isObject(evidence.nasa_provenance) && evidence.nasa_provenance.material_name === request.material &&
+    isProvenance(evidence.nasa_provenance) &&
+    each(evidence.hazard_drivers, (driver) => isObject(driver) && isText(driver.feature) &&
+      isText(driver.label) && isNumber(driver.importance_pct));
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || '';
-
-/**
- * Evaluates the avionics flame safety state.
- * Tries the live Python FastAPI endpoint first; falls back smoothly to empirical NASA models.
- */
-export async function evaluateAvionicsState(
-  req: AvionicsEvaluationRequest
-): Promise<AvionicsEvaluationResponse> {
-  const isEarth = req.gravity === 1;
-
-  // If in Earth Baseline mode, evaluate strictly via NASA-STD-6001B pass/fail
-  if (isEarth) {
-    return evaluateEarthBaseline(req);
-  }
-
-  // Attempt live call to FastAPI backend
+async function requestJson(path: string, signal: AbortSignal, body?: EvaluationRequest): Promise<unknown> {
+  const controller = new AbortController();
+  const abort = () => controller.abort();
+  if (signal.aborted) abort();
+  signal.addEventListener('abort', abort, { once: true });
+  const timeout = globalThis.setTimeout(abort, 8000);
   try {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 2000);
-
-    const res = await fetch(`${API_BASE_URL}/api/avionics/evaluate`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        material: req.material,
-        oxygen_pct: req.oxygen_pct,
-        pressure_kpa: req.pressure_kpa,
-        flow_velocity_cm_s: req.flow_velocity_cm_s,
-        cutoff_probability: req.cutoff_probability ?? 0.05,
-        spread_threshold_mm_s: req.spread_threshold_mm_s ?? 0.5,
-        sweep_points: req.sweep_points ?? 50,
-      }),
+    const response = await fetch(apiBaseUrl + path, {
       signal: controller.signal,
+      ...(body && {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      }),
     });
-
-    clearTimeout(timeout);
-
-    if (res.ok) {
-      const data: AvionicsEvaluationResponse = await res.json();
-      return data;
-    }
-  } catch {
-    // Backend offline or unreachable - use high-fidelity empirical NASA ML fallback
+    if (!response.ok) throw new Error(`API request failed (HTTP ${response.status})`);
+    return await response.json();
+  } finally {
+    globalThis.clearTimeout(timeout);
+    signal.removeEventListener('abort', abort);
   }
-
-  return evaluateEmpiricalFallback(req);
 }
 
-/**
- * 1.00g Earth Baseline evaluation:
- * Evaluates materials strictly against NASA-STD-6001B ground qualification loi_threshold_pct rule.
- */
-function evaluateEarthBaseline(req: AvionicsEvaluationRequest): AvionicsEvaluationResponse {
-  const activeMat =
-    materials.find(
-      (m) =>
-        m.material_name.toLowerCase() === req.material.toLowerCase() ||
-        m.name.toLowerCase() === req.material.toLowerCase()
-    ) || materials[0];
-
-  const pass1g = req.oxygen_pct <= activeMat.loi_threshold_pct;
-
-  const spreadMeter: SpreadRateMeter = {
-    flame_spread_mm_s: pass1g ? 0.0 : 0.85,
-    uncertainty_2sigma_mm_s: 0.15,
-    spread_lower_mm_s: pass1g ? 0.0 : 0.7,
-    spread_upper_mm_s: pass1g ? 0.0 : 1.0,
-    out_of_material_training_range: false,
-  };
-
-  const riskRanking: MaterialRiskItem[] = materials.map((m) => {
-    const passes = req.oxygen_pct <= m.loi_threshold_pct;
-    return {
-      material_name: m.material_name,
-      displayName: m.displayName,
-      location: m.location,
-      probability_sustained: passes ? 0.0 : 0.85,
-      probability_extinguished: passes ? 1.0 : 0.15,
-      risk_status: passes ? 'LOW' : 'HIGH',
-      predicted_outcome: passes ? 'EXTINGUISHED' : 'SUSTAINED',
-      flame_spread_mm_s: passes ? 0.0 : 0.9,
-      uncertainty_2sigma_mm_s: 0.15,
-      spread_lower_mm_s: passes ? 0.0 : 0.75,
-      spread_upper_mm_s: passes ? 0.0 : 1.05,
-      hazard_regime: passes ? 'NOMINAL' : 'CRITICAL',
-      badge_color: passes ? 'green' : 'red',
-      loi_threshold_pct: m.loi_threshold_pct,
-      critical_flow_window_cms: m.critical_flow_window_cms,
-      psi_investigation_id: m.psi_investigation_id,
-      mission_source: 'NASA-STD-6001B (1g Earth Baseline)',
-      standard_ref: m.standard_ref,
-      source_doi_url: m.source_doi_url,
-      historical_finding: m.historical_finding,
-      out_of_material_training_range: false,
-    };
-  });
-
-  const sectorTriage: SectorTriageItem[] = [
-    {
-      material_name: 'Sibal Fabric Blend',
-      hazard_regime: req.oxygen_pct <= 18.5 ? 'NOMINAL' : 'CRITICAL',
-      badge_color: req.oxygen_pct <= 18.5 ? 'green' : 'red',
-      probability_sustained: req.oxygen_pct <= 18.5 ? 0.0 : 0.95,
-      flame_spread_mm_s: req.oxygen_pct <= 18.5 ? 0.0 : 1.2,
-      psi_investigation_id: 'PSI-98',
-      mission_source: 'NASA-STD-6001B 1g Baseline',
-    },
-    {
-      material_name: 'Silicone Rtv-560',
-      hazard_regime: req.oxygen_pct <= 30.0 ? 'NOMINAL' : 'CRITICAL',
-      badge_color: req.oxygen_pct <= 30.0 ? 'green' : 'red',
-      probability_sustained: req.oxygen_pct <= 30.0 ? 0.0 : 0.7,
-      flame_spread_mm_s: req.oxygen_pct <= 30.0 ? 0.0 : 0.6,
-      psi_investigation_id: 'PSI-99',
-      mission_source: 'NASA-STD-6001B 1g Baseline',
-    },
-    {
-      material_name: 'Pmma Cast Acrylic',
-      hazard_regime: req.oxygen_pct <= 17.0 ? 'NOMINAL' : 'CRITICAL',
-      badge_color: req.oxygen_pct <= 17.0 ? 'green' : 'red',
-      probability_sustained: req.oxygen_pct <= 17.0 ? 0.0 : 0.9,
-      flame_spread_mm_s: req.oxygen_pct <= 17.0 ? 0.0 : 1.1,
-      psi_investigation_id: 'PSI-26',
-      mission_source: 'NASA-STD-6001B 1g Baseline',
-    },
-  ];
-
-  const sweepPoints: AirflowSweepPoint[] = Array.from({ length: 50 }, (_, i) => {
-    const flow = (i / 49) * 50;
-    return {
-      flow_velocity_cm_s: Math.round(flow * 10) / 10,
-      flame_spread_mm_s: pass1g ? 0.0 : 0.8,
-      uncertainty_2sigma_mm_s: 0.1,
-      spread_lower_mm_s: pass1g ? 0.0 : 0.7,
-      spread_upper_mm_s: pass1g ? 0.0 : 0.9,
-      probability_sustained: pass1g ? 0.0 : 0.85,
-      probability_extinguished: pass1g ? 1.0 : 0.15,
-      risk_status: pass1g ? 'LOW' : 'HIGH',
-    };
-  });
-
-  const evidence: EvidenceAndActuation = {
-    active_regime: pass1g ? 'NOMINAL' : 'CRITICAL',
-    badge_color: pass1g ? 'green' : 'red',
-    regime_probabilities: pass1g
-      ? { NOMINAL: 0.98, ELEVATED: 0.02, CRITICAL: 0.0 }
-      : { NOMINAL: 0.02, ELEVATED: 0.15, CRITICAL: 0.83 },
-    hazard_drivers: [
-      { feature: 'o2_vs_loi', label: 'O2 Margin vs. LOI Threshold', importance_pct: 68.4 },
-      { feature: 'buoyant_cooling', label: '1g Buoyant Chimney Effect', importance_pct: 22.1 },
-      { feature: 'cabin_pressure', label: 'Cabin Pressure', importance_pct: 9.5 },
-    ],
-    reverse_solver_recommendation: {
-      recommended_flow_velocity_cm_s: pass1g ? null : 0.0,
-      probability_sustained_at_target: 0.0,
-      status: pass1g ? '1g_ground_pass_confirmed' : 'scrub_oxygen_below_loi',
-    },
-    airflow_delta_cm_s: null,
-    fan_actuation_command: pass1g ? 'PASS_1G_STANDARDS' : 'FAIL_GROUND_TEST_1',
-    nasa_provenance: {
-      material_name: activeMat.displayName,
-      psi_investigation_id: activeMat.psi_investigation_id,
-      mission_source: 'NASA-STD-6001B Benchmark',
-      standard_ref: activeMat.standard_ref,
-      source_doi_url: activeMat.source_doi_url,
-      loi_threshold_pct: activeMat.loi_threshold_pct,
-      critical_flow_window_cms: activeMat.critical_flow_window_cms,
-      historical_finding: activeMat.historical_finding,
-      total_nasa_test_records: activeMat.total_nasa_test_records,
-    },
-  };
-
-  return {
-    inputs: {
-      material: activeMat.material_name,
-      oxygen_pct: req.oxygen_pct,
-      pressure_kpa: req.pressure_kpa,
-      flow_velocity_cm_s: req.flow_velocity_cm_s,
-      cutoff_probability: req.cutoff_probability ?? 0.05,
-      spread_threshold_mm_s: req.spread_threshold_mm_s ?? 0.5,
-    },
-    spread_rate_meter: spreadMeter,
-    sector_triage: sectorTriage,
-    material_risk_ranking: riskRanking,
-    airflow_simulation: {
-      material: activeMat.material_name,
-      critical_flow_window_cms: activeMat.critical_flow_window_cms,
-      quench_target: null,
-      sweep_points: sweepPoints,
-    },
-    evidence_and_actuation: evidence,
-  };
+export async function fetchCatalog(signal: AbortSignal): Promise<Catalog> {
+  const data = await requestJson('/api/avionics/materials', signal);
+  const valid = (value: unknown): value is Catalog =>
+    isObject(value) && isVersioned(value) && each(value.materials, isProvenance);
+  if (!valid(data) || data.materials.length === 0) throw new Error('Material catalog is unavailable');
+  return data;
 }
 
-/**
- * 0.00g Microgravity empirical evaluation:
- * Reproduces the mathematical outputs of Model 1 (GP), Model 2 (Poly Logistic),
- * and Model 3 (Random Forest) fitted to Dataset V2.
- */
-function evaluateEmpiricalFallback(req: AvionicsEvaluationRequest): AvionicsEvaluationResponse {
-  const activeMat =
-    materials.find(
-      (m) =>
-        m.material_name.toLowerCase() === req.material.toLowerCase() ||
-        m.name.toLowerCase() === req.material.toLowerCase()
-    ) || materials[0];
-
-  // Model 1: Gaussian Process Continuous Spread Rate (mm/s)
-  const calcSpread = (mat: Material, o2: number, flow: number, press: number) => {
-    const loi = mat.loi_threshold_pct;
-    const o2Excess = o2 - loi;
-    const [flowMin, flowMax] = mat.critical_flow_window_cms;
-
-    if (o2Excess <= -4) return { spread: 0.0, sigma: 0.15 };
-
-    // Airflow paradox bell curve
-    let flowFactor = 0.2;
-    if (flow >= flowMin && flow <= flowMax) {
-      const mid = (flowMin + flowMax) / 2;
-      const span = (flowMax - flowMin) / 2;
-      const bell = Math.exp(-Math.pow((flow - mid) / (span + 2), 2));
-      flowFactor = 0.4 + bell * 0.6;
-    } else if (flow > flowMax) {
-      // Convective blowout
-      flowFactor = Math.max(0.05, 0.4 - (flow - flowMax) * 0.02);
-    } else {
-      // Diffusion starvation
-      flowFactor = Math.max(0.02, flow / Math.max(1, flowMin) * 0.4);
-    }
-
-    const pressFactor = Math.sqrt(Math.max(50, press) / 101.3);
-    const baseRate = mat.loi_threshold_pct < 20 ? 1.8 : mat.loi_threshold_pct < 30 ? 0.9 : 0.3;
-    const o2Factor = 1.0 + o2Excess * 0.08;
-
-    const rate = Math.max(0, baseRate * flowFactor * pressFactor * o2Factor);
-    const sigma = 0.25 + rate * 0.22;
-    return {
-      spread: Math.round(rate * 1000) / 1000,
-      sigma: Math.round(sigma * 1000) / 1000,
-    };
-  };
-
-  // Model 2: Polynomial Logistic Regression P(SUSTAINED)
-  const calcProbability = (mat: Material, o2: number, flow: number, press: number) => {
-    const o2Delta = o2 - mat.loi_threshold_pct;
-    const [flowMin, flowMax] = mat.critical_flow_window_cms;
-    const inWindow = flow >= flowMin && flow <= flowMax;
-    const flowBoost = inWindow ? 1.2 : flow < flowMin ? -2.0 : -0.8;
-    const pressEffect = (press - 101.3) * 0.02;
-
-    const z = -0.5 + o2Delta * 0.45 + flowBoost + pressEffect;
-    const prob = 1 / (1 + Math.exp(-z));
-    return Math.max(0.001, Math.min(0.999, Math.round(prob * 10000) / 10000));
-  };
-
-  // Active Material evaluation
-  const activeSpread = calcSpread(activeMat, req.oxygen_pct, req.flow_velocity_cm_s, req.pressure_kpa);
-  const activeProb = calcProbability(activeMat, req.oxygen_pct, req.flow_velocity_cm_s, req.pressure_kpa);
-
-  const spreadMeter: SpreadRateMeter = {
-    flame_spread_mm_s: activeSpread.spread,
-    uncertainty_2sigma_mm_s: activeSpread.sigma,
-    spread_lower_mm_s: Math.max(0, activeSpread.spread - activeSpread.sigma),
-    spread_upper_mm_s: activeSpread.spread + activeSpread.sigma,
-    out_of_material_training_range: req.oxygen_pct > 34 || req.flow_velocity_cm_s > 30,
-  };
-
-  // Model 2 Material Risk Ranking table for all 8 materials
-  const ranking: MaterialRiskItem[] = materials.map((m) => {
-    const prob = calcProbability(m, req.oxygen_pct, req.flow_velocity_cm_s, req.pressure_kpa);
-    const spread = calcSpread(m, req.oxygen_pct, req.flow_velocity_cm_s, req.pressure_kpa);
-    const isCritical = prob >= 0.6 || spread.spread > 1.2;
-    const isElevated = prob >= 0.1 || spread.spread > 0.4;
-    const status = isCritical ? 'HIGH' : isElevated ? 'ELEVATED' : 'LOW';
-    const regime = isCritical ? 'CRITICAL' : isElevated ? 'ELEVATED' : 'NOMINAL';
-    const badgeColor = isCritical ? 'red' : isElevated ? 'amber' : 'green';
-
-    return {
-      material_name: m.material_name,
-      displayName: m.displayName,
-      location: m.location,
-      probability_sustained: prob,
-      probability_extinguished: Math.round((1 - prob) * 10000) / 10000,
-      risk_status: status,
-      predicted_outcome: prob >= 0.05 ? 'SUSTAINED' : 'EXTINGUISHED',
-      flame_spread_mm_s: spread.spread,
-      uncertainty_2sigma_mm_s: spread.sigma,
-      spread_lower_mm_s: Math.max(0, spread.spread - spread.sigma),
-      spread_upper_mm_s: spread.spread + spread.sigma,
-      hazard_regime: regime,
-      badge_color: badgeColor,
-      loi_threshold_pct: m.loi_threshold_pct,
-      critical_flow_window_cms: m.critical_flow_window_cms,
-      psi_investigation_id: m.psi_investigation_id,
-      mission_source: m.mission_source,
-      standard_ref: m.standard_ref,
-      source_doi_url: m.source_doi_url,
-      historical_finding: m.historical_finding,
-      out_of_material_training_range: false,
-    };
-  });
-
-  // Sort by probability sustained descending
-  ranking.sort((a, b) => b.probability_sustained - a.probability_sustained);
-
-  // Sector triage for left sidebar
-  const sectorTriage: SectorTriageItem[] = [
-    {
-      material_name: 'Sibal Fabric Blend',
-      hazard_regime: ranking.find((r) => r.material_name === 'Sibal Fabric Blend')?.hazard_regime || 'ELEVATED',
-      badge_color: ranking.find((r) => r.material_name === 'Sibal Fabric Blend')?.badge_color || 'amber',
-      probability_sustained: ranking.find((r) => r.material_name === 'Sibal Fabric Blend')?.probability_sustained || 0.9,
-      flame_spread_mm_s: ranking.find((r) => r.material_name === 'Sibal Fabric Blend')?.flame_spread_mm_s || 2.1,
-      psi_investigation_id: 'PSI-98',
-      mission_source: 'BASS-II (ISS Glovebox Flight)',
-    },
-    {
-      material_name: 'Silicone Rtv-560',
-      hazard_regime: ranking.find((r) => r.material_name === 'Silicone Rtv-560')?.hazard_regime || 'NOMINAL',
-      badge_color: ranking.find((r) => r.material_name === 'Silicone Rtv-560')?.badge_color || 'green',
-      probability_sustained: ranking.find((r) => r.material_name === 'Silicone Rtv-560')?.probability_sustained || 0.01,
-      flame_spread_mm_s: ranking.find((r) => r.material_name === 'Silicone Rtv-560')?.flame_spread_mm_s || 0.08,
-      psi_investigation_id: 'PSI-99',
-      mission_source: 'Saffire-II (Cygnus Flight Burns)',
-    },
-    {
-      material_name: 'Pmma Cast Acrylic',
-      hazard_regime: ranking.find((r) => r.material_name === 'Pmma Cast Acrylic')?.hazard_regime || 'CRITICAL',
-      badge_color: ranking.find((r) => r.material_name === 'Pmma Cast Acrylic')?.badge_color || 'red',
-      probability_sustained: ranking.find((r) => r.material_name === 'Pmma Cast Acrylic')?.probability_sustained || 0.78,
-      flame_spread_mm_s: ranking.find((r) => r.material_name === 'Pmma Cast Acrylic')?.flame_spread_mm_s || 1.78,
-      psi_investigation_id: 'PSI-26',
-      mission_source: 'BASS-II (ISS Glovebox Flight)',
-    },
-  ];
-
-  // 50-point sweep data for Bottom-Left chart (Dual Y-Axis)
-  const sweepPoints: AirflowSweepPoint[] = Array.from({ length: 50 }, (_, i) => {
-    const flow = (i / 49) * 50;
-    const sweep = calcSpread(activeMat, req.oxygen_pct, flow, req.pressure_kpa);
-    const sweepProb = calcProbability(activeMat, req.oxygen_pct, flow, req.pressure_kpa);
-    return {
-      flow_velocity_cm_s: Math.round(flow * 10) / 10,
-      flame_spread_mm_s: sweep.spread,
-      uncertainty_2sigma_mm_s: sweep.sigma,
-      spread_lower_mm_s: Math.max(0, sweep.spread - sweep.sigma),
-      spread_upper_mm_s: sweep.spread + sweep.sigma,
-      probability_sustained: sweepProb,
-      probability_extinguished: Math.round((1 - sweepProb) * 1000) / 1000,
-      risk_status: sweepProb > 0.5 ? 'HIGH' : sweepProb > 0.1 ? 'ELEVATED' : 'LOW',
-    };
-  });
-
-  // Reverse Solver Quench Optimization (<2.5 cm/s)
-  const quenchFlow = activeMat.critical_flow_window_cms[0] > 1.5 ? 1.5 : 1.0;
-  const quenchProb = calcProbability(activeMat, req.oxygen_pct, quenchFlow, req.pressure_kpa);
-  const deltaFlow = Math.round((quenchFlow - req.flow_velocity_cm_s) * 10) / 10;
-
-  const evidence: EvidenceAndActuation = {
-    active_regime: activeProb >= 0.6 ? 'CRITICAL' : activeProb >= 0.1 ? 'ELEVATED' : 'NOMINAL',
-    badge_color: activeProb >= 0.6 ? 'red' : activeProb >= 0.1 ? 'amber' : 'green',
-    regime_probabilities: {
-      CRITICAL: activeProb >= 0.6 ? 0.8 : 0.05,
-      ELEVATED: activeProb >= 0.1 && activeProb < 0.6 ? 0.7 : 0.15,
-      NOMINAL: activeProb < 0.1 ? 0.85 : 0.05,
-    },
-    hazard_drivers: [
-      { feature: 'flame_spread_mm_s', label: 'Flame Spread Rate', importance_pct: 49.1 },
-      { feature: 'flow_velocity_cm_s', label: 'Ventilation Airflow', importance_pct: 28.4 },
-      { feature: 'oxygen_pct', label: 'Oxygen Concentration', importance_pct: 14.2 },
-      { feature: 'pressure_kpa', label: 'Cabin Pressure', importance_pct: 8.3 },
-    ],
-    reverse_solver_recommendation: {
-      material: activeMat.material_name,
-      recommended_flow_velocity_cm_s: quenchFlow,
-      probability_sustained_at_target: quenchProb,
-      status: 'safe_quench_point_found',
-      iterations_evaluated: 50,
-    },
-    airflow_delta_cm_s: deltaFlow,
-    fan_actuation_command:
-      deltaFlow < 0 ? `THROTTLE_DOWN (${deltaFlow.toFixed(1)} cm/s)` : 'NOMINAL_HOLD',
-    nasa_provenance: {
-      material_name: activeMat.displayName,
-      psi_investigation_id: activeMat.psi_investigation_id,
-      mission_source: activeMat.mission_source,
-      standard_ref: activeMat.standard_ref,
-      source_doi_url: activeMat.source_doi_url,
-      loi_threshold_pct: activeMat.loi_threshold_pct,
-      critical_flow_window_cms: activeMat.critical_flow_window_cms,
-      historical_finding: activeMat.historical_finding,
-      total_nasa_test_records: activeMat.total_nasa_test_records,
-    },
-  };
-
-  return {
-    inputs: {
-      material: activeMat.material_name,
-      oxygen_pct: req.oxygen_pct,
-      pressure_kpa: req.pressure_kpa,
-      flow_velocity_cm_s: req.flow_velocity_cm_s,
-      cutoff_probability: req.cutoff_probability ?? 0.05,
-      spread_threshold_mm_s: req.spread_threshold_mm_s ?? 0.5,
-    },
-    spread_rate_meter: spreadMeter,
-    sector_triage: sectorTriage,
-    material_risk_ranking: ranking,
-    airflow_simulation: {
-      material: activeMat.material_name,
-      critical_flow_window_cms: activeMat.critical_flow_window_cms,
-      quench_target: {
-        material: activeMat.material_name,
-        recommended_flow_velocity_cm_s: quenchFlow,
-        probability_sustained_at_target: quenchProb,
-        status: 'safe_quench_point_found',
-      },
-      sweep_points: sweepPoints,
-    },
-    evidence_and_actuation: evidence,
-  };
+export async function evaluateAvionicsState(request: EvaluationRequest, signal: AbortSignal): Promise<Evaluation> {
+  const data = await requestJson('/api/avionics/evaluate', signal, request);
+  if (!isEvaluation(data, request)) throw new Error('Unexpected evaluation response');
+  return data;
 }

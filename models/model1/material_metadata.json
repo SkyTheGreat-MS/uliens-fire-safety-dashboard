@@ -1,0 +1,294 @@
+{
+  "materials": {
+    "Kapton Hn": {
+      "loi_threshold_pct": 37.0,
+      "row_count": 2,
+      "outcome_counts": {
+        "EXTINGUISHED": 1,
+        "SUSTAINED": 1
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.0,
+          34.0
+        ],
+        "pressure_kpa": [
+          70.3,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          10.0,
+          15.0
+        ],
+        "loi_threshold_pct": [
+          37.0,
+          37.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.0,
+        "max": 0.85,
+        "mean": 0.425,
+        "median": 0.425,
+        "std": 0.425
+      }
+    },
+    "Nomex Ht90-40": {
+      "loi_threshold_pct": 28.5,
+      "row_count": 10,
+      "outcome_counts": {
+        "EXTINGUISHED": 9,
+        "SUSTAINED": 1
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.0,
+          22.5
+        ],
+        "pressure_kpa": [
+          98.5,
+          102.1
+        ],
+        "flow_velocity_cm_s": [
+          8.0,
+          30.0
+        ],
+        "loi_threshold_pct": [
+          28.5,
+          28.5
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.0,
+        "max": 2.5,
+        "mean": 0.25,
+        "median": 0.0,
+        "std": 0.75
+      }
+    },
+    "Paraffin Wax": {
+      "loi_threshold_pct": 16.0,
+      "row_count": 24,
+      "outcome_counts": {
+        "EXTINGUISHED": 14,
+        "SUSTAINED": 10
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          15.9,
+          22.2
+        ],
+        "pressure_kpa": [
+          98.29,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          0.0,
+          10.0
+        ],
+        "loi_threshold_pct": [
+          16.0,
+          16.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.0,
+        "max": 2.08,
+        "mean": 0.8491666666666666,
+        "median": 1.08,
+        "std": 0.610839017708885
+      }
+    },
+    "Pmma Cast Acrylic": {
+      "loi_threshold_pct": 17.0,
+      "row_count": 178,
+      "outcome_counts": {
+        "EXTINGUISHED": 52,
+        "SUSTAINED": 126
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          13.6,
+          22.6
+        ],
+        "pressure_kpa": [
+          98.29,
+          102.21
+        ],
+        "flow_velocity_cm_s": [
+          0.0,
+          20.0
+        ],
+        "loi_threshold_pct": [
+          17.0,
+          17.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.0,
+        "max": 3.08,
+        "mean": 1.2365168539325844,
+        "median": 1.33,
+        "std": 0.6257534355283202
+      }
+    },
+    "Ptfe Teflon": {
+      "loi_threshold_pct": 95.0,
+      "row_count": 1,
+      "outcome_counts": {
+        "EXTINGUISHED": 1,
+        "SUSTAINED": 0
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.0,
+          21.0
+        ],
+        "pressure_kpa": [
+          101.3,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          10.0,
+          10.0
+        ],
+        "loi_threshold_pct": [
+          95.0,
+          95.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0
+      }
+    },
+    "Sibal Fabric Blend": {
+      "loi_threshold_pct": 18.5,
+      "row_count": 41,
+      "outcome_counts": {
+        "EXTINGUISHED": 24,
+        "SUSTAINED": 17
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          16.4,
+          22.7
+        ],
+        "pressure_kpa": [
+          98.29,
+          101.72
+        ],
+        "flow_velocity_cm_s": [
+          5.0,
+          22.0
+        ],
+        "loi_threshold_pct": [
+          18.5,
+          18.5
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.85,
+        "max": 3.83,
+        "mean": 1.8307317073170728,
+        "median": 1.72,
+        "std": 0.6537933970818433
+      }
+    },
+    "Silicone Rtv-560": {
+      "loi_threshold_pct": 30.0,
+      "row_count": 4,
+      "outcome_counts": {
+        "EXTINGUISHED": 4,
+        "SUSTAINED": 0
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.5,
+          22.1
+        ],
+        "pressure_kpa": [
+          101.3,
+          101.3
+        ],
+        "flow_velocity_cm_s": [
+          20.0,
+          20.0
+        ],
+        "loi_threshold_pct": [
+          30.0,
+          30.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0
+      }
+    },
+    "Ultem Polyetherimide": {
+      "loi_threshold_pct": 47.0,
+      "row_count": 2,
+      "outcome_counts": {
+        "EXTINGUISHED": 2,
+        "SUSTAINED": 0
+      },
+      "observed_ranges": {
+        "oxygen_pct": [
+          21.9,
+          22.5
+        ],
+        "pressure_kpa": [
+          100.01,
+          102.1
+        ],
+        "flow_velocity_cm_s": [
+          8.0,
+          14.5
+        ],
+        "loi_threshold_pct": [
+          47.0,
+          47.0
+        ]
+      },
+      "observed_flame_spread_mm_s": {
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "median": 0.0,
+        "std": 0.0
+      }
+    }
+  },
+  "global_observed_ranges": {
+    "oxygen_pct": [
+      13.6,
+      34.0
+    ],
+    "pressure_kpa": [
+      70.3,
+      102.21
+    ],
+    "flow_velocity_cm_s": [
+      0.0,
+      30.0
+    ],
+    "loi_threshold_pct": [
+      16.0,
+      95.0
+    ]
+  },
+  "global_flame_spread_mm_s": {
+    "min": 0.0,
+    "max": 3.83,
+    "mean": 1.2171374045801526,
+    "median": 1.28
+  },
+  "target_description": "Continuous flame spread rate in mm/s with Gaussian Process \u00b12\u03c3 uncertainty band.",
+  "warning": "Research-model estimate; not certified fire-safety guidance."
+}
