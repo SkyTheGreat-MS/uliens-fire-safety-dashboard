@@ -6,7 +6,6 @@ import { SimulationViews } from './components/SimulationViews';
 import { StatusPanel } from './components/StatusPanel';
 import {
   materials,
-  sectors,
   type AvionicsEvaluationResponse,
   type Preset,
   type Readings,
@@ -157,27 +156,9 @@ function App() {
         onApplyOverride={(targetFlow) => updateReading('airflow', targetFlow)}
         onAirflowChange={(flow) => updateReading('airflow', flow)}
       />
-      <footer className="flex flex-col items-start gap-x-[18px] gap-y-2 bg-surface px-2.5 py-2 font-mono text-[10.5px] text-secondary compact:flex-row compact:flex-wrap compact:items-center compact:justify-between">
-        <div className="flex flex-wrap gap-3">
-          <span className="flex items-center gap-1.5">
-            <i className="inline-block size-1.5 bg-primary" />
-            Sample readout
-          </span>
-          <span className="flex items-center gap-1.5">
-            <i className="inline-block size-1.5 bg-warning" />
-            Elevated visual state
-          </span>
-          <span className="flex items-center gap-1.5">
-            <i className="inline-block size-1.5 bg-critical" />
-            Armed control
-          </span>
-        </div>
-        <span>Gauges: click to arm scroll / drag · Arrows adjust (Shift ×10) · Esc disarms</span>
-        <span>
-          {sectors[activeSector].short} ·{' '}
-          {readings.gravity === 1 ? '1.00g Earth Baseline' : '0.00g NASA PSI-26 Model'}
-        </span>
-      </footer>
+      <p className="w-full indent-[0.16em] text-center font-brand text-[10.5px] font-medium leading-none tracking-[0.16em] text-secondary">
+        Uliens
+      </p>
     </main>
   );
 }

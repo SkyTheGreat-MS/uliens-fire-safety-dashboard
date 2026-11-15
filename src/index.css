@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Overpass:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @font-face {
@@ -56,6 +56,7 @@
   --font-sans: "Overpass", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-heading: "Fira Sans", sans-serif;
   --font-mono: "Geist Mono", "SFMono-Regular", Consolas, monospace;
+  --font-brand: "Space Grotesk", "Geist Sans", system-ui, sans-serif;
 
   --breakpoint-compact: 620px;
   --breakpoint-tight: 880px;
