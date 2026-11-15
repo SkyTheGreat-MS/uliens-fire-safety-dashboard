@@ -25,7 +25,6 @@ services:
   - type: web
     name: pyrois-dashboard
     runtime: static
-    plan: free
     buildCommand: npm install && npm run build
     staticPublishPath: dist
     routes:
