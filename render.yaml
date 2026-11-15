@@ -1,0 +1,47 @@
+# yaml-language-server: $schema=https://render.com/schema/render.yaml.json
+services:
+  # ---------------------------------------------------------------------------
+  # PYROIS API: FastAPI Microgravity Combustion Analytics Engine
+  # ---------------------------------------------------------------------------
+  - type: web
+    name: pyrois-api
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: pip install --upgrade pip && pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: DB_PATH
+        value: storage/records.db
+
+  # ---------------------------------------------------------------------------
+  # PYROIS DASHBOARD: Mission Control Avionics Static Site (Vite / React)
+  # ---------------------------------------------------------------------------
+  - type: web
+    name: pyrois-dashboard
+    runtime: static
+    plan: free
+    region: oregon
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=0, must-revalidate
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: pyrois-api
+          property: host
