@@ -12,7 +12,7 @@ class DatasetInfo(BaseModel):
 
 class DatasetSchema(BaseModel):
     name: str
-    schema: Dict[str, str]  # column name -> type name
+    column_types: Dict[str, str] = Field(alias="schema")
 
 class RecordBase(BaseModel):
     dataset_name: str = Field(..., description="Name of the dataset (without .csv extension)")

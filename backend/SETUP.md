@@ -1,7 +1,7 @@
 # Backend Setup & Configuration
 
 ## Prerequisites
-- **Python 3.10+** (recommended version 3.11)
+- **Python 3.11+** (required by Model 2's scikit-learn dependency)
 - **Git** (to clone the repository)
 - **Virtual environment** (venv or conda)
 - **pip** (will be used to install dependencies)
@@ -23,8 +23,6 @@
 3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
-   # pandas is required for CSV handling if not already in requirements.txt
-   pip install pandas
    ```
 4. **Run the development server**
    ```bash

@@ -4,3 +4,6 @@ pandas
 pydantic
 sqlalchemy
 python-dotenv
+joblib>=1.5
+# Match the scikit-learn version used to serialize the bundled Model 2 pipeline.
+scikit-learn==1.9.1
