@@ -9,11 +9,7 @@ export function Header() {
     <header className="relative flex min-h-[76px] min-w-0 items-center justify-between gap-3 bg-surface px-3 py-2 sm:px-4 sm:py-2.5">
       {/* Title & Subtitle Section with PYROIS Logo */}
       <div className="flex items-center gap-2.5 sm:gap-3">
-        <img
-          src={flameIcon}
-          alt="PYROIS Logo"
-          className="h-10 w-auto object-contain drop-shadow-[0_0_12px_rgba(52,211,153,0.35)] select-none sm:h-12"
-        />
+        
         <div className="flex flex-col justify-center">
           <h1 className="m-0 font-heading text-[17px] font-bold leading-tight tracking-[.01em] text-ink sm:text-[22px] lg:text-[24px]">
             <span>PYROIS</span>{' '}
