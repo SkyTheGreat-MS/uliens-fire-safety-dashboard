@@ -1,23 +1,32 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { ChevronRight, FileText, Send, Sparkles, X } from 'lucide-react';
+import {
+  AlertTriangle,
+  ChevronRight,
+  ExternalLink,
+  FileText,
+  Search,
+  Sparkles,
+  X,
+} from 'lucide-react';
 import flameIcon from '../assets/flame-icon.png';
 import {
   SUGGESTED_RAG_PROMPTS,
   queryNasaFlightCorpus,
+  type RagCitation,
+  type RagFinding,
   type RagResponse,
 } from '../services/nasaFlightCorpus';
 
-export interface RagCitation {
-  source: string;
-  page?: number | string;
-  snippet?: string;
-}
+export type { RagCitation, RagFinding };
 
 export interface RagQueryResult {
   prompt: string;
   response: string;
+  findings?: RagFinding[];
   citations?: RagCitation[];
   timestamp: string;
+  isGrounded?: boolean;
+  suggestedPrompts?: string[];
 }
 
 interface RagChatFloaterProps {
@@ -93,8 +102,11 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
       setResult({
         prompt: localResponse.prompt,
         response: localResponse.response,
+        findings: localResponse.findings,
         citations: localResponse.citations,
         timestamp: localResponse.timestamp,
+        isGrounded: localResponse.isGrounded,
+        suggestedPrompts: localResponse.suggestedPrompts,
       });
       setPrompt('');
     } finally {
@@ -132,11 +144,11 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
               </span>
               <span className="flex items-center gap-1 border border-success/60 bg-success/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-success">
                 <span className="size-1.5 rounded-full bg-success animate-pulse" />
-                <span>8 NASA PDFs</span>
+                <span>ONLINE</span>
               </span>
             </div>
             <p className="m-0 font-sans text-[11px] font-normal text-secondary">
-              Flight Science Assistant · BASS, Saffire &amp; FLEX
+              Combustion Knowledgebase
             </p>
           </div>
         </div>
@@ -173,45 +185,118 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
               </p>
             </div>
 
-            {/* Direct Avionics Finding (Concise, Unchunked Answer) */}
-            <div className="border border-line bg-surface p-2.5">
-              <div className="mb-1.5 flex items-center justify-between font-mono text-[10px]">
-                <span className="flex items-center gap-1.5 font-heading text-[11px] font-bold uppercase tracking-[.08em] text-primary">
-                  <span className="size-1.5 rounded-full bg-primary" />
-                  <span>FLIGHT SCIENCE FINDING</span>
-                </span>
-                {result.citations && result.citations[0] && (
-                  <span className="inline-flex items-center gap-1 border border-line bg-void px-1.5 py-0.5 font-mono text-[10px] font-semibold text-primary">
-                    <FileText className="size-2.5 text-primary" />
-                    <span>{result.citations[0].source}</span>
-                    {result.citations[0].page && (
-                      <span className="text-secondary">· p.{result.citations[0].page}</span>
-                    )}
+            {/* Conditionally Render Based on Grounded Status */}
+            {result.isGrounded === false ? (
+              /* Out-of-Scope Avionics Warning Banner */
+              <div className="border border-warning/60 bg-warning/10 p-2.5">
+                <div className="mb-2 flex items-center justify-between border-b border-warning/20 pb-1.5 font-mono text-[10px]">
+                  <span className="flex items-center gap-1.5 font-heading text-[11px] font-bold uppercase tracking-[.08em] text-warning">
+                    <AlertTriangle className="size-3 shrink-0 text-warning" />
+                    <span>NO GROUNDED RESOURCES FOUND</span>
                   </span>
+                  <span className="border border-warning/50 bg-void px-1.5 py-0.5 font-mono text-[9px] font-bold uppercase tracking-wider text-warning">
+                    OUT OF SCOPE
+                  </span>
+                </div>
+
+                <p className="m-0 font-sans text-[12px] leading-relaxed text-ink">
+                  {result.response}
+                </p>
+
+                {/* Suggested Flight Inquiries for operator recovery */}
+                {result.suggestedPrompts && result.suggestedPrompts.length > 0 && (
+                  <div className="mt-3 border-t border-line/60 pt-2">
+                    <div className="mb-1.5 flex items-center gap-1 font-mono text-[10px] font-bold uppercase tracking-wider text-secondary">
+                      <Sparkles className="size-2.5 text-primary" />
+                      <span>SUPPORTED FLIGHT SCIENCE INQUIRIES:</span>
+                    </div>
+                    <div className="grid gap-1">
+                      {result.suggestedPrompts.map((suggestion, sIdx) => (
+                        <button
+                          key={sIdx}
+                          type="button"
+                          onClick={() => executeQuery(suggestion)}
+                          className="flex items-center justify-between border border-line bg-surface/80 px-2 py-1 text-left font-sans text-[11px] font-medium text-secondary transition-colors hover:border-primary/60 hover:bg-raised hover:text-ink cursor-pointer"
+                        >
+                          <span className="truncate">{suggestion}</span>
+                          <ChevronRight className="size-3 shrink-0 text-muted" />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
-
-              {/* Crisp, Direct Finding Statement */}
-              <p className="m-0 font-sans text-[12px] leading-relaxed text-ink">
-                {result.response}
-              </p>
-
-              {/* Additional Reference Citations */}
-              {result.citations && result.citations.length > 1 && (
-                <div className="mt-2 flex flex-wrap items-center gap-1.5 border-t border-line/40 pt-1.5 font-mono text-[10px]">
-                  <span className="uppercase tracking-wider text-muted">Additional Ref:</span>
-                  {result.citations.slice(1).map((cite, idx) => (
-                    <span
-                      key={idx}
-                      className="inline-flex items-center gap-1 border border-line bg-void px-1.5 py-0.5 text-secondary"
-                    >
-                      <span className="text-primary">{cite.source}</span>
-                      {cite.page && <span>· p.{cite.page}</span>}
-                    </span>
-                  ))}
+            ) : (
+              /* Grounded Findings (At Least Two Referred Mission Findings) */
+              <div className="flex flex-col gap-2">
+                <div className="flex items-center justify-between font-mono text-[10px]">
+                  <span className="flex items-center gap-1.5 font-heading text-[11px] font-bold uppercase tracking-[.08em] text-primary">
+                    <span className="size-1.5 rounded-full bg-primary" />
+                    <span>GROUNDED FLIGHT EVIDENCE ({result.findings?.length ?? 1} FINDINGS)</span>
+                  </span>
                 </div>
-              )}
-            </div>
+
+                {(result.findings && result.findings.length > 0
+                  ? result.findings
+                  : [
+                      {
+                        id: 'primary',
+                        title: 'Flight Science Finding',
+                        document: result.citations?.[0]?.source ?? 'NASA Technical Report',
+                        shortSource: result.citations?.[0]?.source ?? 'NASA Ref',
+                        page: result.citations?.[0]?.page ?? 1,
+                        url: result.citations?.[0]?.url ?? 'https://psi.nasa.gov/physci/repo/search?q=combustion',
+                        answer: result.response,
+                      },
+                    ]
+                ).map((finding, idx) => (
+                  <div key={finding.id || idx} className="border border-line bg-surface p-2.5">
+                    <div className="mb-1.5 flex items-start justify-between gap-2 font-mono text-[10px]">
+                      <span className="font-heading text-[11px] font-bold uppercase tracking-[.06em] text-ink leading-snug">
+                        {String(idx + 1).padStart(2, '0')}. {finding.title}
+                      </span>
+                      <a
+                        href={finding.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        title={`Open ${finding.document} reference link`}
+                        className="shrink-0 inline-flex items-center gap-1 border border-line bg-void px-1.5 py-0.5 font-mono text-[10px] font-semibold text-primary hover:border-primary hover:bg-surface/80 transition-colors cursor-pointer"
+                      >
+                        <FileText className="size-2.5 text-primary" />
+                        <span>{finding.shortSource}</span>
+                        {finding.page && <span className="text-secondary">· p.{finding.page}</span>}
+                        <ExternalLink className="size-2.5 text-secondary" />
+                      </a>
+                    </div>
+
+                    {/* Medium-range grounded answer */}
+                    <p className="m-0 font-sans text-[12px] leading-relaxed text-ink">
+                      {finding.answer}
+                    </p>
+                  </div>
+                ))}
+
+                {/* Additional Reference Citations */}
+                {result.citations && result.citations.length > 0 && (
+                  <div className="mt-1 flex flex-wrap items-center gap-1.5 border-t border-line/40 pt-1.5 font-mono text-[10px]">
+                    <span className="uppercase tracking-wider text-muted">Direct Citation Links:</span>
+                    {result.citations.map((cite, idx) => (
+                      <a
+                        key={idx}
+                        href={cite.url || 'https://psi.nasa.gov/physci/repo/search?q=combustion'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1 border border-line bg-void px-1.5 py-0.5 text-secondary hover:border-primary hover:text-primary transition-colors cursor-pointer"
+                      >
+                        <span className="text-primary">{cite.source}</span>
+                        {cite.page && <span>· p.{cite.page}</span>}
+                        <ExternalLink className="size-2 text-secondary" />
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         ) : (
           <div className="flex h-full min-h-[150px] flex-col justify-between py-0.5">
@@ -220,10 +305,10 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
                 <span className="font-heading text-[12px] font-bold uppercase tracking-[.08em] text-ink">
                   FLAMIE
                 </span>
-                <span className="font-mono text-[10px] text-muted">STANDBY · TIER 2</span>
+                <span className="font-mono text-[10px] text-muted">COMBUSTION KNOWLEDGEBASE</span>
               </div>
               <p className="m-0 mt-1 font-sans text-[11px] leading-relaxed text-secondary">
-                Direct microgravity combustion science answers grounded in 8 NASA flight experiment reports.
+                Combustion Knowledgebase grounded in verified NASA flight experiment research (BASS, Saffire, FLEX, NASA-STD-6001B).
               </p>
             </div>
 
@@ -239,7 +324,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
                     key={idx}
                     type="button"
                     onClick={() => executeQuery(p)}
-                    className="flex items-center justify-between border border-line bg-surface/70 px-2 py-1 text-left font-sans text-[11.5px] font-medium text-secondary transition-colors hover:border-primary/60 hover:bg-raised hover:text-ink"
+                    className="flex items-center justify-between border border-line bg-surface/70 px-2 py-1 text-left font-sans text-[11.5px] font-medium text-secondary transition-colors hover:border-primary/60 hover:bg-raised hover:text-ink cursor-pointer"
                   >
                     <span className="truncate">{p}</span>
                     <ChevronRight className="size-3 shrink-0 text-muted" />
@@ -258,22 +343,22 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
           type="text"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Ask FLAMIE about airflow paradox, quench speed, or NASA standards..."
+          placeholder="Query Nasa Mission Logs..."
           className="flex-1 border border-line bg-void px-2.5 py-1.5 font-sans text-[12px] text-ink placeholder:font-sans placeholder:text-muted focus:border-primary focus:outline-none"
         />
         <button
           type="submit"
           disabled={!prompt.trim() || isLoading}
-          className="flex items-center gap-1 border border-primary bg-primary/15 px-3 py-1.5 font-mono text-[10.5px] font-bold uppercase tracking-[.06em] text-primary transition-colors hover:bg-primary/25 disabled:cursor-not-allowed disabled:border-line disabled:bg-transparent disabled:text-muted"
+          className="flex items-center gap-1 border border-primary bg-primary/15 px-3 py-1.5 font-mono text-[10.5px] font-bold uppercase tracking-[.06em] text-primary transition-colors hover:bg-primary/25 disabled:cursor-not-allowed disabled:border-line disabled:bg-transparent disabled:text-muted cursor-pointer"
         >
-          <Send className="size-3" />
-          <span>Send</span>
+          <Search className="size-3" />
+          <span>Search</span>
         </button>
       </form>
 
       {/* 4. Footer Metadata */}
       <div className="mt-2 flex items-center justify-between border-t border-line/60 pt-1.5 font-mono text-[10px] text-muted">
-        <span>FLAMIE · Grounded in 8 NASA Flight PDFs</span>
+        <span>FLAMIE · Combustion Knowledgebase</span>
         <span>Esc to close</span>
       </div>
     </div>

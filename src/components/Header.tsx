@@ -24,7 +24,7 @@ export function Header() {
             <span className="size-1.5 rounded-full bg-success animate-pulse" />
             <span>FLAMIE</span>
           </div>
-          <span className="font-mono text-[10px] text-muted">8 NASA FLIGHT PDFs</span>
+          <span className="font-mono text-[10px] text-muted">Combustion Knowledgebase</span>
         </div>
 
         <button
