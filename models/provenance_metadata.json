@@ -1,0 +1,114 @@
+{
+  "Kapton Hn": {
+    "material_name": "Kapton Hn",
+    "psi_investigation_id": "PSI-25",
+    "mission_source": "NASA-STD-6001B Benchmark",
+    "standard_ref": "NASA-STD-6001B Test 4",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 37.0,
+    "critical_flow_window_cms": [
+      5.0,
+      15.0
+    ],
+    "historical_finding": "Apollo 13 / BASS-II: Polyimide insulation self-extinguishes in nominal cabin air, but undergoes explosive arc-tracking flashover under enriched O2 (>30%).",
+    "total_nasa_test_records": 2
+  },
+  "Nomex Ht90-40": {
+    "material_name": "Nomex Ht90-40",
+    "psi_investigation_id": "PSI-25",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-25",
+    "loi_threshold_pct": 28.5,
+    "critical_flow_window_cms": [
+      5.0,
+      20.0
+    ],
+    "historical_finding": "BASS-II: Aramid fabric quenches rapidly across nominal flight airflows; flame spread observed only under extreme elevated O2 test points.",
+    "total_nasa_test_records": 10
+  },
+  "Paraffin Wax": {
+    "material_name": "Paraffin Wax",
+    "psi_investigation_id": "PSI-GEN",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 16.0,
+    "critical_flow_window_cms": [
+      1.0,
+      10.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record.",
+    "total_nasa_test_records": 24
+  },
+  "Pmma Cast Acrylic": {
+    "material_name": "Pmma Cast Acrylic",
+    "psi_investigation_id": "PSI-26",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 17.0,
+    "critical_flow_window_cms": [
+      1.0,
+      15.0
+    ],
+    "historical_finding": "BASS / Saffire-IV: Sustained continuous concurrent flame spread under forced microgravity ventilation; exhibited false-pass behavior relative to 1g tests.",
+    "total_nasa_test_records": 178
+  },
+  "Ptfe Teflon": {
+    "material_name": "Ptfe Teflon",
+    "psi_investigation_id": "PSI-26",
+    "mission_source": "NASA-STD-6001B Benchmark",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-26",
+    "loi_threshold_pct": 95.0,
+    "critical_flow_window_cms": [
+      5.0,
+      15.0
+    ],
+    "historical_finding": "NASA-STD-6001B: Extremely low flammability envelope; poses zero flame propagation at operational cabin levels, but releases toxic fluorochemical pyrolyzates above 300\u00b0C.",
+    "total_nasa_test_records": 1
+  },
+  "Sibal Fabric Blend": {
+    "material_name": "Sibal Fabric Blend",
+    "psi_investigation_id": "PSI-98",
+    "mission_source": "BASS-II (ISS Glovebox Flight)",
+    "standard_ref": "NASA BASS Baseline Standard",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-98",
+    "loi_threshold_pct": 18.5,
+    "critical_flow_window_cms": [
+      3.0,
+      15.0
+    ],
+    "historical_finding": "Saffire-I / BASS: 75% cotton / 25% fiberglass calibration fabric; serves as empirical benchmark for low-speed concurrent boundary layer burning.",
+    "total_nasa_test_records": 41
+  },
+  "Silicone Rtv-560": {
+    "material_name": "Silicone Rtv-560",
+    "psi_investigation_id": "PSI-99",
+    "mission_source": "Saffire-II (Cygnus Flight Burns)",
+    "standard_ref": "NASA-STD-6001B Test 1",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/data/investigations/PSI-99",
+    "loi_threshold_pct": 30.0,
+    "critical_flow_window_cms": [
+      5.0,
+      20.0
+    ],
+    "historical_finding": "Saffire-II: Generates porous silica ash layer that insulates fuel and sustains flameless internal smolder under quiescent or low-flow conditions.",
+    "total_nasa_test_records": 4
+  },
+  "Ultem Polyetherimide": {
+    "material_name": "Ultem Polyetherimide",
+    "psi_investigation_id": "PSI-GEN",
+    "mission_source": "BASS-I (ISS Flight Telemetry)",
+    "standard_ref": "NASA-STD-6001B",
+    "source_doi_url": "https://psi.nasa.gov/physci/repo/search?q=combustion",
+    "loi_threshold_pct": 47.0,
+    "critical_flow_window_cms": [
+      5.0,
+      20.0
+    ],
+    "historical_finding": "NASA microgravity combustion test archive record.",
+    "total_nasa_test_records": 2
+  }
+}

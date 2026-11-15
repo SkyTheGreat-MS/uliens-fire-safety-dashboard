@@ -1,0 +1,20 @@
+{
+  "logic": {
+    "NOMINAL": "test_outcome == 'EXTINGUISHED' and flame_spread_mm_s == 0.0",
+    "ELEVATED": "test_outcome == 'EXTINGUISHED' and flame_spread_mm_s > 0.0 (partial spread before quenching), OR test_outcome == 'SUSTAINED' and flame_spread_mm_s < material_median_sustained_spread",
+    "CRITICAL": "test_outcome == 'SUSTAINED' and flame_spread_mm_s >= material_median_sustained_spread"
+  },
+  "material_median_sustained_spread_mm_s": {
+    "Kapton Hn": 0.85,
+    "Nomex Ht90-40": 2.5,
+    "Paraffin Wax": 1.08,
+    "Pmma Cast Acrylic": 1.46,
+    "Sibal Fabric Blend": 2.44
+  },
+  "global_median_sustained_spread_mm_s": 1.58,
+  "ui_badge_color_mapping": {
+    "NOMINAL": "green",
+    "ELEVATED": "amber",
+    "CRITICAL": "red"
+  }
+}

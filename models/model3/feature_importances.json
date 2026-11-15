@@ -1,0 +1,49 @@
+{
+  "hazard_drivers": [
+    {
+      "feature": "flame_spread_mm_s",
+      "label": "Flame Spread Rate",
+      "importance_pct": 49.07
+    },
+    {
+      "feature": "oxygen_pct",
+      "label": "O2 Concentration",
+      "importance_pct": 17.89
+    },
+    {
+      "feature": "flow_velocity_cm_s",
+      "label": "Airflow Velocity",
+      "importance_pct": 12.15
+    },
+    {
+      "feature": "material_name",
+      "label": "Material Type",
+      "importance_pct": 7.55
+    },
+    {
+      "feature": "pressure_kpa",
+      "label": "Cabin Pressure",
+      "importance_pct": 7.06
+    },
+    {
+      "feature": "loi_threshold_pct",
+      "label": "LOI Threshold",
+      "importance_pct": 6.28
+    }
+  ],
+  "raw_importances": {
+    "oxygen_pct": 0.17892010052850024,
+    "pressure_kpa": 0.07058708057812266,
+    "flow_velocity_cm_s": 0.12149147683131697,
+    "loi_threshold_pct": 0.06275003923052394,
+    "flame_spread_mm_s": 0.49074630234683503,
+    "material_name_Kapton Hn": 0.0009672946637398277,
+    "material_name_Nomex Ht90-40": 0.00891574565959977,
+    "material_name_Paraffin Wax": 0.013153258198411386,
+    "material_name_Pmma Cast Acrylic": 0.028991272087635144,
+    "material_name_Ptfe Teflon": 0.0001468704274276145,
+    "material_name_Sibal Fabric Blend": 0.01915544365338938,
+    "material_name_Silicone Rtv-560": 0.002630797011421455,
+    "material_name_Ultem Polyetherimide": 0.001544318783076543
+  }
+}

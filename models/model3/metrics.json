@@ -1,0 +1,75 @@
+{
+  "model": "StandardScaler + OneHotEncoder + RandomForestClassifier(200 trees, class_weight=balanced)",
+  "target": "hazard_regime",
+  "classes": [
+    "NOMINAL",
+    "ELEVATED",
+    "CRITICAL"
+  ],
+  "validation_rows": 53,
+  "training_rows": 209,
+  "accuracy": 0.9245283018867925,
+  "macro_f1": 0.9377958079783637,
+  "weighted_f1": 0.9254468215392858,
+  "per_class_metrics": {
+    "NOMINAL": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1_score": 1.0,
+      "support": 7
+    },
+    "ELEVATED": {
+      "precision": 0.9642857142857143,
+      "recall": 0.9,
+      "f1_score": 0.9310344827586207,
+      "support": 30
+    },
+    "CRITICAL": {
+      "precision": 0.8333333333333334,
+      "recall": 0.9375,
+      "f1_score": 0.8823529411764706,
+      "support": 16
+    }
+  },
+  "confusion_matrix_labels": [
+    "NOMINAL",
+    "ELEVATED",
+    "CRITICAL"
+  ],
+  "confusion_matrix": [
+    [
+      7,
+      0,
+      0
+    ],
+    [
+      0,
+      27,
+      3
+    ],
+    [
+      0,
+      1,
+      15
+    ]
+  ],
+  "class_counts_total": {
+    "NOMINAL": 35,
+    "ELEVATED": 148,
+    "CRITICAL": 79
+  },
+  "feature_columns": [
+    "oxygen_pct",
+    "pressure_kpa",
+    "flow_velocity_cm_s",
+    "loi_threshold_pct",
+    "flame_spread_mm_s",
+    "material_name"
+  ],
+  "split": {
+    "method": "stratified random holdout",
+    "test_size": 0.2,
+    "seed": 42
+  },
+  "warning": "Research-model estimate; not certified fire-safety guidance."
+}

@@ -1,15 +1,16 @@
 import { useCallback, useId, type KeyboardEvent } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { gravityRegimes, type Readings, type SpreadRateMeter } from '../data';
+import { controlLimits, gravityRegimes, type DialKey, type Readings } from '../data';
 import { useAvionicsControl } from '../hooks/useAvionicsControl';
+import type { Spread } from '../services/avionicsService';
 import { panel, sectionHead, sectionMeta, sectionTitle } from './ui';
 
-export type ControlKey = 'oxygen' | 'airflow' | 'pressure' | 'gravity' | 'spread';
+export type ControlKey = DialKey | 'gravity';
 type Props = {
   values: Readings;
   live: Readings;
   armedControl: ControlKey | null;
-  spreadRateMeter?: SpreadRateMeter | null;
+  spreadRateMeter?: Spread;
   onArm: (key: ControlKey | null) => void;
   onChange: (key: ControlKey, value: number) => void;
 };
@@ -40,7 +41,7 @@ export function InstrumentControls({
       <div className={`${sectionHead} mb-[9px]`}>
         <h2 className={sectionTitle}>Environmental controls</h2>
         <span className={sectionMeta}>
-          {values.gravity === 1 ? '1.00g Earth Baseline' : '0.00g NASA PSI-26 Model'}
+          {values.gravity === 1 ? '1.00g Earth reference' : '0.00g Microgravity scenario'}
         </span>
       </div>
       <div className="grid grid-cols-2 items-stretch gap-[7px] compact:grid-cols-3 tight:grid-cols-[repeat(3,minmax(145px,1fr))_84px_minmax(190px,1.15fr)]">
@@ -50,9 +51,7 @@ export function InstrumentControls({
           unit="O₂ vol %"
           value={values.oxygen}
           baseline={live.oxygen}
-          min={12}
-          max={36}
-          step={0.1}
+          {...controlLimits.oxygen}
           digits={1}
           armed={armedControl === 'oxygen'}
           onArm={() => onArm('oxygen')}
@@ -65,9 +64,7 @@ export function InstrumentControls({
           unit="cm/s"
           value={values.airflow}
           baseline={live.airflow}
-          min={0}
-          max={50}
-          step={0.5}
+          {...controlLimits.airflow}
           digits={1}
           armed={armedControl === 'airflow'}
           onArm={() => onArm('airflow')}
@@ -80,24 +77,14 @@ export function InstrumentControls({
           unit="kPa"
           value={values.pressure}
           baseline={live.pressure}
-          min={50}
-          max={115}
-          step={0.5}
+          {...controlLimits.pressure}
           digits={1}
           armed={armedControl === 'pressure'}
           onArm={() => onArm('pressure')}
           onDisarm={() => onArm(null)}
           onChange={(value) => onChange('pressure', value)}
         />
-        <SpreadRateMeterControl
-          value={values.spread ?? (spreadRateMeter?.flame_spread_mm_s ?? 1.78)}
-          baseline={live.spread ?? (spreadRateMeter?.flame_spread_mm_s ?? 1.78)}
-          uncertainty={spreadRateMeter?.uncertainty_2sigma_mm_s ?? 0.89}
-          armed={armedControl === 'spread'}
-          onArm={() => onArm('spread')}
-          onDisarm={() => onArm(null)}
-          onChange={(value) => onChange('spread', value)}
-        />
+        <SpreadRateMeter meter={spreadRateMeter} />
         <GravityControl
           value={values.gravity ?? 0}
           armed={armedControl === 'gravity'}
@@ -144,7 +131,8 @@ function Dial({
       onChange(Math.max(min, Math.min(max, Math.round((value + amount) / step) * step))),
     [max, min, onChange, step, value]
   );
-  const interactions = useAvionicsControl({ armed, step, onArm, onAdjust: adjust, onDisarm });
+  const { ref, onKeyDown: adjustByKey, onPointerDown, onPointerMove, onPointerUp } =
+    useAvionicsControl({ armed, step, onArm, onAdjust: adjust, onDisarm });
   const progress = (n: number) => Math.max(0, Math.min(1, (n - min) / (max - min)));
   const valueProgress = progress(value);
   const uid = useId().replace(/[^a-zA-Z0-9_-]/g, '');
@@ -161,13 +149,13 @@ function Dial({
       onChange(event.key === 'Home' ? min : max);
       return;
     }
-    interactions.onKeyDown(event);
+    adjustByKey(event);
   };
 
   return (
     <div className="flex min-w-0 flex-col items-center h-full">
       <div
-        ref={interactions.ref}
+        ref={ref}
         className={`relative flex min-h-[190px] h-full w-full cursor-pointer touch-none select-none flex-col items-center justify-between border p-2 ${armedShell(
           armed
         )}`}
@@ -180,9 +168,10 @@ function Dial({
         tabIndex={0}
         onClick={onArm}
         onKeyDown={onKeyDown}
-        onPointerDown={interactions.onPointerDown}
-        onPointerMove={interactions.onPointerMove}
-        onPointerUp={interactions.onPointerUp}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={onPointerUp}
+        onPointerCancel={onPointerUp}
       >
         <div className="self-start font-heading text-[11px] font-bold uppercase tracking-[.08em] text-secondary">
           {label}
@@ -270,131 +259,36 @@ function Dial({
   );
 }
 
-type SpreadRateProps = {
-  value: number;
-  baseline: number;
-  uncertainty?: number;
-  armed: boolean;
-  onArm: () => void;
-  onDisarm: () => void;
-  onChange: (value: number) => void;
-};
-
-/**
- * Model 1: Gaussian Process Spread Rate Meter
- * Avionics meter displaying predicted flame spread rate (mm/s) and ±2σ uncertainty.
- * Fully armable and adjustable via pointer drag, mouse wheel, and arrow keys.
- */
-function SpreadRateMeterControl({
-  value,
-  baseline,
-  uncertainty = 0.89,
-  armed,
-  onArm,
-  onDisarm,
-  onChange,
-}: SpreadRateProps) {
-  const min = 0.0;
-  const max = 3.5;
-  const step = 0.05;
-
-  const adjust = useCallback(
-    (amount: number) =>
-      onChange(Math.max(min, Math.min(max, Math.round((value + amount) / step) * step))),
-    [max, min, onChange, step, value]
-  );
-
-  const interactions = useAvionicsControl({ armed, step, onArm, onAdjust: adjust, onDisarm });
-
-  const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
-    if (event.key === 'Home' || event.key === 'End') {
-      event.preventDefault();
-      onArm();
-      onChange(event.key === 'Home' ? min : max);
-      return;
-    }
-    interactions.onKeyDown(event);
-  };
-
-  const isAdjusted = Math.abs(value - baseline) > 0.02;
-
+function SpreadRateMeter({ meter }: { meter?: Spread }) {
   return (
     <div className="flex min-w-0 flex-col items-center h-full w-full">
-      <div
-        ref={interactions.ref}
-        className={`relative flex min-h-[190px] h-full w-full cursor-pointer touch-none select-none flex-col justify-between border p-[6px] ${armedShell(
-          armed
-        )}`}
-        role="slider"
-        aria-label="Model 1 Gaussian Process Flame Spread Rate"
-        aria-valuemin={min}
-        aria-valuemax={max}
-        aria-valuenow={value}
-        aria-valuetext={`${value.toFixed(2)} mm/s; sample ${baseline.toFixed(2)} mm/s`}
-        tabIndex={0}
-        onClick={onArm}
-        onKeyDown={onKeyDown}
-        onPointerDown={interactions.onPointerDown}
-        onPointerMove={interactions.onPointerMove}
-        onPointerUp={interactions.onPointerUp}
-      >
+      <div className="relative flex min-h-[190px] h-full w-full flex-col justify-between border border-transparent bg-void p-[6px]">
         <div className="flex flex-col items-center text-center w-full">
-          {armed && (
-            <span className="mb-0.5 bg-critical px-1 py-0.5 font-mono text-[8px] font-bold text-ink leading-none">
-              ARMED
-            </span>
-          )}
           <span className="font-heading text-[9.5px] font-bold uppercase tracking-[.05em] text-secondary leading-tight whitespace-nowrap">
             SPREAD RATE
           </span>
-          <span className="font-mono text-[8px] text-muted leading-tight whitespace-nowrap">
-            Model 1 (GP)
-          </span>
+          <span className="font-mono text-[8px] text-muted leading-tight whitespace-nowrap">Model 1 (GP)</span>
         </div>
-
-        {/* 10 LED Segments (0.0 to 3.5 mm/s) */}
-        <div className="my-auto flex w-full flex-col-reverse justify-center gap-[2.5px] py-1">
-          {Array.from({ length: 10 }, (_, i) => {
-            const threshold = Number(((i + 1) * 0.35).toFixed(2));
-            const segmentTone =
-              i < 3
-                ? 'border-success bg-success'
-                : i < 7
-                ? 'border-warning bg-warning'
-                : 'border-critical bg-critical';
-            return (
-              <i
-                key={i}
-                className={`h-2 w-full border transition-colors ${
-                  value >= threshold ? segmentTone : 'border-line bg-raised'
-                } hover:opacity-80`}
-                title={`Target: ${threshold.toFixed(2)} mm/s`}
-                onClick={(e) => {
-                  if (armed) {
-                    e.stopPropagation();
-                    onChange(threshold);
-                  }
-                }}
-              />
-            );
+        <div className="my-auto flex w-full flex-col-reverse justify-center gap-[2.5px] py-1" aria-hidden="true">
+          {Array.from({ length: 10 }, (_, index) => {
+            const segmentTone = index < 3 ? 'border-success bg-success'
+              : index < 7 ? 'border-warning bg-warning' : 'border-critical bg-critical';
+            const active = meter && meter.flame_spread_mm_s >= (index + 1) * 0.35;
+            return <i key={index} className={`h-2 w-full border transition-colors ${active ? segmentTone : 'border-line bg-raised'}`} />;
           })}
         </div>
-
-        <div className="flex w-full flex-col items-center justify-center pt-1 border-t border-line/40 text-center">
-          <div className="font-mono text-[13px] font-bold tabular-nums text-ink leading-tight whitespace-nowrap">
-            {value.toFixed(2)}{' '}
+        <output aria-label="Model 1 flame spread rate" className="flex w-full flex-col items-center justify-center pt-1 border-t border-line/40 text-center">
+          <span className="font-mono text-[13px] font-bold tabular-nums text-ink leading-tight whitespace-nowrap">
+            {meter?.flame_spread_mm_s.toFixed(2) ?? '—'}{' '}
             <span className="font-sans text-[9px] font-normal text-secondary">mm/s</span>
-          </div>
-          <div className="font-mono text-[8.5px] tabular-nums text-secondary leading-tight mt-0.5 whitespace-nowrap">
-            {isAdjusted ? (
-              <span className="text-warning font-semibold">
-                TGT <span className="text-secondary font-normal">({baseline.toFixed(2)})</span>
-              </span>
-            ) : (
-              <span>±{uncertainty.toFixed(2)} (2σ)</span>
-            )}
-          </div>
-        </div>
+          </span>
+          <span className="font-mono text-[8.5px] tabular-nums text-secondary leading-tight mt-0.5 whitespace-nowrap">
+            {meter ? `±${meter.uncertainty_2sigma_mm_s.toFixed(2)} (2σ)` : 'Unavailable'}
+          </span>
+          {meter?.out_of_material_training_range && (
+            <span className="font-mono text-[8px] text-warning whitespace-nowrap">Extrapolated</span>
+          )}
+        </output>
       </div>
     </div>
   );

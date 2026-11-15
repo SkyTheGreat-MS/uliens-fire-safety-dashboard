@@ -1,25 +1,25 @@
 {
-  "validation_rows": 50,
+  "validation_rows": 53,
   "positive_label": "SUSTAINED",
   "negative_label": "EXTINGUISHED",
   "probability_threshold_for_metrics": 0.5,
-  "accuracy": 0.8,
-  "precision_sustained": 0.8461538461538461,
-  "recall_sustained": 0.8918918918918919,
-  "f1_sustained": 0.868421052631579,
-  "roc_auc": 0.7411642411642412,
+  "accuracy": 0.7547169811320755,
+  "precision_sustained": 0.78125,
+  "recall_sustained": 0.8064516129032258,
+  "f1_sustained": 0.7936507936507936,
+  "roc_auc": 0.8093841642228738,
   "confusion_matrix_labels": [
     "EXTINGUISHED",
     "SUSTAINED"
   ],
   "confusion_matrix": [
     [
-      7,
-      6
+      15,
+      7
     ],
     [
-      4,
-      33
+      6,
+      25
     ]
   ],
   "split": {
@@ -27,10 +27,10 @@
     "test_size": 0.2,
     "seed": 42
   },
-  "training_rows": 198,
+  "training_rows": 209,
   "class_counts": {
-    "EXTINGUISHED": 62,
-    "SUSTAINED": 186
+    "EXTINGUISHED": 107,
+    "SUSTAINED": 155
   },
   "feature_columns": [
     "oxygen_pct",
