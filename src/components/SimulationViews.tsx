@@ -38,7 +38,7 @@ export function SimulationViews({ readings, selectedMaterial, evaluation, onPrev
             <div className="min-w-0">
               <h2 className={sectionTitle}>{isEarth ? 'Limiting oxygen index' : 'The airflow paradox'}</h2>
               <p className="m-0 mt-0.5 font-mono text-[10.5px] leading-snug text-secondary">
-                {isEarth ? 'SCENARIO OXYGEN VS. CATALOG LOI' : 'MODEL 1 · GAUSSIAN PROCESS · FLAME SPREAD (mm/s) ± 2σ'}
+                {isEarth ? 'SCENARIO OXYGEN VS. CATALOG LOI' : 'Gaussian Process . Flame Spread (mm/s) ± 2σ'}
               </p>
             </div>
           </div>

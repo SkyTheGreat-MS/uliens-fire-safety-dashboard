@@ -89,6 +89,9 @@ function App() {
   const evaluation = request && result?.request === request ? result.response : null;
   const unavailable = catalogFailed || (request !== null && result?.request === request && !evaluation);
   const loadingLabel = catalog ? 'Evaluating scenario…' : 'Loading material catalog…';
+  const statusMessage = unavailable ? 'Scenario data unavailable' : isEarth && catalog
+    ? 'Earth reference · Limiting oxygen index comparison'
+    : evaluation ? null : loadingLabel;
 
   function selectSector(sector: Sector) {
     setScenario((current) => ({ ...current, sector }));
@@ -118,23 +121,23 @@ function App() {
   return (
     <main className="mx-auto grid w-full max-w-[1700px] gap-2 p-2 compact:p-3">
       <Header />
-      <div role="status" className="flex items-center gap-2 px-1 font-mono text-[10.5px] text-secondary">
-        <span>{unavailable ? 'Scenario data unavailable' : isEarth && catalog
-          ? 'Earth reference · Limiting oxygen index comparison'
-          : evaluation ? `V2 · ${evaluation.warning}` : loadingLabel}</span>
-        {unavailable && (
-          <button
-            type="button"
-            className="border border-line px-2 text-primary"
-            onClick={() => {
-              setCatalog(null);
-              setCatalogFailed(false);
-              setResult(null);
-              setRetry((current) => current + 1);
-            }}
-          >Retry</button>
-        )}
-      </div>
+      {statusMessage && (
+        <div role="status" className="flex items-center gap-2 px-1 font-mono text-[10.5px] text-secondary">
+          <span>{statusMessage}</span>
+          {unavailable && (
+            <button
+              type="button"
+              className="border border-line px-2 text-primary"
+              onClick={() => {
+                setCatalog(null);
+                setCatalogFailed(false);
+                setResult(null);
+                setRetry((current) => current + 1);
+              }}
+            >Retry</button>
+          )}
+        </div>
+      )}
       <section className="grid grid-cols-1 items-stretch gap-2 deck:grid-cols-[minmax(270px,310px)_minmax(0,1fr)] deck:gap-2.5">
         <StatusPanel
           activeSector={sector}

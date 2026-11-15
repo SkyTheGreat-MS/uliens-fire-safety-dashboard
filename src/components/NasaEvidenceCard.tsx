@@ -60,7 +60,7 @@ export function NasaEvidenceCard({ material, evidence, onPreviewTarget, isEarth 
         <div className="mb-2.5">
           <div className="mb-1.5 flex items-center justify-between">
             <h3 className="font-heading text-[10.5px] font-bold uppercase tracking-[.08em] text-secondary">Global feature importance</h3>
-            <span className="font-mono text-[10px] text-muted">Model 3 · Random forest</span>
+            <span className="font-mono text-[10px] text-muted">Random forest</span>
           </div>
           <div className="grid gap-1.5 border border-line bg-void p-2">
             {drivers.length === 0 && <span className="font-mono text-[10px] text-secondary">Unavailable for this view</span>}

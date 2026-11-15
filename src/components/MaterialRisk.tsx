@@ -37,7 +37,7 @@ export function MaterialRisk({ activeSector, selectedMaterial, materials, rankin
         <div>
           <div className={`${sectionHead} mb-1`}><h2 className={sectionTitle}>Material risk ranking</h2></div>
           <p className="mb-2 font-mono text-[10.5px] tracking-[.02em] text-secondary">
-            {earthOxygen == null ? 'MODEL 2 · POLYNOMIAL LOGISTIC REGRESSION' : 'EARTH REFERENCE · LIMITING OXYGEN INDEX'}
+            {earthOxygen == null ? 'Polynomial Logistic Regression' : 'EARTH REFERENCE · LIMITING OXYGEN INDEX'}
           </p>
         </div>
         <div className="grid min-w-[120px] justify-items-end gap-0.5">

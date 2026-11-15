@@ -267,7 +267,6 @@ function SpreadRateMeter({ meter }: { meter?: Spread }) {
           <span className="font-heading text-[9.5px] font-bold uppercase tracking-[.05em] text-secondary leading-tight whitespace-nowrap">
             SPREAD RATE
           </span>
-          <span className="font-mono text-[8px] text-muted leading-tight whitespace-nowrap">Model 1 (GP)</span>
         </div>
         <div className="my-auto flex w-full flex-col-reverse justify-center gap-[2.5px] py-1" aria-hidden="true">
           {Array.from({ length: 10 }, (_, index) => {
@@ -277,7 +276,7 @@ function SpreadRateMeter({ meter }: { meter?: Spread }) {
             return <i key={index} className={`h-2 w-full border transition-colors ${active ? segmentTone : 'border-line bg-raised'}`} />;
           })}
         </div>
-        <output aria-label="Model 1 flame spread rate" className="flex w-full flex-col items-center justify-center pt-1 border-t border-line/40 text-center">
+        <output aria-label="Flame spread rate" className="flex w-full flex-col items-center justify-center pt-1 border-t border-line/40 text-center">
           <span className="font-mono text-[13px] font-bold tabular-nums text-ink leading-tight whitespace-nowrap">
             {meter?.flame_spread_mm_s.toFixed(2) ?? '—'}{' '}
             <span className="font-sans text-[9px] font-normal text-secondary">mm/s</span>

@@ -40,7 +40,7 @@ export function StatusPanel({
       <div>
         <div className={`${sectionHead} mb-2`}>
           <h2 className={sectionTitle}>Habitat status</h2>
-          <span className={sectionMeta}>{isEarth ? 'Earth reference' : 'Model 3 scenario triage'}</span>
+          {isEarth && <span className={sectionMeta}>Earth reference</span>}
         </div>
         <div className="grid gap-1.5">
           {sectors.map((sector, index) => {
@@ -92,11 +92,9 @@ export function StatusPanel({
 
       <hr className="my-2.5 w-full border-0 border-t border-line" />
 
-      {/* Middle: Demo Cases */}
       <div className="flex flex-1 flex-col justify-center">
         <div className={`${sectionHead} mb-2`}>
-          <h2 className={sectionTitle}>Demo cases</h2>
-          <span className={sectionMeta}>Flight presets</span>
+          <h2 className={sectionTitle}>Flight presets</h2>
         </div>
         <div className="grid gap-1.5">
           {presets.map((preset) => {
