@@ -52,6 +52,7 @@ export default {
         sans: ['Overpass', 'sans-serif'],
         heading: ['"Fira Sans"', 'sans-serif'],
         mono: ['"Geist Mono"', 'SFMono-Regular', 'Consolas', 'monospace'],
+        brand: ['"Space Grotesk"', '"Geist Sans"', 'system-ui', 'sans-serif'],
       },
       fontWeight: {
         normal: '400',
