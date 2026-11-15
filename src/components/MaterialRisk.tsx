@@ -5,7 +5,7 @@ import type { RankingRow } from '../services/avionicsService';
 import { panel, sectionHead, sectionTitle } from './ui';
 
 const riskColumns =
-  'grid-cols-[24px_minmax(132px,1fr)_58px] compact:grid-cols-[28px_minmax(150px,1.2fr)_minmax(90px,.8fr)_62px_68px] tight:grid-cols-[30px_minmax(170px,1.25fr)_minmax(110px,.9fr)_66px_72px]';
+  'grid-cols-[24px_minmax(132px,1fr)_58px] compact:grid-cols-[28px_minmax(150px,1.2fr)_minmax(90px,.8fr)_minmax(62px,.55fr)_68px] tight:grid-cols-[30px_minmax(170px,1.25fr)_minmax(110px,.9fr)_minmax(66px,.55fr)_72px]';
 
 type Props = {
   activeSector: Sector;
@@ -41,7 +41,7 @@ export function MaterialRisk({ activeSector, selectedMaterial, materials, rankin
           </p>
         </div>
         <div className="grid min-w-[120px] justify-items-end gap-0.5">
-          <span className="font-mono text-[10px] text-muted">{ordered.length} MATERIALS</span>
+          {/* <span className="font-mono text-[10px] text-muted">{ordered.length} MATERIALS</span> */}
           <b className="font-mono text-[12px] font-bold text-primary">{sectors[activeSector].short}</b>
         </div>
       </div>
@@ -49,7 +49,7 @@ export function MaterialRisk({ activeSector, selectedMaterial, materials, rankin
       <div className="border-t border-line">
         <div className={`hidden items-center gap-1.5 border-b border-line bg-surface px-[7px] py-1.5 font-mono text-[10.5px] font-semibold uppercase tracking-[.06em] text-muted compact:grid tight:gap-2 ${riskColumns}`}>
           <span>Rank</span><span>Material / location</span><span>Visual meter</span>
-          <span>{earthOxygen == null ? 'P(sustained)' : 'LOI'}</span><span>State</span>
+          <span className="justify-self-center text-center">{earthOxygen == null ? 'Ignition Index' : 'LOI'}</span><span>State</span>
         </div>
         <div className="max-h-[188px] overflow-y-auto overflow-x-auto avionics-scrollbar divide-y divide-line">
           {ordered.length === 0 && <p className="px-2 py-3 font-mono text-[11px] text-secondary">Waiting for material catalog</p>}
@@ -78,15 +78,15 @@ export function MaterialRisk({ activeSector, selectedMaterial, materials, rankin
                   <b className="whitespace-normal font-heading text-[13px] font-bold text-ink compact:overflow-hidden compact:text-ellipsis compact:whitespace-nowrap">{item.displayName}</b>
                   <small className="truncate font-mono text-[10px] text-secondary" title={subtitle}>{subtitle}</small>
                 </span>
-                <span className="col-start-2 row-start-2 flex h-2 gap-0.5 compact:col-auto compact:row-auto">
+                <span className="col-start-3 row-start-1 flex h-2 gap-0.5 compact:col-auto compact:row-auto">
                   {percent != null && Array.from({ length: 20 }, (_, segment) => (
                     <i key={segment} className={`flex-1 ${segment < level ? tones?.meter : 'bg-raised'}`} />
                   ))}
                 </span>
-                <span className="hidden justify-self-end text-right font-mono text-[12px] font-bold text-ink compact:block">
+                <span className="hidden justify-self-center text-center font-mono text-[12px] font-bold text-ink compact:col-start-4 compact:block">
                   {earth != null ? loi : percent == null ? '—' : `${percent.toFixed(1)}%`}
                 </span>
-                <span className={`col-start-3 row-span-2 row-start-1 justify-self-end border px-1.5 py-0.5 font-mono text-[9.5px] font-bold compact:col-auto compact:row-auto ${tones?.badge ?? 'border-line text-secondary'}`}>
+                <span className={`col-start-5 row-span-2 row-start-1 justify-self-end border px-1.5 py-0.5 font-mono text-[9.5px] font-bold compact:col-auto compact:row-auto ${tones?.badge ?? 'border-line text-secondary'}`}>
                   {earth ?? prediction?.risk_status ?? '—'}
                   {prediction?.out_of_material_training_range && <span className="block text-warning">Extrapolated</span>}
                 </span>
@@ -155,13 +155,13 @@ function InspectionDrawer({ material, prediction, earthOxygen, onClose }: {
               <span className="font-mono text-[10px] text-muted">{material.standard_ref}</span>
             </h4>
             <div className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-2 gap-y-1.5">
-              <span className="text-[12px] font-medium text-secondary">{earthOxygen == null ? 'Model 3 regime' : `${earthOxygen.toFixed(1)}% O₂`}</span>
+              <span className="text-[12px] font-medium text-secondary">{earthOxygen == null ? 'Random forest regime' : `${earthOxygen.toFixed(1)}% O₂`}</span>
               <b className="border border-line px-2 py-0.5 font-mono text-[11px] font-bold">
                 {earthOxygen == null ? prediction?.hazard_regime ?? 'Unavailable' : earthReference(earthOxygen, material.loi_threshold_pct)}
               </b>
               {earthOxygen == null && (
                 <small className="col-span-full font-mono text-[10.5px] text-secondary">
-                  P(sustained) <span className="font-bold text-primary">{prediction ? `${(prediction.probability_sustained * 100).toFixed(1)}%` : '—'}</span>
+                  Ignition Index <span className="font-bold text-primary">{prediction ? `${(prediction.probability_sustained * 100).toFixed(1)}%` : '—'}</span>
                   {prediction?.out_of_material_training_range && ' · Extrapolated estimate'}
                 </small>
               )}
