@@ -99,7 +99,12 @@ export type Evaluation = VersionInfo & {
   warning: string;
 };
 
-const apiBaseUrl = (import.meta.env?.VITE_API_URL ?? '').replace(/\/+$/, '');
+const rawApiUrl = (import.meta.env?.VITE_API_URL ?? '').trim();
+const normalizedUrl =
+  rawApiUrl && !rawApiUrl.startsWith('http://') && !rawApiUrl.startsWith('https://') && !rawApiUrl.startsWith('/')
+    ? `https://${rawApiUrl}`
+    : rawApiUrl;
+const apiBaseUrl = normalizedUrl.replace(/\/+$/, '');
 const isObject = (value: unknown): value is Record<string, unknown> =>
   typeof value === 'object' && value !== null && !Array.isArray(value);
 const isNumber = (value: unknown): value is number => typeof value === 'number' && Number.isFinite(value);
