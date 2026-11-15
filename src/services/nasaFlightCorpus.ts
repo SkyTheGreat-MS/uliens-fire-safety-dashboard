@@ -372,7 +372,7 @@ const DOMAIN_ANCHORS = [
 ];
 
 export const REJECTION_MESSAGE =
-  'No grounded flight science resources found for this inquiry in the 8 NASA reference PDFs. The FLAMIE retrieval corpus is strictly restricted to verified microgravity combustion data from BASS, Saffire, and FLEX flight experiments.';
+  'No grounded flight science resources found for this inquiry in the 8 NASA reference PDFs. The Combustion Knowledgebase retrieval corpus is strictly restricted to verified microgravity combustion data from BASS, Saffire, and FLEX flight experiments.';
 
 export const DEFAULT_FALLBACK_PROMPTS = [
   'What is the airflow paradox in microgravity?',

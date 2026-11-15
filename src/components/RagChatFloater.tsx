@@ -126,7 +126,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
       ref={popoverRef}
       role="dialog"
       aria-modal="false"
-      aria-label="FLAMIE Flight Science Assistant"
+      aria-label="Combustion Knowledgebase"
       className="absolute right-0 top-[calc(100%+8px)] z-50 flex w-[540px] max-w-[calc(100vw-24px)] flex-col border border-line bg-surface p-3 shadow-2xl animate-[drawer-enter_120ms_linear] motion-reduce:animate-none"
     >
       {/* 1. Header: Matches Section Head & Design System Typography */}
@@ -134,13 +134,13 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
         <div className="flex items-center gap-2.5">
           <img
             src={flameIcon}
-            alt="FLAMIE Icon"
+            alt="Combustion Knowledgebase Icon"
             className="size-8 object-contain drop-shadow-[0_0_10px_rgba(52,211,153,0.35)]"
           />
           <div className="flex flex-col">
             <div className="flex items-center gap-2">
               <span className="font-heading text-[12px] font-bold uppercase tracking-[.08em] text-ink">
-                FLAMIE
+                COMBUSTION KNOWLEDGE BASE
               </span>
               <span className="flex items-center gap-1 border border-success/60 bg-success/15 px-1.5 py-0.5 font-mono text-[10px] font-semibold uppercase tracking-wider text-success">
                 <span className="size-1.5 rounded-full bg-success animate-pulse" />
@@ -148,7 +148,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
               </span>
             </div>
             <p className="m-0 font-sans text-[11px] font-normal text-secondary">
-              Combustion Knowledgebase
+              SI-Driven Microgravity Telemetry &amp; Flight Logs
             </p>
           </div>
         </div>
@@ -302,20 +302,17 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
           <div className="flex h-full min-h-[150px] flex-col justify-between py-0.5">
             <div>
               <div className="flex items-center justify-between">
-                <span className="font-heading text-[12px] font-bold uppercase tracking-[.08em] text-ink">
-                  FLAMIE
-                </span>
-                <span className="font-mono text-[10px] text-muted">COMBUSTION KNOWLEDGEBASE</span>
+                
               </div>
               <p className="m-0 mt-1 font-sans text-[11px] leading-relaxed text-secondary">
-                Combustion Knowledgebase grounded in verified NASA flight experiment research (BASS, Saffire, FLEX, NASA-STD-6001B).
+                Combustion Knowledge Base grounded in verified NASA flight experiment research (BASS, Saffire, FLEX, NASA-STD-6001B).
               </p>
             </div>
 
             {/* Suggested Flight Inquiries */}
             <div className="mt-2.5">
               <div className="mb-1.5 flex items-center gap-1 font-mono text-[10px] font-bold uppercase tracking-wider text-muted">
-                <Sparkles className="size-2.5 text-primary" />
+                
                 <span>Suggested Flight Inquiries</span>
               </div>
               <div className="grid gap-1">
@@ -358,7 +355,7 @@ export function RagChatFloater({ isOpen, onClose, onSendQuery }: RagChatFloaterP
 
       {/* 4. Footer Metadata */}
       <div className="mt-2 flex items-center justify-between border-t border-line/60 pt-1.5 font-mono text-[10px] text-muted">
-        <span>FLAMIE · Combustion Knowledgebase</span>
+        <span>Combustion Knowledgebase · SI-Driven Flight Telemetry</span>
         <span>Esc to close</span>
       </div>
     </div>

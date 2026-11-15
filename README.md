@@ -1,6 +1,7 @@
-# ECLSS Flight Deck — Web
+# PYROIS (Pyrotechnic & Flammability Operational Intelligence System)
+### SI-Driven Microgravity Combustion Analytics
 
-React + Vite browser prototype for the ECLSS Flight Deck UI. It runs locally in a browser; readings, risk values, and chart shape are illustrative only. No model, live telemetry, or backend is connected.
+React + Vite browser prototype for the PYROIS avionics dashboard UI. It runs locally in a browser; readings, risk values, and chart shape are illustrative only. No model, live telemetry, or backend is connected.
 
 The interface is built with Tailwind CSS, Lucide React icons, and Recharts for the 2D airflow paradox curve. It uses locally served Geist Sans and Geist Mono font files. Interface labels use sentence case, while uppercase is reserved for short state indicators such as `NOMINAL`, `DRIFT`, and `ARMED`.
 
@@ -34,12 +35,12 @@ In compliance with the NASA Space Apps Challenge rules on Super Intelligence (SI
 
 1. **AI Image Generation**:
    - **Tool Used:** Generative text-to-image tool.
-   - **Application:** Created the abstract spirit flame mascot icon (`src/assets/flame-icon.png` / `public/Ethereal Teal Spirit Flame.png`) used for the FLAMIE combustion knowledgebase interface.
+   - **Application:** Created the abstract spirit flame logo icon (`src/assets/flame-icon.png` / `public/Ethereal Teal Spirit Flame.png`) used for the PYROIS logo and Combustion Knowledgebase interface.
    - **NASA Branding Compliance:** The generated asset contains zero NASA logos, flags, mission patches, or agency identifiers.
 
-2. **RAG Knowledgebase & Natural Language Assistance (FLAMIE)**:
+2. **RAG Knowledgebase & Natural Language Assistance**:
    - **Tool Used:** Retrieval-Augmented Generation (RAG) assistant architecture.
-   - **Application:** Embedded flight science query assistant grounded exclusively in 8 peer-reviewed NASA flight experiment publications (BASS-I, BASS-II, Saffire-I/II/III, FLEX, and NASA-STD-6001B).
+   - **Application:** Embedded flight science query assistant ("Combustion Knowledgebase") grounded exclusively in 8 peer-reviewed NASA flight experiment publications (BASS-I, BASS-II, Saffire-I/II/III, FLEX, and NASA-STD-6001B).
    - **Guardrails:** Equipped with domain-relevance filters that reject off-topic questions without hallucinating citations.
 
 3. **Code & Architecture Acceleration**:
